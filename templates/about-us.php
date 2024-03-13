@@ -156,3 +156,4 @@ $eurotech_video = get_field('eurotech_video');
 
 
 </main>
+<?php get_footer() ?>

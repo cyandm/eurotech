@@ -18,12 +18,11 @@ body {
   direction: ltr;
 }
 body {
-  background: $clr_natural_1;
+  background: $clr_bg_paper;
   @include fs("body-s");
   color: $clr_primary_text;
 }
-.title-s{
-  
+.title-s {
 }
 h1,
 .h1 {

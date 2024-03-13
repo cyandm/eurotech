@@ -1,14 +1,15 @@
 @use "../../utils/" as *;
+
 .Property {
-  .product-properties {
+  .tab {
     padding: $s_5 0;
     border-bottom: $b_1;
   }
-  .product-tab {
+  .tab-content {
     @include d_flex(row, start, start, nowrap, true, $s_2);
     padding-top: $s_5;
     button {
-      padding: $s_3;
+      padding: $s_4;
       width: 100%;
       border: 0;
       margin-bottom: $s_2;
@@ -19,8 +20,39 @@
       color: $clr_natural_1;
     }
     .Variable-value button {
-      background-color: $clr_bg_paper;
+      background-color: $clr_secondary_text;
       color: $clr_secondary_light;
     }
+    @include mq("md") {
+      flex-direction: column;
+    }
+  }
+}
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tab-content p {
+  text-align: justify;
+  line-height: 1.9;
+  letter-spacing: 0.4px;
+  color: #202238;
+}
+.tab-content {
+  display: none;
+}
+.show {
+  display: flex !important;
+}
+.tabs .active {
+  background-color: #ffffff;
+  color: #4d5bf9;
+}
+
+.Variable-value,
+.Variable-name {
+  @include mq("md") {
+    width: 100%;
   }
 }

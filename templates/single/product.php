@@ -9,8 +9,11 @@ $product = new WP_Query([
     'posts_per_page' => 6,
     'post__not_in' => [get_the_ID()],
 ]);
-?>
+// var_dump(get_queried_object());
+$top_term = get_the_terms($post_id, 'product-category');
+$category = $top_term[0]->name;
 
+?>
 <main class="product">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
 
@@ -21,25 +24,25 @@ $product = new WP_Query([
                 <img src="<?= get_field("product_fourth_image"); ?>" />
 
             </div>
-            <button class="hover-zoom">
+            <button class="hover-zoom mb-hide">
                 hover to zoom
             </button>
         </div>
     </div>
     <div class="container">
-        <div class="product-title">
-            <div class="titr">
-                <h2>
-                    <?= get_the_title(); ?>
-                </h2>
+        <div class="titr">
+            <h2>
+                <?= get_the_title(); ?>
+            </h2>
+            <div class="product-title">
                 <span>
                     <?= get_field("product_sku") . ' SKU'; ?>
                 </span>
+                <span class="score">
+                    <?= str_repeat('<i class="iconsax" icon-name="star" fill="red"></i>', $rating);
+                    ?>
+                </span>
             </div>
-            <span class="score">
-                <?= str_repeat('<i class="iconsax" icon-name="star" fill="red"></i>', $rating);
-                ?>
-            </span>
         </div>
         <div class="post-content">
             <?php the_content() ?>
@@ -64,7 +67,7 @@ $product = new WP_Query([
         <div class="like-product">
             <h2>Maybe you like it</h2>
 
-            <div class="product-card">
+            <div class="products">
                 <?php
 
                 while ($product->have_posts()) {
@@ -82,7 +85,7 @@ $product = new WP_Query([
         </div>
         <div class="like-product">
             <h2>best seller</h2>
-            <div class="product-card">
+            <div class="products">
 
                 <?php
                 while ($product->have_posts()) {
@@ -110,3 +113,5 @@ $product = new WP_Query([
             "flex";
     }
 </script>
+
+<?php wp_footer() ?>

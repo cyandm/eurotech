@@ -1,17 +1,53 @@
 @use "../../utils/" as *;
-.like-product {
-}
-.product-card {
+
+.products {
   @include d_flex(row, space-between, center, nowrap, true, $s_3);
   img {
     width: 100%;
+    @include mq("md") {
+      width: 30%;
+      aspect-ratio: 4/3;
+    }
   }
   .detail {
     display: flex;
+    align-items: center;
     i {
       background-color: $clr_natural_9;
       color: $clr_natural_1;
       padding: $s_2;
+    }
+  }
+}
+@include mq("md") {
+  .products {
+    flex-direction: column;
+    .product-card {
+      padding: $s_5;
+      background-color: $clr_natural_1;
+
+      img {
+        width: 47%;
+        aspect-ratio: 143/120;
+      }
+      .card {
+        @include d_flex(row, start, center, nowrap, true, $s_4);
+
+        // display: flex;
+        // gap: $s_4;
+        // align-items: center;
+      }
+      .detail {
+        display: block;
+        i {
+          display: none;
+        }
+        .cat {
+          @include fs("caption");
+          color: $clr_secondary_light;
+          line-height: 30px;
+        }
+      }
     }
   }
 }

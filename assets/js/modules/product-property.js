@@ -1,8 +1,9 @@
-function selectTab(tabIndex) {
-    document.getElementById("tab1Content").style.display = "none";
-    document.getElementById("tab2Content").style.display = "none";
-    document.getElementById("tab3Content").style.display = "none";
-    document.getElementById("tab4Content").style.display = "none";
-    document.getElementById("tab" + tabIndex + "Content").style.display =
-        "flex";
+
+let i;
+for (let i = 1; i < 5; i++) 
+{
+    document.getElementById("tab" + i).onclick = function () { myFunction1() };
+function myFunction1() {
+    document.getElementById("tab" + i + "Content").classList.toggle("show");
 }
+};

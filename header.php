@@ -9,4 +9,20 @@
 </head>
 
 <body <?php body_class() ?>>
+
+	<div class="header">
+		<div class="main">
+			<div class="logo-contain">
+				<?php the_custom_logo() ?>
+			</div>
+			<div class="search-box">
+				<?php
+				get_template_part(
+					'templates/components/forms/search-box',
+					null,
+				);
+				?>
+			</div>
+		</div>
+	</div>
 	<?php wp_body_open() ?>

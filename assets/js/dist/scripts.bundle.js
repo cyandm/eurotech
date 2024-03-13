@@ -4290,4 +4290,19 @@
       });
     });
   });
+
+  // assets/js/modules/product-property.js
+  for (let i = 1; i < 5; i++) {
+    let myFunction1 = function() {
+      document.getElementById("tab" + i + "Content").classList.toggle("show");
+    };
+    myFunction12 = myFunction1;
+    document.getElementById("tab" + i).onclick = function() {
+      myFunction1();
+    };
+  }
+  var myFunction12;
+
+  // assets/js/index.js
+  console.log("ss");
 })();

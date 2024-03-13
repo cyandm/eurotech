@@ -1,0 +1,15 @@
+@use "../utils/" as *;
+.header {
+  @include d_flex(row, center, center, nowrap, true, $s_3);
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: $s_8;
+  .main {
+    @include d_flex();
+    width: 90%;
+    height: 72%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 $s_5;
+  }
+}

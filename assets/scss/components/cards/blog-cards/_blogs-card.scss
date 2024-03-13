@@ -26,7 +26,6 @@
       }
       .paragraph {
         @include fs("body");
-        -webkit-line-clamp: 2;
       }
       .postmeta {
         @include fs("body-s");

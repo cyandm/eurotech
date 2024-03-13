@@ -34,7 +34,7 @@ $blog_slider = new WP_Query([
 		<div class="sidebar">
 			<?php
 			get_template_part(
-				'templates/components/cards/blog-sidebar',
+				'templates/components/blog-sidebar',
 				null,
 			);
 			?>
