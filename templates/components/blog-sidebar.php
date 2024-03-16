@@ -1,4 +1,3 @@
-<?php get_header() ?>
 <?php
 $post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $popular_post = get_field('popular_post');
@@ -66,4 +65,3 @@ $popular_blog = new WP_Query([
 	<img src="<?php echo get_field("fifth_pic"); ?>" />
 	<img src="<?php echo get_field("sixth_pic"); ?>" />
 </div>
-<?php get_footer() ?>
