@@ -1,4 +1,4 @@
-<?php /*Template Name: Blog */ get_header() ?>
+<?php /*Template Name: blog */ get_header() ?>
 <?php
 $post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', get_the_ID()));

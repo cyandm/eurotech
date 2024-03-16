@@ -11,12 +11,22 @@
         aspect-ratio: 143/120;
       }
       .card {
-        @include d_flex(row, start, center, nowrap, true, $s_4);
+        @include d_flex(row, start, center, nowrap, false, $s_4);
       }
       .detail {
         display: block;
+        p {
+          @include fs("h3");
+        }
+        span {
+          display: flex;
+          justify-content: space-between;
+        }
+
         i {
-          display: none;
+          background-color: $clr_natural_9;
+          color: $clr_natural_1;
+          padding: $s_2;
         }
         .cat {
           @include fs("caption");

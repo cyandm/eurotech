@@ -5,22 +5,23 @@ $category = $top_term[0]->name;
 ?>
 
 <div class="product-card">
-    <div class="card">
-        <img src="<?= get_field("product_secound_image") ?>" />
+    <a href="<?php the_permalink($post_id) ?>">
+        <div class="card">
+            <img src="<?= get_field("product_secound_image") ?>" />
 
-        <div class="detail">
-            <h5 class="paragraph">
-                <?= get_the_title($post_id);
-                ?>
-            </h5>
-            <a href="<?php the_permalink($post_id) ?>"> <i class="iconsax" icon-name="arrow-right"></i>
-            </a>
-            <a href="" class="cat">
-                <?= isset ($top_term) ? $category : "door";
-
-                ?>
-            </a>
+            <div class="detail">
+                <p class="paragraph">
+                    <?= get_the_title($post_id);
+                    ?>
+                </p>
+                <span> <a href="" class="cat">
+                        <?= isset ($top_term) ? $category : "door";
+                        ?>
+                    </a>
+                    <a href="<?php the_permalink($post_id) ?>"> <i class="iconsax" icon-name="arrow-right"></i>
+                    </a>
+                </span>
+            </div>
         </div>
-    </div>
-
+    </a>
 </div>
