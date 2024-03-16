@@ -84,8 +84,10 @@ main.single-post-page {
   } //*single-blog
 
   .hide ul.cat {
-    @include d_flex(row-reverse, flex-start, start, wrap, false, $s_4);
+    @include d_flex(row-reverse, flex-start, start, nowrap, false, $s_4);
     padding: $s_5 0;
+    overflow: auto;
+    max-width: 100%;
     :active li {
       background-color: $clr_primary_text;
       color: $clr_primary_main;

@@ -18,25 +18,26 @@ $product = new WP_Query([
         <div class="sidebar">
             <?php
             get_template_part(
-                'templates/components/product-sidebar',
+                'templates/components/sidebar/products-sidebar',
                 null,
             );
             ?>
-            <div class="products">
-                <div class="like-product">
-                    <h2>best seller</h2>
-                    <div class="products">
+        </div>
+        <div class="allproduct">
+            <div class="like-product">
+                <h2>best seller</h2>
+                <div class="products">
 
-                        <?php
-                        while ($product->have_posts()) {
-                            $product->the_post();
-                            $post_id = get_the_ID();
-                            get_template_part('/templates/components/cards/suggest', 'product', ['post_id' => $post_id]);
-                        }
-                        ?>
-                        <?php wp_reset_postdata() ?>
-                    </div>
+                    <?php
+                    while ($product->have_posts()) {
+                        $product->the_post();
+                        $post_id = get_the_ID();
+                        get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $post_id]);
+                    }
+                    ?>
+                    <?php wp_reset_postdata() ?>
                 </div>
             </div>
         </div>
+    </div>
 </main>

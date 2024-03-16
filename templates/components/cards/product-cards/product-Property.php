@@ -1,7 +1,5 @@
 <div class="tab" name="tab" id="tab1">specifications</div>
-
 <div id="tab1Content" name="tab-content" class="tab-content">
-
     <div class="Variable-name">
         <button>
             <?= get_field("the_first_feature") ?>
@@ -85,33 +83,29 @@
 </div>
 
 <div class="tab" id="tab2">product description</div>
-
 <div id="tab2Content" class="tab-content">
     <?= the_content() ?>
-
 </div>
 
 <div class="tab" id="tab3">product catalog</div>
 <div id="tab3Content" class="tab-content">
-    <a href="<?= get_field("catalog"); ?>"> Catalog </a>
+    <p>Click to download the catalog</p>
+    <a href="<?= get_field("catalog"); ?>" class="download">
+
+        <span> Download
+            <?php get_template_part('/templates/components/svg/icon-download-pdf') ?>
+        </span>
+    </a>
 
 </div>
-
 
 
 <div class="tab" id="tab4">frequently asked question</div>
-
-
-
 <div id="tab4Content" class="tab-content">
-    <div> <button> weight</button>
-        <button> height</button>
-        <button> color</button>
-        <button> color</button>
-        <button> color</button>
-    </div>
+    <?php
+    get_template_part(
+        'templates/components/cards/product-cards/product-question',
+        null,
+    );
+    ?>
 </div>
-
-<script>
-
-</script>

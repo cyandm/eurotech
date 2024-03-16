@@ -1,11 +1,7 @@
-<?php /*Template Name: contact */ ?>
+<?php /*Template Name: contact */ get_header()?>
 <?php
-
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 ?>
-
-<?php get_header() ?>
-
 <div class="contact-us">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
         <div class="container">
@@ -20,5 +16,4 @@ $banner = get_the_post_thumbnail_url($post_id, 'full');
         </div>
     </div>
 </div>
-
 <?php get_footer() ?>

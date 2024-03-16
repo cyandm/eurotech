@@ -26,13 +26,15 @@ $phone_number2 = null !== get_option('cyn_phone_number_two') ? get_option('cyn_p
 		</div>
 		<div class="footer-col col-contact">
 			<h4 class="footer-col-title">Contact</h4>
-			<?php if (!empty($phone_number)) echo "<div><a href='tel:$phone_number'>" . $phone_number . '</a></div>' ?>
-			<?php if (!empty($phone_number2)) echo "<div><a href='tel:$phone_number2'>" . $phone_number2 . '</a></div>' ?>
-			<div class="icon-social-media">
+			<?php if (!empty ($phone_number))
+				echo "<div><a href='tel:$phone_number'>" . $phone_number . '</a></div>' ?>
+			<?php if (!empty ($phone_number2))
+				echo "<div><a href='tel:$phone_number2'>" . $phone_number2 . '</a></div>' ?>
+				<div class="icon-social-media">
 				<?php render_social_media($pinterest_link, 'pinterest.svg') ?>
 				<?php render_social_media($facebook_link, 'facebook.svg') ?>
-				<?php render_social_media($instagram_link,  'instagram.svg') ?>
-				<?php render_social_media($x_link,  'x.svg') ?>
+				<?php render_social_media($instagram_link, 'instagram.svg') ?>
+				<?php render_social_media($x_link, 'x.svg') ?>
 			</div>
 		</div>
 		<div class="footer-col">
@@ -44,10 +46,12 @@ $phone_number2 = null !== get_option('cyn_phone_number_two') ? get_option('cyn_p
 			<?php wp_nav_menu(['theme_location' => 'footer-col3']) ?>
 
 		</div>
-		<?php if (!empty($address)) : ?>
+		<?php if (!empty ($address)): ?>
 			<div class="footer-col ">
 				<h4 class="footer-col-title">Address</h4>
-				<div><?= $address ?></div>
+				<div>
+					<?= $address ?>
+				</div>
 			</div>
 		<?php endif ?>
 		<div class="footer-col col-newsletter">

@@ -1,4 +1,4 @@
-<?php /*Template Name: search */ ?>
+<?php ?>
 <?php
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 

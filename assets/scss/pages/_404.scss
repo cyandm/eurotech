@@ -27,10 +27,7 @@
       cursor: pointer;
     }
   }
-}
-
-@include mq("md") {
-  .error-page {
+  @include mq("md") {
     background-position: top;
     background-size: 180%;
     .error-text {
@@ -41,7 +38,6 @@
       }
       a {
         width: 100%;
-        padding: $s_5;
       }
     }
   }

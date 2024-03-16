@@ -1,4 +1,4 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 .site-footer {
   padding-block: $s_10;
   padding-inline: $s_10;
@@ -40,7 +40,7 @@
         @include d_flex(column, flex-start, stretch, nowrap, false, $s_3);
       }
     }
-    @include mq('md') {
+    @include mq("md") {
       .col-newsletter {
         order: -1;
       }
@@ -55,7 +55,7 @@
   @media (max-width: 1440px) {
     padding-inline: $s_10;
   }
-  @include mq('md') {
+  @include mq("md") {
     padding-inline: $s_5;
   }
 }

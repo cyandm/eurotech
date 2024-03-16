@@ -58,8 +58,5 @@
         background-color: $clr_primary_main;
       }
     }
-    @include mq("md") {
-      height: 60vh;
-    }
   }
 }

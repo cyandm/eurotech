@@ -1,5 +1,5 @@
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $popular_post = get_field('popular_post');
 $num = 01;
 $first_blogs = new WP_Query([
@@ -28,7 +28,7 @@ $popular_blog = new WP_Query([
 			foreach ($popular_post as $blog_id) {
 				echo "<span class='number'>" . "0" . $num . "</span>";
 				$num++;
-				get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $blog_id]);
+				get_template_part('/templates/components/cards/blog-cards/popular', 'blog', ['post_id' => $blog_id]);
 			}
 		} else {
 			while ($first_blogs->have_posts()) {

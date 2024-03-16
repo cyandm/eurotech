@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 $rating = get_field("rating");
 $best_seller = get_field('best_seller');
@@ -50,7 +50,7 @@ $category = $top_term[0]->name;
         <div class="Property">
             <?php
             get_template_part(
-                'templates/components/cards/product-Property',
+                'templates/components/cards/product-cards/product-Property',
                 null,
             );
             ?>
@@ -73,7 +73,7 @@ $category = $top_term[0]->name;
                 while ($product->have_posts()) {
                     $product->the_post();
                     $product_id = get_the_ID();
-                    get_template_part('/templates/components/cards/suggest', 'product', ['post_id' => $product_id]);
+                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
 
                     wp_reset_postdata();
 
@@ -91,7 +91,7 @@ $category = $top_term[0]->name;
                 while ($product->have_posts()) {
                     $product->the_post();
                     $post_id = get_the_ID();
-                    get_template_part('/templates/components/cards/suggest', 'product', ['post_id' => $post_id]);
+                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $post_id]);
                 }
                 ?>
                 <?php wp_reset_postdata() ?>
