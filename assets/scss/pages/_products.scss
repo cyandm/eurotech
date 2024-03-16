@@ -23,7 +23,6 @@
     color: $clr_natural_9;
     .sidebar {
       width: 48%;
-      @include d_flex(row, start, center, nowrap, false, 0);
     }
     .allproduct {
       width: 80%;
