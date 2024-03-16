@@ -3,7 +3,6 @@
   height: 100px;
   position: absolute;
   top: $s_8;
-
   @include d_flex(row, space-between, center, nowrap, false, $s_3);
   width: 90%;
   margin: 0 $s_5;
@@ -16,7 +15,6 @@
   .menu-nav {
     padding: $s_5;
     background-color: rgba(0, 0, 0, 0.5);
-  }
   ul {
     color: $clr_natural_1;
     @include d_flex(row, center, center, nowrap, false, $s_7);
@@ -36,4 +34,5 @@
     padding: $s_5;
     background-color: rgba(0, 0, 0, 0.5);
   }
+}
 }

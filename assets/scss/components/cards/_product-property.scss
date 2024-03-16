@@ -55,4 +55,9 @@
   @include mq("md") {
     width: 100%;
   }
+  #tab4Content,
+  #tab2Content,
+  #tab3Content {
+    display: none;
+  }
 }

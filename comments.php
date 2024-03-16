@@ -6,7 +6,7 @@ comment_form(
 	array(
 		'logged_in_as' => null,
 		'title_reply' => "leave comment",
-		'title_reply_to' => "Add reply %s",
+		'title_reply_to' => "Leave a Reply",
 		'comment_field' => '
 		<div class="input-group">
 		<div class="input-box"> <lable>Name* </lable><input id="name" name="name" class="comment-input" rows="1" maxlength="50" placeholder=" " required/></div>
@@ -20,8 +20,6 @@ comment_form(
 		'label_submit' => ' Add Comment',
 		'submit_field' => '<div class="form-submit">%1$s %2$s</div>',
 		'comment_notes_before' => '',
-		'title_reply_to' => 'Leave a Reply',
-
 	)
 );
 if (have_comments()):

@@ -1,7 +1,5 @@
 <div class="tab" name="tab" id="tab1">specifications</div>
-
 <div id="tab1Content" name="tab-content" class="tab-content">
-
     <div class="Variable-name">
         <button>
             <?= get_field("the_first_feature") ?>
@@ -96,12 +94,7 @@
     <a href="<?= get_field("catalog"); ?>"> Catalog </a>
 
 </div>
-
-
-
 <div class="tab" id="tab4">frequently asked question</div>
-
-
 
 <div id="tab4Content" class="tab-content">
     <div> <button> weight</button>
@@ -109,7 +102,3 @@
         >
     </div>
 </div>
-
-<script>
-
-</script>
