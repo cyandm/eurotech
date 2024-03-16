@@ -1,1 +1,61 @@
 @use '../utils/' as *;
+.site-footer {
+  padding-block: $s_10;
+  padding-inline: $s_10;
+  .footer-wrapper {
+    padding: $s_10 $s_5;
+    background-color: $clr_secondary_dark;
+    @include d_flex(row, stretch, flex-start, wrap, true, $s_6);
+    .footer-col {
+      @include d_flex(column, flex-start, stretch, nowrap, false, $s_1);
+
+      &-title {
+        color: $clr_secondary_light;
+        margin-bottom: $s_2;
+      }
+      > div {
+        color: $clr_text_contrast;
+      }
+      &:not(:nth-child(5)) {
+        white-space: nowrap;
+      }
+      .icon-social-media {
+        @include d_flex(row, flex-start, stretch, nowrap, false, $s_2);
+        > a {
+          background-color: $clr_primary_light;
+          width: px_to_rem(32);
+          height: px_to_rem(32);
+          @include d_flex(row, center, center);
+
+          > div {
+            @include d_flex(row, center, center);
+            img {
+              object-fit: contain;
+              max-height: $s_5;
+            }
+          }
+        }
+      }
+      .form-newsletter {
+        @include d_flex(column, flex-start, stretch, nowrap, false, $s_3);
+      }
+    }
+    @include mq('md') {
+      .col-newsletter {
+        order: -1;
+      }
+      .col-support {
+        order: 3;
+      }
+      .col-contact {
+        order: 4;
+      }
+    }
+  }
+  @media (max-width: 1440px) {
+    padding-inline: $s_10;
+  }
+  @include mq('md') {
+    padding-inline: $s_5;
+  }
+}

@@ -1,4 +1,4 @@
-@use "../utils/" as *;
+@use '../utils/' as *;
 .single-sidebar {
   width: 37%;
 
@@ -12,7 +12,7 @@
   }
   .catergories {
     li.current-cat {
-      @include make_icon("\e9a6");
+      @include make_icon('\e9a6');
     }
     li.current-cat::before {
       color: $clr_primary_main;
@@ -38,7 +38,7 @@
     --_i: 100%;
     transition: 0.3s, background-size 0.3s 0.3s;
   }
-  @include mq("md") {
+  @include mq('md') {
     width: 100%;
   }
 }

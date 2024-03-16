@@ -1,5 +1,5 @@
-@use "../utils/variables" as *;
-@use "../utils/mixins" as *;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 *,
 *::after,
@@ -9,53 +9,58 @@
 * {
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   direction: ltr;
+  text-transform: capitalize;
 }
 body {
   background: $clr_bg_paper;
-  @include fs("body-s");
+  @include fs('body-s');
   color: $clr_primary_text;
 }
 .title-s {
 }
 h1,
 .h1 {
-  @include fs("title");
+  @include fs('title');
 }
 h2,
 .h2 {
-  @include fs("h1");
-  @include mq("md") {
-    @include fs("h3");
+  @include fs('h1');
+  @include mq('md') {
+    @include fs('h3');
   }
 }
 h3,
 .h3 {
-  @include fs("h2");
+  @include fs('h2');
 }
 h4,
 .h4 {
-  @include fs("h3");
+  @include fs('h3');
 }
 h5,
 .h5 {
-  @include fs("h4");
+  @include fs('h4');
 }
 h6,
 .h6 {
-  @include fs("body-s");
+  @include fs('body-s');
 }
 
 input,
-textarea {
+textarea,
+button {
   background: transparent;
-  font-family: "poppins";
+  font-family: 'poppins';
+  border: none;
+  outline: none;
 }
 ::placeholder {
   color: $clr_primary_light;
