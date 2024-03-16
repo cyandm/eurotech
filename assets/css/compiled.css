@@ -51,6 +51,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 body {
@@ -58,6 +59,7 @@ body {
   padding: 0;
   font-family: "Poppins";
   direction: ltr;
+  text-transform: capitalize;
 }
 
 body {
@@ -119,9 +121,12 @@ h6,
 }
 
 input,
-textarea {
+textarea,
+button {
   background: transparent;
   font-family: "poppins";
+  border: none;
+  outline: none;
 }
 
 ::placeholder {
@@ -349,13 +354,106 @@ img {
   font-size: 24px;
 }
 
-footer {
-  width: 100%;
-  height: 150px;
-  background-color: black;
+.site-footer {
+  padding-block: 2.5rem;
+  padding-inline: 2.5rem;
 }
-footer ul {
-  line-height: 14px;
+.site-footer .footer-wrapper {
+  padding: 2.5rem 1.25rem;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.site-footer .footer-wrapper > * {
+  flex: 1;
+}
+.site-footer .footer-wrapper .footer-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+}
+.site-footer .footer-wrapper .footer-col-title {
+  color: #6b6b6b;
+  margin-bottom: 0.5rem;
+}
+.site-footer .footer-wrapper .footer-col > div {
+  color: #ffffff;
+}
+.site-footer .footer-wrapper .footer-col:not(:nth-child(5)) {
+  white-space: nowrap;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media > a {
+  background-color: #fff9eb;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media > a > * {
+  flex: 1;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media > a > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media > a > div > * {
+  flex: 1;
+}
+.site-footer .footer-wrapper .footer-col .icon-social-media > a > div img {
+  object-fit: contain;
+  max-height: 1.25rem;
+}
+.site-footer .footer-wrapper .footer-col .form-newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  .site-footer .footer-wrapper .col-newsletter {
+    order: -1;
+  }
+  .site-footer .footer-wrapper .col-support {
+    order: 3;
+  }
+  .site-footer .footer-wrapper .col-contact {
+    order: 4;
+  }
+}
+@media (max-width: 1440px) {
+  .site-footer {
+    padding-inline: 2.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .site-footer {
+    padding-inline: 1.25rem;
+  }
 }
 
 .about-steps-slider .steps .step {
@@ -835,6 +933,9 @@ footer ul {
   padding: 1rem;
   border: 0;
 }
+.search-box form input {
+  flex: 1;
+}
 .search-box form ::placeholder {
   color: #6b6b6b;
 }
@@ -969,6 +1070,24 @@ footer ul {
   }
 }
 
+.button-primary {
+  background-color: #feb800;
+  color: #000000;
+  padding: 1rem 1.25rem;
+  transition: all 0.4s ease-in-out;
+}
+.button-primary:hover {
+  cursor: pointer;
+}
+.button-secondary {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 1rem 1.25rem;
+  transition: all 0.4s ease-in-out;
+}
+.button-secondary:hover {
+  cursor: pointer;
+}
 .input {
   margin-bottom: 1.25rem;
   background-color: #ffffff;
@@ -979,6 +1098,22 @@ footer ul {
   color: #6b6b6b;
 }
 
+.input-primary {
+  background-color: #f5f4f4;
+  color: #000000;
+  padding: 0.5rem 0.75rem;
+}
+.input-primary::placeholder {
+  color: #6b6b6b;
+}
+.input-secondary {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+}
+.input-secondary::placeholder {
+  color: #6b6b6b;
+}
 .blog-comments {
   width: 100%;
   display: flex;
@@ -1784,7 +1919,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   padding: 2rem 0;
 }
 
-.search-result .banner {
+main.search-result-page .banner {
   width: 100%;
   height: 70vh;
   background-position: top;
@@ -1797,7 +1932,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   flex-wrap: nowrap;
   gap: 0;
 }
-.search-result .banner p {
+main.search-result-page .banner p {
   color: #ffffff;
   font-size: 60px;
   font-weight: 500;
@@ -1805,7 +1940,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   width: 50%;
   padding-left: 2.5rem;
 }
-.search-result .search-menu {
+main.search-result-page .search-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1814,7 +1949,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   gap: 0;
   margin-top: 3rem;
 }
-.search-result .search-menu ul.product-cat {
+main.search-result-page .search-menu ul.product-cat {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1826,7 +1961,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   overflow: auto;
   max-width: 100%;
 }
-.search-result .search-menu ul.product-cat li {
+main.search-result-page .search-menu ul.product-cat li {
   border-color: rgba(0, 0, 0, 0);
   transition: all ease-in-out 0.6s;
   font-size: 20px;
@@ -1834,6 +1969,29 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   line-height: 36px;
   min-height: 50px;
   padding: 0.75rem 1rem;
+}
+main.search-result-page .search-result .product-result h2 span,
+main.search-result-page .search-result .blog-result h2 span {
+  color: #d79b00;
+}
+main.search-result-page .search-result .not-found-search .result-cant-found {
+  margin-block: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+main.search-result-page .search-result .not-found-search .result-cant-found > * {
+  flex: 1;
+}
+main.search-result-page .search-result .not-found-search .result-cant-found > div {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 90px;
+  color: #d79b00;
+  font-size: 40px;
 }
 
 .contact-us .banner {

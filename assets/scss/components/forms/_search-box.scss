@@ -1,4 +1,4 @@
-@use "../../utils/" as *;
+@use '../../utils/' as *;
 
 .search-box {
   width: 30%;
@@ -10,6 +10,9 @@
       background-color: $clr_primary_main;
       padding: $s_4;
       border: 0;
+    }
+    input {
+      flex: 1;
     }
     ::placeholder {
       color: $clr_secondary_light;

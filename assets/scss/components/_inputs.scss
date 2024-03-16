@@ -9,3 +9,23 @@
     color: $clr_secondary_light;
   }
 }
+.input {
+  &-primary {
+    background-color: $clr_bg_default;
+    color: $clr_primary_text;
+    padding: $s_2 $s_3;
+    &::placeholder {
+      color: $clr_secondary_light;
+    }
+  }
+  &-secondary {
+    background-color: rgba($clr_natural_9, 0.5);
+    padding: $s_3 $s_4;
+    color: $clr_text_contrast;
+    &::placeholder {
+      color: $clr_secondary_light;
+    }
+  }
+  &-accent {
+  }
+}

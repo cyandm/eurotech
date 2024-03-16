@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 body {
@@ -16,14 +17,14 @@ body {
   padding: 0;
   font-family: "Poppins";
   direction: ltr;
+  text-transform: capitalize;
 }
 body {
   background: $clr_natural_1;
   @include fs("body-s");
   color: $clr_primary_text;
 }
-.title-s {
-}
+
 h1,
 .h1 {
   @include fs("title");
@@ -53,9 +54,12 @@ h6,
 }
 
 input,
-textarea {
+textarea,
+button {
   background: transparent;
   font-family: "poppins";
+  border: none;
+  outline: none;
 }
 ::placeholder {
   color: $clr_primary_light;

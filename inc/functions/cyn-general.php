@@ -95,7 +95,14 @@ function setPostViews($postID)
         update_post_meta($postID, $count_key, $count);
     }
 }
+function render_social_media($social_media_link, $address)
+{
+    $address_stable = get_stylesheet_directory_uri() . '/assets/img/';
+    if (empty($social_media_link)) return;
 
+
+    printf("<a href='%s'><div class='social-media-item'><img src='%s'></div></a>", $social_media_link, $address_stable . $address);
+}
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
 
 
@@ -168,6 +175,4 @@ function the_pagination()
     ' . "\n", get_next_posts_link('<span aria-hidden="true" class="page-link ripple">&raquo;</span>
     <span class="sr-only">Next</span>'));
     echo '</ul>' . "\n";
-
-
 }

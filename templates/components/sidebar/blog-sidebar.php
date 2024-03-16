@@ -39,19 +39,18 @@ $popular_blog = new WP_Query([
 				get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
 			}
 			wp_reset_postdata();
-
 		}
 		?>
 
 		<!-- <?php
-		while ($popular_blog->have_posts()) {
-			$popular_blog->the_post();
-			$post_id = get_the_ID();
-			echo "<span class='number'>" . $num . "</span>";
-			$num++;
-			get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
-		}
-		?> -->
+				while ($popular_blog->have_posts()) {
+					$popular_blog->the_post();
+					$post_id = get_the_ID();
+					echo "<span class='number'>" . $num . "</span>";
+					$num++;
+					get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
+				}
+				?> -->
 		<?php wp_reset_postdata() ?>
 	</div>
 
