@@ -1,0 +1,69 @@
+@use "../../../utils/" as *;
+
+.Property {
+  .tab {
+    padding: $s_5 0;
+    border-bottom: $b_1;
+  }
+  .tab-content {
+    @include d_flex(row, start, center, nowrap, true, $s_2);
+    padding-top: $s_5;
+    display: none;
+    button {
+      padding: $s_4;
+      width: 100%;
+      border: 0;
+      margin-bottom: $s_2;
+    }
+    .Variable-name button {
+      background-color: $clr_secondary_light;
+      color: $clr_natural_1;
+    }
+    .Variable-value button {
+      background-color: $clr_secondary_text;
+      color: $clr_secondary_light;
+    }
+    @include mq("md") {
+      flex-direction: column;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.9;
+      letter-spacing: 0.4px;
+      color: #202238;
+    }
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .show {
+    display: flex !important;
+  }
+
+  .Variable-value,
+  .Variable-name {
+    @include mq("md") {
+      width: 100%;
+    }
+  }
+  #tab3Content {
+    * {
+      display: flex;
+    }
+    .download {
+      justify-content: flex-end;
+    }
+    span {
+      padding: $s_4;
+      background-color: $clr_primary_main;
+      @include fs("h2");
+      @include mq("md") {
+        @include fs("caption");
+        padding: $s_2;
+        align-items: center;
+      }
+    }
+  }
+}

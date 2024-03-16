@@ -1,4 +1,4 @@
-@use "../../utils/" as *;
+@use "../../../utils/" as *;
 
 .products {
   @include d_flex(row, space-between, center, nowrap, true, $s_3);
@@ -24,7 +24,7 @@
     flex-direction: column;
     .product-card {
       padding: $s_5;
-      background-color: $clr_natural_1;
+      background-color: $clr_bg_paper;
 
       img {
         width: 47%;
@@ -32,10 +32,6 @@
       }
       .card {
         @include d_flex(row, start, center, nowrap, true, $s_4);
-
-        // display: flex;
-        // gap: $s_4;
-        // align-items: center;
       }
       .detail {
         display: block;

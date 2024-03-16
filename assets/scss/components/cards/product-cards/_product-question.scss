@@ -1,0 +1,13 @@
+@use "../../../utils/" as *;
+#tab4Content {
+  div {
+    margin: $s_6;
+
+    .question {
+      @include fs("h3");
+    }
+    .answer {
+      color: $clr_secondary_light;
+    }
+  }
+}

@@ -13,6 +13,9 @@
       background-size: 110%;
       transition: ease-in-out 5s;
     }
+    @include mq("md") {
+      height: 40vh;
+    }
   }
   .gallery {
     @include d_flex(row, space-between, flex-end, nowrap, false, 0);
@@ -59,10 +62,16 @@
         margin: $s_6 0;
         @include d_flex(row, space-between, center, nowrap, false, 0);
         width: 30%;
+        @include mq("md") {
+          width: 100%;
+        }
       }
       .score i {
         color: $clr_primary_dark;
         fill: $clr_primary_dark;
+      }
+      @include mq("md") {
+        flex-direction: column;
       }
     }
     .product-pagination {
@@ -86,8 +95,5 @@
     h2 {
       padding: $s_8 0;
     }
-  }
-  @include mq("md") {
-    height: 40vh;
   }
 }

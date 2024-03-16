@@ -18,7 +18,7 @@ $product = new WP_Query([
         <div class="sidebar">
             <?php
             get_template_part(
-                'templates/components/product-sidebar',
+                'templates/components/products-sidebar',
                 null,
             );
             ?>

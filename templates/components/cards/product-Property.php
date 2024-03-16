@@ -83,22 +83,29 @@
 </div>
 
 <div class="tab" id="tab2">product description</div>
-
 <div id="tab2Content" class="tab-content">
     <?= the_content() ?>
-
 </div>
 
 <div class="tab" id="tab3">product catalog</div>
 <div id="tab3Content" class="tab-content">
-    <a href="<?= get_field("catalog"); ?>"> Catalog </a>
+    <p>Click to download the catalog</p>
+    <a href="<?= get_field("catalog"); ?>" class="download">
+
+        <span> Download
+            <?php get_template_part('/templates/components/svg/icon-download-pdf') ?>
+        </span>
+    </a>
 
 </div>
-<div class="tab" id="tab4">frequently asked question</div>
 
+
+<div class="tab" id="tab4">frequently asked question</div>
 <div id="tab4Content" class="tab-content">
-    <div> <button> weight</button>
-        <button> height</button>
-        >
-    </div>
+    <?php
+    get_template_part(
+        'templates/components/cards/product-question',
+        null,
+    );
+    ?>
 </div>
