@@ -1,4 +1,5 @@
 @use "../../../utils/" as *;
+//card of sigle product
 .product {
   .products {
     @include d_flex(row, space-between, center, nowrap, true, $s_3);

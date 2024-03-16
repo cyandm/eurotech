@@ -1,4 +1,4 @@
-<?php $post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+<?php $post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $top_term = get_the_terms($post_id, 'product-category');
 $category = $top_term[0]->name;
 
@@ -15,8 +15,8 @@ $category = $top_term[0]->name;
             </h5>
             <a href="<?php the_permalink($post_id) ?>"> <i class="iconsax" icon-name="arrow-right"></i>
             </a>
-            <a href="" class="hide cat">
-                <?= isset($top_term) ? $category : "door";
+            <a href="" class="cat">
+                <?= isset ($top_term) ? $category : "door";
 
                 ?>
             </a>

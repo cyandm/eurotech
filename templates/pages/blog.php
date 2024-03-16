@@ -1,6 +1,6 @@
 <?php /*Template Name: Blog */ get_header() ?>
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', get_the_ID()));
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 $blog_slider = new WP_Query([
@@ -18,7 +18,7 @@ $blog_slider = new WP_Query([
 				while ($blog_slider->have_posts()) {
 					$blog_slider->the_post();
 					$post_id = get_the_ID();
-					get_template_part('/templates/components/cards/blog', 'topslider', ['post_id' => $post_id]);
+					get_template_part('/templates/components/cards/blog-card/blog', 'topslider', ['post_id' => $post_id]);
 				}
 				?>
 				<?php wp_reset_postdata() ?>
@@ -34,7 +34,7 @@ $blog_slider = new WP_Query([
 		<div class="sidebar">
 			<?php
 			get_template_part(
-				'templates/components/blog-sidebar',
+				'templates/components/sidebar/blog-sidebar',
 				null,
 			);
 			?>
@@ -68,7 +68,7 @@ $blog_slider = new WP_Query([
 					while ($new_blogs->have_posts()) {
 						$new_blogs->the_post();
 						$post_id = get_the_ID();
-						get_template_part('/templates/components/cards/blogpage', 'card', ['post_id' => $post_id]);
+						get_template_part('/templates/components/cards/blog-cards/blogpage', 'card', ['post_id' => $post_id]);
 					}
 					?>
 					<?php wp_reset_postdata() ?>
