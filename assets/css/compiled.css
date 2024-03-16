@@ -54,18 +54,21 @@
 }
 
 body {
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
   font-family: "Poppins";
   direction: ltr;
-}
-
-body {
   background: #ececec;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
   color: #000000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -143,7 +146,7 @@ input {
 }
 
 .container {
-  max-width: 1360px;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -312,9 +315,6 @@ img {
     align-items: center;
     flex-wrap: nowrap;
     gap: 0.75rem;
-  }
-  .submit > * {
-    flex: 1;
   }
 }
 
@@ -892,9 +892,6 @@ img {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.contact-us .banner > * {
-  flex: 1;
-}
 .contact-us .banner .container {
   display: flex;
   flex-direction: row;
@@ -1065,9 +1062,6 @@ img {
   flex-wrap: nowrap;
   gap: 0;
 }
-.product .banner > * {
-  flex: 1;
-}
 .product .gallery {
   display: flex;
   flex-direction: row;
@@ -1134,9 +1128,6 @@ img {
   }
 }
 
-.container {
-  margin-bottom: 2.5rem;
-}
 .container .titr {
   display: flex;
   flex-direction: row;
@@ -1271,8 +1262,38 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 1.25rem;
 }
-.header .main > * {
-  flex: 1;
+
+.heroes {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.heroes__title {
+  padding-block: 18% 10%;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 90px;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .heroes__title {
+    visibility: hidden;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+}
+.heroes__title__mobile {
+  display: none;
+  margin-block: 0.75rem 1.25rem;
+}
+@media screen and (max-width: 768px) {
+  .heroes__title__mobile {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 44.5px;
+  }
 }
 
 main.single-post-page .post-image img {
@@ -1490,10 +1511,6 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   flex-wrap: nowrap;
   gap: 0;
 }
-.blog-page .blog-archive li:hover .blog-head > *,
-.blog-page .blog-archive .blog-main .blog-head > * {
-  flex: 1;
-}
 @media screen and (max-width: 768px) {
   .blog-page .blog-archive li:hover .blog-head,
   .blog-page .blog-archive .blog-main .blog-head {
@@ -1605,9 +1622,6 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   flex-wrap: nowrap;
   gap: 1.75rem;
   padding: 1.75rem 0;
-}
-.about-us .about-us-content > * {
-  flex: 1;
 }
 .about-us .about-us-content .about-video {
   object-fit: cover;
@@ -1826,6 +1840,68 @@ main.single-post-page .hide ul.cat li.current-cat::before {
     padding: 1.25rem;
   }
 }
+.inspiration__gallery {
+  margin-block-start: 2rem;
+}
+.inspiration__gallery__content {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .inspiration__gallery__content {
+    gap: 1rem;
+  }
+}
+.inspiration__gallery__content__item {
+  min-width: 100%;
+  max-height: 380px;
+}
+.inspiration__gallery__content__item__img {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 0;
+  height: 100%;
+}
+.inspiration__gallery__content__item__img img {
+  height: 100%;
+  object-fit: cover;
+}
+.inspiration__gallery__content__item:nth-child(6n-5), .inspiration__gallery__content__item:nth-child(6n-1) {
+  min-height: calc(760px + 1.5rem);
+  grid-column: 6 span;
+  grid-row: 2 span;
+}
+.inspiration__gallery__content__item:nth-child(6n-2), .inspiration__gallery__content__item:nth-child(6n-1) {
+  margin-block-start: calc(2rem - 1.5rem);
+}
+@media screen and (max-width: 768px) {
+  .inspiration__gallery__content__item:nth-child(6n-2), .inspiration__gallery__content__item:nth-child(6n-1) {
+    margin-block-start: unset;
+  }
+}
+.inspiration__gallery__content__item:nth-child(6n-4), .inspiration__gallery__content__item:nth-child(6n-2) {
+  grid-column: 4 span;
+}
+.inspiration__gallery__content__item:nth-child(6n-3), .inspiration__gallery__content__item:nth-child(6n) {
+  grid-column: 4 span;
+}
+@media screen and (max-width: 768px) {
+  .inspiration__gallery__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .inspiration__gallery__content .inspiration__gallery__content__item {
+    max-height: unset;
+  }
+  .inspiration__gallery__content .inspiration__gallery__content__item:nth-child(6n-5), .inspiration__gallery__content .inspiration__gallery__content__item:nth-child(6n-1) {
+    min-height: unset;
+  }
+}
+
 @font-face {
   font-family: "iconsax";
   src: url("../fonts/icons/iconsax/iconsax.eot");

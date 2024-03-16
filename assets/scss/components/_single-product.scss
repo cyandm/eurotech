@@ -53,7 +53,7 @@
   }
 }
 .container {
-  margin-bottom: $s_10;
+  // margin-bottom: $s_10;
   .titr {
     @include d_flex($even_column: false, $a_i: center);
     span {

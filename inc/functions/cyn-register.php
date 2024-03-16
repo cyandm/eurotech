@@ -10,7 +10,8 @@ function cyn_post_type_register()
 {
     $GLOBALS["form-post-type"] = $post_type = 'form';
     cyn_make_post_type('form ', $post_type, 'dashicons-email-alt2', true, ['title']);
-    cyn_make_post_type('product', 'product', '');
+    cyn_make_post_type('product', 'product', 'dashicons-archive');
+    cyn_make_post_type('inspiration', 'inspiration', 'dashicons-format-gallery', true, ['title', 'thumbnail', 'editor']);
 }
 
 function cyn_taxonomy_register()
@@ -86,5 +87,3 @@ function cyn_make_taxonomy($name, $slug, $post_types, $is_hierarchical = true)
 
     register_taxonomy($slug, $post_types, $args);
 }
-
-
