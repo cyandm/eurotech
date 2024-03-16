@@ -11,11 +11,11 @@
 <body <?php body_class() ?>>
 
 	<div class="header">
-		<div class="main">
+		<div class="contain">
 			<div class="logo-contain">
 				<?php the_custom_logo() ?>
 			</div>
-			<div class="search-box">
+			<div class="header-search">
 				<?php
 				get_template_part(
 					'templates/components/forms/search-box',
@@ -24,5 +24,11 @@
 				?>
 			</div>
 		</div>
+		<div class="menu-nav">
+			<?php wp_nav_menu([
+				'theme_location' => 'header'
+			]) ?>
+		</div>
 	</div>
+
 	<?php wp_body_open() ?>

@@ -1,4 +1,4 @@
-<?php /*Template Name: search */ ?>
+<?php ?>
 <?php
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 
@@ -11,7 +11,6 @@ global $wp_query;
 
 $searchQuery = get_search_query();
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-
 if (isset($_GET['section']) && $_GET['section'] == 'blog') {
     $section = "blog";
 } elseif (isset($_GET['section']) && $_GET['section'] == 'product') {

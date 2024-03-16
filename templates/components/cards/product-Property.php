@@ -106,9 +106,7 @@
 <div id="tab4Content" class="tab-content">
     <div> <button> weight</button>
         <button> height</button>
-        <button> color</button>
-        <button> color</button>
-        <button> color</button>
+        >
     </div>
 </div>
 

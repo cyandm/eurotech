@@ -6,8 +6,7 @@
   line-height: $s_6;
   padding: $s_4;
 
-  ::placeholder {
+  &::placeholder {
     color: $clr_secondary_light;
   }
-
 }
