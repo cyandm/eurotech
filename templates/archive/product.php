@@ -9,7 +9,8 @@ $product = new WP_Query([
 ?>
 
 <main class="archive-product">
-    <div class="banner" style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
+    <div class="banner"
+        style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
 
         <p>Our doors add beauty and elegance to your office</p>
     </div>
@@ -26,7 +27,6 @@ $product = new WP_Query([
             <div class="like-product">
                 <h2>best seller</h2>
                 <div class="products">
-
                     <?php
                     while ($product->have_posts()) {
                         $product->the_post();
@@ -40,3 +40,4 @@ $product = new WP_Query([
         </div>
     </div>
 </main>
+<?php get_footer() ?>
