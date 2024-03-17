@@ -1,4 +1,3 @@
-console.log(ddd);
 import Swiper from 'swiper';
 
 var swiper = new Swiper(".blogslider", {

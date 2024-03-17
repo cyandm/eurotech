@@ -1,50 +1,65 @@
-@use "../utils/" as *;
+@use "../utils/"as *;
+
 .header {
-  height: 100px;
   position: absolute;
-  top: 8vh;
+  display: block;
+  height: 5rem;
+  top: 1.5rem;
   width: 100%;
+  z-index: 9999;
+
   .container {
     @include d_flex(row, space-between, center, nowrap, false, 0);
     padding: $s_3;
+
     .contain {
       display: flex;
       width: 30%;
       gap: $s_3;
+
       .logo-contain {
         width: 33%;
+
         img {
           width: 100%;
         }
       }
     }
+
     .menu-nav {
       padding: $s_5;
       background-color: rgba(0, 0, 0, 0.5);
+
       ul {
         color: $clr_natural_1;
         @include d_flex(row, center, center, nowrap, false, $s_7);
       }
+
       .sub-menu {
         display: none;
         position: absolute;
         transition: ease-in-out 5s;
       }
+
       .menu-item-has-children:hover .sub-menu {
         display: block;
       }
+
       .menu-item {
         transition: ease-in-out 5s;
       }
+
       .sub-menu {
         padding: $s_5;
         background-color: rgba(0, 0, 0, 0.5);
       }
     }
+
     @include mq("md") {
       // justify-content: space-around;
     }
   }
+
   .mobile_nav_menu {
     i {
       color: $clr_natural_1;
