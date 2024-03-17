@@ -62,3 +62,29 @@ img {
     display: block;
   }
 }
+
+.pagination {
+  margin-block: $s_12;
+  @include d_flex($gap: $s_3);
+
+  @include mq("md") {
+    margin-block: $s_5;
+    justify-content: center;
+  }
+
+  .page-numbers {
+    border-bottom: $b_4;
+    padding-inline: $s_2;
+
+    &.dots {
+      border-bottom: unset;
+      line-height: 0;
+      padding-block-start: $s_6;
+      color: $clr_secondary_text;
+      font-size: 2rem;
+    }
+  }
+  .current {
+    border-color: $clr_primary_dark;
+  }
+}

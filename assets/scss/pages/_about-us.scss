@@ -15,15 +15,23 @@
       padding-left: $s_10;
     }
   } //banner
+
   .about-content {
     display: grid;
     padding: $s_7 0;
+    gap: $s_8;
+
+    @include mq("md") {
+      padding: 0;
+    }
+
     .about_img {
       grid-column-start: 1;
       grid-column-end: 3;
       width: 100%;
     }
   } //about-content
+
   .about-us-content {
     @include d_flex($gap: $s_7, $a_i: stretch);
     padding: $s_7 0;
@@ -40,10 +48,21 @@
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr);
       gap: $s_4;
+
       .statistic {
         @include d_flex(column, start, center, nowrap, true, 0);
         background-color: $clr_secondary_text;
         padding: $s_5;
+
+        > h2 {
+          @include fs("title-s");
+          font-weight: 600;
+
+          @include mq("md") {
+            @include fs("h1");
+          }
+        }
+
         span {
           color: $clr_secondary_light;
         }
@@ -53,6 +72,7 @@
       height: auto;
     }
   } //about-us-content
+
   .about-us-steps {
     @include d_flex(row, center, center, nowrap, false, $s_7);
     .eurotech_img {
@@ -64,7 +84,7 @@
       }
     }
     .steps {
-      @include make_icon(" ");
+      // @include make_icon(" ");
       .step {
         @include d_flex(row, start, center, nowrap, false, 0);
         .step_padding {
@@ -75,7 +95,7 @@
         }
         .step-icon {
           background-color: $clr_secondary_dark;
-          padding: $s_3;
+          padding: $s_6 $s_8;
           z-index: 2;
           img {
             font-size: $s_11;
@@ -84,18 +104,20 @@
       } //step
     }
   } //steps
+
   .steps::before {
     position: absolute;
     width: 0;
-    height: 80%;
-    right: 48%;
+    height: 70%;
+    right: 50%;
     border-right: 3px dashed #7d8181;
-    margin-top: 15vh;
+
     @include mq("lg") {
       display: none;
     }
   } //about-us-steps
 } //.about-us
+
 @include mq("md") {
   .about-us .container * {
     width: 100% !important;

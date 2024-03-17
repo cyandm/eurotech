@@ -10,13 +10,13 @@ $heroTitle = get_field('hero_title', $front_page_id);
 <main class="inspiration">
 
     <section class="inspiration__hero">
-        <div class="inspiration__hero__items heroes" <?php printf("style=\"background-image:url('%s')\"", $heroImage) ?>>
-            <div class="inspiration__hero__items__text heroes__title container">
+        <div class="inspiration__hero__items hero" <?php printf("style=\"background-image:url('%s')\"", $heroImage) ?>>
+            <div class="inspiration__hero__items__text hero__title container">
                 <?= $heroTitle ?>
             </div>
         </div>
 
-        <div class="inspiration__hero__items__text heroes__title__mobile container">
+        <div class="inspiration__hero__items__text hero__title__mobile container">
             <?= $heroTitle ?>
         </div>
 
@@ -48,16 +48,20 @@ $heroTitle = get_field('hero_title', $front_page_id);
 
     </section>
 
-    <?php
-    echo "<div class='page-count-pagination'>" . paginate_links(
-        array(
-            'total' => $wp_query->max_num_pages,
-            'next_text' => __('<div class="pagination-next">Next<i class="iconsax" icon-name="arrow-right"></i></div>'),
-            'prev_text' => __('<div class="pagination-prev"><i class="iconsax" icon-name="arrow-left"></i>Previous</div>'),
-            'prev_next' => true
-        )
-    ) . "</div>";
-    ?>
+
+    <section class="inspiration__pagination container">
+
+        <?php
+        echo "<div class='pagination'>" . paginate_links(
+            array(
+                'total' => $wp_query->max_num_pages,
+                'prev_next' => false,
+                'mid_size' => 1,
+            )
+        ) . "</div>";
+        ?>
+
+    </section>
 
 </main>
 

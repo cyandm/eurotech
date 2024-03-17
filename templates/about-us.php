@@ -4,11 +4,22 @@ $banner = get_the_post_thumbnail_url($post_id, 'full');
 $eurotech_video = get_field('eurotech_video');
 ?>
 <main class="about-us">
-    <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
-        <p>Everything you need to <br> know about Eurotech</p>
-    </div>
+
+    <section class="about-us__hero">
+        <div class="about-us__hero__items hero" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
+            <div class="about-us__hero__items__text hero__title container">
+                <p>Everything you need to <br> know about Eurotech</p>
+            </div>
+        </div>
+
+        <div class="about-us__hero__items__text hero__title__mobile container">
+            <p>Everything you need to <br> know about Eurotech</p>
+        </div>
+
+    </section>
+
+
     <div class="container">
-        <h3 class="hide">Everything you need to know about Eurotech</h3>
         <div class="about-content ">
             <div class="our_team">
                 <h2>
@@ -45,33 +56,25 @@ $eurotech_video = get_field('eurotech_video');
                 </p>
                 <div class="statistics">
                     <div class="statistic">
-                        <h2>+
-                            <?= get_field("eurotech_consent"); ?>
-                        </h2>
+                        <h2>+<?= get_field("eurotech_consent"); ?></h2>
                         <span>
                             consent
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+
-                            <?= get_field("eurotech_project"); ?>
-                        </h2>
+                        <h2>+<?= get_field("eurotech_project"); ?></h2>
                         <span>
                             Projects
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+
-                            <?= get_field("eurotech_expert"); ?>
-                        </h2>
+                        <h2>+<?= get_field("eurotech_expert"); ?></h2>
                         <span>
                             experts
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+
-                            <?= get_field("eurotech_adviser"); ?>
-                        </h2>
+                        <h2>+<?= get_field("eurotech_adviser"); ?></h2>
                         <span>
                             adviser
                         </span>

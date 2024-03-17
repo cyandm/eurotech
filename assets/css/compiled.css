@@ -225,6 +225,36 @@ img {
   }
 }
 
+.pagination {
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  .pagination {
+    margin-block: 1.25rem;
+    justify-content: center;
+  }
+}
+.pagination .page-numbers {
+  border-bottom: 2px solid #ececec;
+  padding-inline: 0.5rem;
+}
+.pagination .page-numbers.dots {
+  border-bottom: unset;
+  line-height: 0;
+  padding-block-start: 1.5rem;
+  color: #e5e3e3;
+  font-size: 2rem;
+}
+.pagination .current {
+  border-color: #d79b00;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins/woff/Poppins-Thin.woff");
@@ -359,6 +389,7 @@ img {
 .site-footer {
   padding-block: 2.5rem;
   padding-inline: 2.5rem;
+  margin-block-start: 5rem;
 }
 .site-footer .footer-wrapper {
   padding: 2.5rem 1.25rem;
@@ -1107,12 +1138,12 @@ img {
 .input-secondary::placeholder {
   color: #6b6b6b;
 }
-.heroes {
+.hero {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.heroes__title {
+.hero__title {
   padding-block: 18% 10%;
   font-size: 60px;
   font-weight: 500;
@@ -1120,19 +1151,19 @@ img {
   color: #ffffff;
 }
 @media screen and (max-width: 768px) {
-  .heroes__title {
+  .hero__title {
     visibility: hidden;
     font-size: 20px;
     font-weight: 400;
     line-height: 36px;
   }
 }
-.heroes__title__mobile {
+.hero__title__mobile {
   display: none;
   margin-block: 0.75rem 1.25rem;
 }
 @media screen and (max-width: 768px) {
-  .heroes__title__mobile {
+  .hero__title__mobile {
     display: block;
     font-size: 24px;
     font-weight: 500;
@@ -1506,16 +1537,6 @@ main.single-post-page .hide ul.cat li.current-cat::before {
     width: 100%;
   }
 }
-.blog-page .blog-archive .pagination {
-  margin-bottom: 1.75rem;
-}
-.blog-page .blog-archive .pagination .page-numbers {
-  border-bottom: 2px solid #ececec;
-  padding: 0.5rem;
-}
-.blog-page .blog-archive .pagination .current {
-  border-color: #d79b00;
-}
 @media screen and (max-width: 768px) {
   .blog-page .blog-archive {
     flex-direction: column-reverse;
@@ -1546,6 +1567,12 @@ main.single-post-page .hide ul.cat li.current-cat::before {
 .about-us .about-content {
   display: grid;
   padding: 1.75rem 0;
+  gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .about-us .about-content {
+    padding: 0;
+  }
 }
 .about-us .about-content .about_img {
   grid-column-start: 1;
@@ -1596,6 +1623,19 @@ main.single-post-page .hide ul.cat li.current-cat::before {
 .about-us .about-us-content .statistics .statistic > * {
   flex: 1;
 }
+.about-us .about-us-content .statistics .statistic > h2 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 90px;
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .about-us .about-us-content .statistics .statistic > h2 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+}
 .about-us .about-us-content .statistics .statistic span {
   color: #6b6b6b;
 }
@@ -1622,19 +1662,6 @@ main.single-post-page .hide ul.cat li.current-cat::before {
     aspect-ratio: 1/1;
   }
 }
-.about-us .about-us-steps .steps::before {
-  content: " ";
-  font-family: "iconsax" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .about-us .about-us-steps .steps .step {
   display: flex;
   flex-direction: row;
@@ -1651,7 +1678,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
 }
 .about-us .about-us-steps .steps .step .step-icon {
   background-color: #000000;
-  padding: 0.75rem;
+  padding: 1.5rem 2rem;
   z-index: 2;
 }
 .about-us .about-us-steps .steps .step .step-icon img {
@@ -1660,10 +1687,9 @@ main.single-post-page .hide ul.cat li.current-cat::before {
 .about-us .steps::before {
   position: absolute;
   width: 0;
-  height: 80%;
-  right: 48%;
+  height: 70%;
+  right: 50%;
   border-right: 3px dashed #7d8181;
-  margin-top: 15vh;
 }
 @media screen and (max-width: 992px) {
   .about-us .steps::before {
