@@ -57,7 +57,7 @@ img {
   padding: $s_4;
 }
 .hide {
-  display: none !important;
+  display: none;
   @include mq("md") {
     display: block;
   }

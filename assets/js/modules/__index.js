@@ -2,4 +2,4 @@ import "./about-slider";
 import "./ajax-form";
 import "./product-property";
 import "./blog-top-slider";
-import './mobile-menu';
+import "./mobile-menu";

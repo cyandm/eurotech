@@ -217,7 +217,7 @@ img {
 }
 
 .hide {
-  display: none !important;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   .hide {
@@ -412,9 +412,6 @@ header .menu-popup {
   top: 5vh;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.575);
-}
-header .menu-popup > * {
-  flex: 1;
 }
 header .menu-popup.show {
   opacity: 1;
