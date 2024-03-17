@@ -1,3 +1,9 @@
-<?php /*Template Name: Home Page */ get_header() ?>
+<?php /* Template Name: Home */ ?>
+
+<?php get_header() ?>
+
+<main class="main">
+
+</main>
 
 <?php get_footer(); ?>
