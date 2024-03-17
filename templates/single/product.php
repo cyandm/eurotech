@@ -66,10 +66,8 @@ $category = $top_term[0]->name;
 
         <div class="like-product">
             <h2>Maybe you like it</h2>
-
             <div class="products">
                 <?php
-
                 while ($product->have_posts()) {
                     $product->the_post();
                     $product_id = get_the_ID();
@@ -86,7 +84,6 @@ $category = $top_term[0]->name;
         <div class="like-product">
             <h2>best seller</h2>
             <div class="products">
-
                 <?php
                 while ($product->have_posts()) {
                     $product->the_post();
@@ -99,19 +96,4 @@ $category = $top_term[0]->name;
         </div>
     </div>
 </main>
-
-<script>
-    function selectTab(tabIndex) {
-        //Hide All Tabs
-        document.getElementById("tab1Content").style.display = "none";
-        document.getElementById("tab2Content").style.display = "none";
-        document.getElementById("tab3Content").style.display = "none";
-        document.getElementById("tab4Content").style.display = "none";
-
-        //Show the Selected Tab
-        document.getElementById("tab" + tabIndex + "Content").style.display =
-            "flex";
-    }
-</script>
-
 <?php wp_footer() ?>

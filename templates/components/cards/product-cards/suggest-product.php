@@ -12,10 +12,13 @@ $category = $top_term[0]->name;
                     ?>
                 </p>
                 <p class="cat">
-                    <?= isset ($top_term) ? $category : "door";
-                    ?>
+                    <span class="cat-name">
+                        <?= isset ($top_term) ? $category : "door";
+                        ?>
+                    </span>
 
-                    <a href="<?php the_permalink($post_id) ?>"> <i class="iconsax" icon-name="arrow-right"></i>
+                    <a class="more" href="<?php the_permalink($post_id) ?>"> <i class="iconsax"
+                            icon-name="arrow-right"></i>
                     </a>
                 </p>
             </div>
