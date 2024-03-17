@@ -1,41 +1,58 @@
-@use "../utils/" as *;
+@use '../utils/' as *;
 .archive-product {
-  .banner {
-    width: 100%;
-    height: 80vh;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    p {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+	.banner {
+		width: 100%;
+		min-height: 80vh;
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@include d_flex(row, flex-start, center);
 
-      color: $clr_natural_1;
-      @include fs("title-s");
-      width: 50%;
-      padding-left: $s_10;
-    }
-  }
+		p {
+			position: relative;
+			color: $clr_natural_1;
+			@include fs('title-s');
+			width: 50%;
+			padding-left: $s_10;
+		}
 
-  .container {
-    @include d_flex(row-reverse, start, start, nowrap, false, 0);
-    color: $clr_natural_9;
-    .sidebar {
-      width: 48%;
-      @include d_flex(row, start, center, nowrap, false, 0);
-    }
-    .allproduct {
-      width: 80%;
+		@include mq('md') {
+			min-height: 60vh;
+			justify-content: flex-end;
+			align-items: flex-end;
 
-      .product-card {
-      }
-      .products {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        gap: $s_6;
-      }
-    }
-  }
+			p {
+				@include fs('h2');
+				width: 100%;
+				padding-inline-start: $s_4;
+				padding-block-end: 2rem;
+			}
+		}
+	}
+
+	.container {
+		@include d_flex(row-reverse, start, start, nowrap, false, 0);
+		color: $clr_natural_9;
+		margin-block-start: 4rem;
+
+		.sidebar {
+			min-width: 40%;
+		}
+		.allproduct {
+			min-width: 40%;
+
+			.product-card {
+			}
+			.products {
+				display: grid;
+
+				grid-template-columns: repeat(2, 1fr);
+				gap: $s_6;
+			}
+		}
+
+		@include mq('lg') {
+			flex-direction: column-reverse;
+		}
+	}
 }

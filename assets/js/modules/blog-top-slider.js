@@ -1,9 +1,8 @@
-console.log(ddd);
 import Swiper from 'swiper';
 
-var swiper = new Swiper(".blogslider", {
+var swiper = new Swiper('.blogslider', {
 	pagination: {
-		el: ".swiper-pagination",
+		el: '.swiper-pagination',
 		clickable: true,
 	},
 	loop: true,
