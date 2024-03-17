@@ -9,15 +9,16 @@
 * {
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 body {
-  text-transform: capitalize;
   margin: 0;
   padding: 0;
   font-family: "Poppins";
   direction: ltr;
-  background: $clr_bg_paper;
+  text-transform: capitalize;
+  background: $clr_natural_1;
   @include fs("body-s");
   color: $clr_primary_text;
 }
@@ -56,9 +57,12 @@ h6,
 }
 
 input,
-textarea {
+textarea,
+button {
   background: transparent;
   font-family: "poppins";
+  border: none;
+  outline: none;
 }
 ::placeholder {
   color: $clr_primary_light;

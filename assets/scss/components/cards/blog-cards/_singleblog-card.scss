@@ -4,6 +4,8 @@
     .blog-posts {
       @include d_flex(row, start, center, nowrap, false, $s_3);
       margin-bottom: $s_8;
+      background-color: $clr_natural_1;
+      pad: $s_3;
     }
     .post-main {
       width: 70%;

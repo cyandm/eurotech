@@ -1,5 +1,5 @@
-@use "../utils/" as *;
-.search-result {
+@use '../utils/' as *;
+main.search-result-page {
   .banner {
     width: 100%;
     height: 70vh;
@@ -9,11 +9,11 @@
     @include d_flex(row, start, center, nowrap, false, 0);
     p {
       color: $clr_natural_1;
-      @include fs("title-s");
+      @include fs('title-s');
       width: 50%;
       padding-left: $s_10;
     }
-  } //
+  }
   .search-menu {
     @include d_flex($even_column: false, $j_c: space-between);
     margin-top: $s_12;
@@ -26,9 +26,30 @@
       li {
         border-color: rgba(0, 0, 0, 0);
         transition: all ease-in-out 0.6s;
-        @include fs("body");
+        @include fs('body');
         min-height: 50px;
         padding: $s_3 $s_4;
+      }
+    }
+  }
+  .search-result {
+    .product-result,
+    .blog-result {
+      h2 {
+        span {
+          color: $clr_primary_dark;
+        }
+      }
+    }
+    .not-found-search {
+      .result-cant-found {
+        margin-block: px_to_rem(240);
+        @include d_flex(column, flex-start, center);
+        > div {
+          @include fs('title-s');
+          color: $clr_primary_dark;
+          font-size: 40px;
+        }
       }
     }
   }

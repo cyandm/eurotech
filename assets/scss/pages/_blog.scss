@@ -2,9 +2,9 @@
 .blog-page {
   .blog-archive {
     @include d_flex(row-reverse, start, start, nowrap, false, $s_4);
-
     li:hover,
     .blog-main {
+      width: 70%;
       .blog-head {
         @include d_flex($j_c: space-between);
         @include mq("md") {
@@ -38,6 +38,9 @@
             color: $clr_primary_main;
           }
         }
+      }
+      @include mq("md") {
+        width: 100%;
       }
     }
     .pagination {
