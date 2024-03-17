@@ -2,7 +2,7 @@
 @use "./functions" as *;
 @use "./mixins" as *;
 .container {
-  max-width: 1360px;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: px_to_rem(16);
 }
@@ -60,5 +60,31 @@ img {
   display: none !important;
   @include mq("md") {
     display: block;
+  }
+}
+
+.pagination {
+  margin-block: $s_12;
+  @include d_flex($gap: $s_3);
+
+  @include mq("md") {
+    margin-block: $s_5;
+    justify-content: center;
+  }
+
+  .page-numbers {
+    border-bottom: $b_4;
+    padding-inline: $s_2;
+
+    &.dots {
+      border-bottom: unset;
+      line-height: 0;
+      padding-block-start: $s_6;
+      color: $clr_secondary_text;
+      font-size: 2rem;
+    }
+  }
+  .current {
+    border-color: $clr_primary_dark;
   }
 }

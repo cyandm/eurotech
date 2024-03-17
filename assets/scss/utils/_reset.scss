@@ -18,11 +18,14 @@ body {
   font-family: "Poppins";
   direction: ltr;
   text-transform: capitalize;
-}
-body {
   background: $clr_natural_1;
   @include fs("body-s");
   color: $clr_primary_text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
