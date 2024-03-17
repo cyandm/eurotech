@@ -9,7 +9,7 @@ $product = new WP_Query([
 ]);
 // var_dump(get_queried_object());
 $top_term = get_the_terms($post_id, 'product-category');
-$category = $top_term[0]->name;
+//$category = $top_term[0]->name;
 
 ?>
 <div class="list-of-category">

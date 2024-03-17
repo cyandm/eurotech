@@ -1,6 +1,6 @@
 @use "../utils/" as *;
-.header {
-  height: 100px;
+header {
+  height: auto;
   position: absolute;
   top: 8vh;
   width: 100%;
@@ -9,10 +9,10 @@
     padding: $s_3;
     .contain {
       display: flex;
-      width: 30%;
+      width: 34%;
       gap: $s_3;
       .logo-contain {
-        width: 33%;
+        width: 28%;
         img {
           width: 100%;
         }
@@ -23,12 +23,15 @@
       background-color: rgba(0, 0, 0, 0.5);
       ul {
         color: $clr_natural_1;
-        @include d_flex(row, center, center, nowrap, false, $s_7);
+        @include d_flex(row, center, center, nowrap, false, $s_10);
       }
       .sub-menu {
         display: none;
         position: absolute;
         transition: ease-in-out 5s;
+      }
+      .menu-item-has-children {
+        @include make_icon("\eb75");
       }
       .menu-item-has-children:hover .sub-menu {
         display: block;
@@ -49,6 +52,47 @@
     i {
       color: $clr_natural_1;
       font-size: 24px;
+      padding: $s-6;
+    }
+  }
+  .menu-popup {
+    @include d_flex();
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 5vh;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.575);
+    &.show {
+      opacity: 1;
+    }
+
+    .main {
+      background-color: $clr_natural_1;
+      padding: $s_4;
+      margin: $s_4;
+      .close {
+        text-align: right;
+      }
+      i.close-pop {
+        border: 2px solid black;
+        border-radius: $s_2;
+      }
+      .menu-primary-container {
+        margin: $s-8 0;
+      }
+      .menu li {
+        padding: $s_3;
+      }
+      .sub-menu {
+        margin-left: $s_10;
+        li {
+          color: $clr_secondary_light;
+        }
+      }
+      .header-search form {
+        background-color: $clr_bg_paper;
+      }
     }
   }
 }

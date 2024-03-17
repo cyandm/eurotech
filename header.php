@@ -10,7 +10,7 @@
 
 <body <?php body_class() ?>>
 
-	<div class="header">
+	<header>
 		<div class="container">
 			<div class="contain">
 				<div class="logo-contain">
@@ -31,9 +31,25 @@
 				]) ?>
 			</div>
 			<div class=" mobile_nav_menu hide">
-				<i class="iconsax" icon-name="hamburger-menu" fill="red"></i>
+				<i class="iconsax open-pop" icon-name="hamburger-menu" fill="red"></i>
 			</div>
 		</div>
-	</div>
+		<div class="menu-popup hide">
+			<div class="main">
+				<p class="close"><i class="iconsax close-pop" icon-name="x" fill="red"></i></p>
+				<div class="header-search">
+					<?php
+					get_template_part(
+						'templates/components/forms/search-box',
+						null,
+					);
+					?>
+				</div>
+				<?php wp_nav_menu([
+					'theme_location' => 'header'
+				]) ?>
+			</div>
+		</div>
+	</header>
 
 	<?php wp_body_open() ?>
