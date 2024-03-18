@@ -962,28 +962,6 @@ img {
   color: #6b6b6b;
 }
 
-.blog-archive .sidebar {
-  width: 37%;
-}
-@media screen and (max-width: 768px) {
-  .blog-archive .sidebar {
-    width: 100%;
-    border-bottom: 1px solid #6b6b6b;
-  }
-}
-.blog-archive .sidebar h3 {
-  margin: 0.75rem 0;
-}
-.blog-archive .sidebar .today-pic {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-.blog-archive .sidebar .today-pic img {
-  width: 100%;
-}
-
 .single-sidebar {
   width: 37%;
 }

@@ -60,7 +60,7 @@ $query_product = new WP_Query($query_product_args);
                         if ($query_product->have_posts()) {
                             while ($query_product->have_posts()) {
                                 $query_product->the_post();
-                                get_template_part('templates/components/cards/card', 'product');
+                                get_template_part('templates/components/cards/product-cards/suggest', 'product');
                             }
                         }
                         wp_reset_postdata();
@@ -90,7 +90,7 @@ $query_product = new WP_Query($query_product_args);
                         if ($query_blog->have_posts()) {
                             while ($query_blog->have_posts()) {
                                 $query_blog->the_post();
-                                get_template_part('templates/components/cards/blogpage', 'card');
+                                get_template_part('templates/components/cards/blog-cards/blogpage', 'card');
                             }
                         }
                         wp_reset_postdata();
