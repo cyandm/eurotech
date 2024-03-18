@@ -1,4 +1,4 @@
-<?php $post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+<?php $post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $top_term = get_the_terms($post_id, 'product-category');
 $category = $top_term[0]->name;
 
@@ -14,11 +14,12 @@ $category = $top_term[0]->name;
                     <?= get_the_title($post_id);
                     ?>
                 </p>
-                <span> <a href="" class="cat">
-                        <?= isset ($top_term) ? $category : "door";
-                        ?>
+                <span>
+                    <a href="" class="cat">
+                        <?= isset($top_term) ? $category : "door"; ?>
                     </a>
-                    <a href="<?php the_permalink($post_id) ?>"> <i class="iconsax" icon-name="arrow-right"></i>
+                    <a href="<?php the_permalink($post_id) ?>">
+                        <i class="iconsax" icon-name="arrow-right"></i>
                     </a>
                 </span>
             </div>
