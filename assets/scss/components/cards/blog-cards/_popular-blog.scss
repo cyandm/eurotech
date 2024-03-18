@@ -12,7 +12,6 @@
     margin: $s_3;
 
     span.number {
-      //@include d_flex(column, start, center, nowrap, false, 0);
       @include fs("title-s");
       color: $clr_natural_4;
       height: 100%;

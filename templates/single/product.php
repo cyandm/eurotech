@@ -11,8 +11,9 @@ $product = new WP_Query([
 ]);
 // var_dump(get_queried_object());
 $top_term = get_the_terms($post_id, 'product-category');
-$category = $top_term[0]->name;
-
+if (isset ($top_term)) {
+    $category = $top_term[0]->name;
+}
 ?>
 <main class="product">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>

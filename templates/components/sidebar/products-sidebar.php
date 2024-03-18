@@ -12,11 +12,11 @@ $top_term = get_the_terms($post_id, 'product-category');
 ?>
 <div class="list-of-category">
     <h3> category</h3>
-    <?php 
+    <?php ?>
 </div>
 <div class="like-product">
     <h3>Maybe you like it</h3>
-    <div class="products">
+    <div class="sidebar-products">
         <?php
         while ($product->have_posts()) {
             $product->the_post();
@@ -30,7 +30,7 @@ $top_term = get_the_terms($post_id, 'product-category');
 </div>
 <div class="like-product">
     <h3>best seller</h3>
-    <div class="products">
+    <div class="sidebar-products">
         <?php
         while ($product->have_posts()) {
             $product->the_post();

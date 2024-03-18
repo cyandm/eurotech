@@ -13,6 +13,9 @@
     .detail {
       display: flex;
       align-items: center;
+      .cat-name {
+        display: none;
+      }
       i {
         background-color: $clr_natural_9;
         color: $clr_natural_1;

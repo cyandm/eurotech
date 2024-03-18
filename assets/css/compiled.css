@@ -602,8 +602,8 @@ header .container .menu-popup .header-search form {
 }
 .blog-section .blog-post img {
   height: auto;
-  width: 40%;
-  aspect-ratio: 1/1;
+  width: 36%;
+  aspect-ratio: 328/302;
 }
 @media screen and (max-width: 768px) {
   .blog-section .blog-post img {
@@ -825,6 +825,11 @@ header .container .menu-popup .header-search form {
 #tab4Content div .answer {
   color: #6b6b6b;
 }
+@media screen and (max-width: 768px) {
+  #tab4Content div {
+    margin: 0;
+  }
+}
 
 .Property .tab {
   padding: 1.25rem 0;
@@ -881,6 +886,9 @@ header .container .menu-popup .header-search form {
     width: 100%;
   }
 }
+.Property #tab2Content {
+  flex-direction: column;
+}
 .Property #tab3Content * {
   display: flex;
 }
@@ -928,6 +936,9 @@ header .container .menu-popup .header-search form {
   display: flex;
   align-items: center;
 }
+.product .products .detail .cat-name {
+  display: none;
+}
 .product .products .detail i {
   background-color: #000000;
   color: #ffffff;
@@ -974,18 +985,18 @@ header .container .menu-popup .header-search form {
 .sidebar h2 {
   padding: 3rem 0 1rem 0;
 }
-.sidebar .products {
+.sidebar .sidebar-products {
   flex-direction: column;
 }
-.sidebar .products .product-card {
+.sidebar .sidebar-products .product-card {
   padding: 1.25rem;
   background-color: #ececec;
   margin-bottom: 0.75rem;
 }
-.sidebar .products .product-card img {
+.sidebar .sidebar-products .product-card img {
   aspect-ratio: 151/115;
 }
-.sidebar .products .product-card .card {
+.sidebar .sidebar-products .product-card .card {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -993,27 +1004,27 @@ header .container .menu-popup .header-search form {
   flex-wrap: nowrap;
   gap: 1rem;
 }
-.sidebar .products .product-card .card > a {
+.sidebar .sidebar-products .product-card .card > a {
   width: 43%;
 }
-.sidebar .products .product-card .detail {
+.sidebar .sidebar-products .product-card .detail {
   display: block;
 }
-.sidebar .products .product-card .detail p {
+.sidebar .sidebar-products .product-card .detail p {
   font-size: 20px;
   font-weight: 500;
   line-height: 34px;
 }
-.sidebar .products .product-card .detail span {
+.sidebar .sidebar-products .product-card .detail span {
   display: flex;
   justify-content: space-between;
 }
-.sidebar .products .product-card .detail i {
+.sidebar .sidebar-products .product-card .detail i {
   background-color: #000000;
   color: #ffffff;
   padding: 0.5rem;
 }
-.sidebar .products .product-card .detail .cat {
+.sidebar .sidebar-products .product-card .detail .cat {
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
