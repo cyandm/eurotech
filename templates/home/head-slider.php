@@ -22,6 +22,13 @@ if (!isset($sliderGroup))
       <div class="slide-details">
         <div class="title">
           <h2 class="bg-filter">Combination of safe modern & special world</h2>
+          <a href="<?= site_url() . '/product' ?>" class="bg-filter">
+            <h3>
+              Explore
+              <br>
+              <i class="iconsax" icon-name="arrow-right"></i>
+            </h3>
+          </a>
         </div>
 
         <div class="deliver">
@@ -38,7 +45,7 @@ if (!isset($sliderGroup))
             </form>
           </div>
 
-          <a href="#" class="bg-filter">
+          <a href="<?= site_url() . '/product' ?>" class="bg-filter">
             <h3>
               Explore Our Doors
               <br>

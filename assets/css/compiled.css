@@ -2216,6 +2216,11 @@ main.main.home section.home-head-slider .swiper .swiper-wrapper .swiper-slide im
   object-fit: cover;
   aspect-ratio: 21/9;
 }
+@media screen and (max-width: 768px) {
+  main.main.home section.home-head-slider .swiper .swiper-wrapper .swiper-slide img {
+    height: 30vh;
+  }
+}
 main.main.home section.home-head-slider .swiper .container {
   position: relative;
   isolation: isolate;
@@ -2243,6 +2248,9 @@ main.main.home section.home-head-slider .swiper .container .slide-details .title
   font-size: 60px;
   line-height: 70px;
 }
+main.main.home section.home-head-slider .swiper .container .slide-details .title a {
+  display: none;
+}
 main.main.home section.home-head-slider .swiper .container .slide-details .deliver {
   display: flex;
   gap: 1.25rem;
@@ -2255,6 +2263,7 @@ main.main.home section.home-head-slider .swiper .container .slide-details .deliv
 }
 main.main.home section.home-head-slider .swiper .container .slide-details .deliver form label {
   width: 100%;
+  font-size: 1rem;
 }
 main.main.home section.home-head-slider .swiper .container .slide-details .deliver form label,
 main.main.home section.home-head-slider .swiper .container .slide-details .deliver form label * {
@@ -2299,9 +2308,45 @@ main.main.home section.home-head-slider .swiper .container .slide-details .deliv
     width: 100%;
     bottom: 0;
   }
+  main.main.home section.home-head-slider .swiper .container .slide-details .bg-filter {
+    background-color: #000;
+    backdrop-filter: none;
+    padding: 0.75rem;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .title {
+    display: flex;
+    gap: 0.5rem;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .title h2,
+  main.main.home section.home-head-slider .swiper .container .slide-details .title a h3 {
+    font-size: 1rem;
+    line-height: 32px;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .title h2 {
+    background-color: transparent;
+    color: #000000;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .title a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .deliver h3 {
+    font-size: 1rem;
+    line-height: 26px;
+  }
+  main.main.home section.home-head-slider .swiper .container .slide-details .deliver a {
+    display: none;
+  }
 }
 main.main.home section.home-head-slider .swiper .swiper-pagination {
   bottom: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.home-head-slider .swiper .swiper-pagination {
+    bottom: auto;
+    top: 25vh;
+  }
 }
 main.main.home section.home-head-slider .swiper .swiper-pagination .swiper-pagination-bullet {
   height: 6px;
@@ -2314,6 +2359,232 @@ main.main.home section.home-head-slider .swiper .swiper-pagination .swiper-pagin
 main.main.home section.home-head-slider .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 36px;
   background-color: #feb800;
+}
+main.main.home section.products-tabs {
+  margin-top: 2rem;
+}
+main.main.home section.products-tabs nav.tabs {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main.main.home section.products-tabs nav.tabs ul {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+main.main.home section.products-tabs nav.tabs ul li {
+  padding: 0.25rem 0.125rem;
+  cursor: pointer;
+  transition: color 0.35s ease;
+  border-bottom: 2px solid transparent;
+}
+main.main.home section.products-tabs nav.tabs ul li:hover {
+  color: #feb800;
+}
+main.main.home section.products-tabs nav.tabs ul li.active {
+  border-bottom-color: #feb800;
+}
+main.main.home section.products-tabs nav.tabs .button-primary {
+  background-color: #000;
+  color: #fffbfb;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.products-tabs nav.tabs .button-primary {
+    display: none;
+    visibility: hidden;
+  }
+}
+main.main.home section.products-tabs div.tabs-content {
+  position: relative;
+}
+main.main.home section.products-tabs div.tabs-content .tab-content {
+  display: none;
+  visibility: hidden;
+  width: 100%;
+}
+main.main.home section.products-tabs div.tabs-content .tab-content.active {
+  display: flex;
+  visibility: visible;
+}
+main.main.home section.products-tabs div.tabs-content .tab-content .product-card {
+  width: 25%;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.products-tabs div.tabs-content .tab-content.active {
+    flex-direction: column;
+  }
+  main.main.home section.products-tabs div.tabs-content .tab-content .product-card {
+    width: 100%;
+  }
+}
+main.main.home section.home-sketch-slider {
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+main.main.home section.home-sketch-slider .swiper-slide .slide {
+  position: relative;
+  display: flex;
+  width: 100%;
+  gap: 4rem;
+}
+main.main.home section.home-sketch-slider .swiper-slide .slide > div {
+  width: calc(50% - 2rem);
+}
+main.main.home section.home-sketch-slider .swiper-slide .slide .img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.home-sketch-slider .swiper-slide .slide .img img.md {
+    display: none;
+    visibility: hidden;
+  }
+}
+main.main.home section.home-sketch-slider .swiper-slide .slide .img img.sm {
+  display: none;
+  visibility: hidden;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.home-sketch-slider .swiper-slide .slide .img img.sm {
+    display: block;
+    visibility: visible;
+  }
+}
+main.main.home section.home-sketch-slider .swiper-slide .slide .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.home-sketch-slider .swiper-slide .slide {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  main.main.home section.home-sketch-slider .swiper-slide .slide > div {
+    width: 100%;
+  }
+}
+main.main.home section.home-sketch-slider .swiper-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -3rem;
+  z-index: 12;
+}
+main.main.home section.home-sketch-slider .swiper-navigation > div {
+  width: calc(50% - 2rem);
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.home-sketch-slider .swiper-navigation {
+    margin-top: 1rem;
+  }
+  main.main.home section.home-sketch-slider .swiper-navigation > div {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+main.main.home section.home-sketch-slider .swiper-navigation .button-primary {
+  background-color: #000;
+  color: #fffbfb;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+}
+main.main.home section.home-sketch-slider .swiper-navigation .button-primary.swiper-button-disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+main.main.home section.catalog,
+main.main.home section.idea {
+  margin-top: 3rem;
+}
+main.main.home section.catalog .container-content,
+main.main.home section.idea .container-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+}
+main.main.home section.catalog .container-content > div,
+main.main.home section.idea .container-content > div {
+  width: calc(50% - 1.5rem);
+}
+main.main.home section.catalog .container-content .img img,
+main.main.home section.idea .container-content .img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+main.main.home section.catalog .container-content .content,
+main.main.home section.idea .container-content .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+main.main.home section.catalog .container-content .content .btns,
+main.main.home section.idea .container-content .content .btns {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+main.main.home section.catalog .container-content .content .btns a,
+main.main.home section.idea .container-content .content .btns a {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.catalog .container-content,
+  main.main.home section.idea .container-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  main.main.home section.catalog .container-content > div,
+  main.main.home section.idea .container-content > div {
+    width: 100%;
+  }
+}
+main.main.home section.idea .container-content .button-primary {
+  background-color: #000;
+  color: #fffbfb;
+}
+@media screen and (max-width: 768px) {
+  main.main.home section.idea .container-content {
+    flex-direction: column-reverse;
+  }
+}
+main.main.home .title-br {
+  position: relative;
+  margin-top: 9px;
+}
+main.main.home .title-br::after, main.main.home .title-br::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  height: 3px;
+}
+main.main.home .title-br::before {
+  width: 9rem;
+  top: -6px;
+  background-color: #feb800;
+}
+main.main.home .title-br::after {
+  width: 7rem;
+  top: 0;
+  background-color: #d79b00;
 }
 
 @font-face {
