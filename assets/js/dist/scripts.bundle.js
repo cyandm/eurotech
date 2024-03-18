@@ -4262,124 +4262,6 @@
   });
   Swiper.use([Resize, Observer]);
 
-<<<<<<< HEAD
-  // assets/js/modules/about-slider.js
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    // effect: "cube",
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: true
-    },
-    speed: 1e3,
-    parallax: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    pagination: {
-      el: ".swiper-pagination"
-    }
-  });
-
-  // assets/js/modules/ajax-form.js
-  jQuery(document).ready(($) => {
-    const contactUsForm = $("#contact-form");
-    const contactUsInput = document.querySelectorAll(
-      "#contact-form div .data"
-    );
-    const contactUsFormSubmit = $("#contact-form #contact-form-submit");
-    $(contactUsForm).on("submit", (e) => {
-      e.preventDefault();
-      $.ajax({
-        url: cyn_head_script.url,
-        type: "post",
-        cache: false,
-        processData: false,
-        contentType: false,
-        data: {
-          action: "send_contact_form",
-          _nonce: cyn_head_script.nonce,
-          data: "formData"
-        },
-        success: (res) => {
-          console.warn(res);
-          contactUsInput.forEach((el) => {
-            el.value = "";
-          });
-          $(contactUsFormSubmit).text(" Send !");
-          setTimeout(() => {
-            $(contactUsFormSubmit).text("Send Massage ");
-          }, 1e3);
-        },
-        error: (err) => {
-          console.error(err);
-          $(contactUsFormSubmit).removeClass("pending");
-          $(contactUsFormSubmit).addClass("error");
-        }
-      });
-    });
-  });
-
-  // assets/js/modules/product-property.js
-  for (let i = 1; i < 5; i++) {
-    const el = document.getElementById("tab" + i);
-    if (el)
-      el.onclick = function() {
-        document.getElementById("tab" + i + "Content").classList.toggle("show");
-      };
-  }
-
-  // assets/js/modules/blog-top-slider.js
-  var swiper2 = new Swiper(".blogslider", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 20500,
-      disableOnInteraction: false
-    },
-    speed: 5e3,
-    parallax: true
-  });
-
-  // assets/js/utils/custom-events.js
-  var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
-
-  // assets/js/utils/functions.js
-  var addListener = (elementNode, eventType, func) => {
-    if (elementNode.getAttribute("hasListener"))
-      return;
-    elementNode.setAttribute("hasListener", true);
-    elementNode.addEventListener(eventType, func);
-  };
-
-  // assets/js/modules/video-cover.js
-  var videoCovers = document.querySelectorAll(".video-cover");
-  var videoSrc = document.querySelectorAll(".video");
-  if (videoCovers) {
-    videoCovers.forEach((videoCover) => {
-      addListener(videoCover, "click", (e) => {
-        const cover = videoCover;
-        console.log("hello");
-        videoSrc.forEach((videoPlay) => {
-          if (videoPlay === videoSrc)
-            return;
-          videoPlay.play();
-        });
-        cover.classList.add("without-cover");
-      });
-    });
-  }
-
-=======
->>>>>>> d688eb314c79818ff741535bb4be3b2e4ff08f8c
   // node_modules/swiper/modules/virtual.mjs
   function Virtual(_ref) {
     let {
@@ -9732,6 +9614,35 @@
     speed: 5e3,
     parallax: true
   });
+
+  // assets/js/utils/custom-events.js
+  var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
+
+  // assets/js/utils/functions.js
+  var addListener = (elementNode, eventType, func) => {
+    if (elementNode.getAttribute("hasListener"))
+      return;
+    elementNode.setAttribute("hasListener", true);
+    elementNode.addEventListener(eventType, func);
+  };
+
+  // assets/js/modules/video-cover.js
+  var videoCovers = document.querySelectorAll(".video-cover");
+  var videoSrc = document.querySelectorAll(".video");
+  if (videoCovers) {
+    videoCovers.forEach((videoCover) => {
+      addListener(videoCover, "click", (e) => {
+        const cover = videoCover;
+        console.log("hello");
+        videoSrc.forEach((videoPlay) => {
+          if (videoPlay === videoSrc)
+            return;
+          videoPlay.play();
+        });
+        cover.classList.add("without-cover");
+      });
+    });
+  }
 
   // assets/js/modules/mobile-menu.js
   var menuMobileHandler = document.querySelector(".open-pop");
