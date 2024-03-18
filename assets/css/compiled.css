@@ -870,6 +870,16 @@ header .menu-popup .header-search form {
 .Property .tab {
   padding: 1.25rem 0;
   border-bottom: 1px solid #feb800;
+  display: flex;
+  justify-content: space-between;
+}
+.Property .tab::after {
+  content: "\eb75";
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 34px;
+  font-family: "iconsax" !important;
 }
 .Property .tab-content {
   display: flex;
