@@ -1,10 +1,10 @@
-@use '../../../utils/' as *;
+@use "../../../utils/" as *;
 //card of sigle product
 .products {
   @include d_flex(row, space-between, center, nowrap, true, $s_3);
   img {
     width: 100%;
-    @include mq('md') {
+    @include mq("md") {
       width: 30%;
       aspect-ratio: 4/3;
     }
@@ -21,7 +21,7 @@
       padding: $s_2;
     }
   }
-  @include mq('md') {
+  @include mq("md") {
     flex-direction: column;
     .product-card {
       padding: $s_5;
@@ -40,7 +40,7 @@
           display: none;
         }
         .cat {
-          @include fs('caption');
+          @include fs("caption");
           color: $clr_secondary_light;
           line-height: 30px;
         }

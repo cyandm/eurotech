@@ -33,7 +33,7 @@
 				<i class="iconsax open-pop" icon-name="hamburger-menu" fill="red"></i>
 			</div>
 		</div>
-		<div class="menu-popup hide">
+		<div class="menu-popup">
 			<div class="main">
 				<p class="close"><i class="iconsax close-pop" icon-name="x" fill="red"></i></p>
 				<div class="header-search">

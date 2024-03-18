@@ -50,15 +50,15 @@ ul {
   -webkit-box-orient: vertical;
 }
 img {
-  object-fit: fill;
+  object-fit: cover;
 }
 .paper {
   background-color: $clr_bg_paper;
   padding: $s_4;
 }
 .hide {
-  display: none !important;
-  @include mq("md") {
+  display: none;
+  @include mq("lg") {
     display: block;
   }
 }

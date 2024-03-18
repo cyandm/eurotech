@@ -1,16 +1,26 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 .archive-product {
   .banner {
     width: 100%;
     min-height: 80vh;
     background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
-    @include d_flex(row, flex-start, center);
-
-    color: $clr_natural_1;
-    @include fs('title-s');
-    padding-left: $s_10;
+    background-size: 100%;
+    p {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $clr_natural_1;
+      @include fs("title-s");
+      width: 50%;
+      padding-left: $s_10;
+      @include mq("md") {
+        @include fs("body");
+      }
+    }
+    @include mq("md") {
+      height: 35vh;
+    }
   }
   .container {
     @include d_flex(row-reverse, start, start, nowrap, false, 0);
@@ -18,6 +28,9 @@
     .sidebar {
       width: 48%;
       @include d_flex(column, start, center, nowrap, false, 0);
+      @include mq("md") {
+        width: 100%;
+      }
     }
     .allproduct {
       width: 80%;
@@ -28,9 +41,15 @@
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(2, 1fr);
         gap: $s_11;
+        .product-card {
+          margin-bottom: $s_3;
+        }
         img {
           width: 100%;
           aspect-ratio: 403/503;
+          @include mq("md") {
+            aspect-ratio: 143/120;
+          }
         }
         .detail {
           a {
@@ -39,11 +58,18 @@
             float: left;
           }
           .paragraph {
-            @include fs('h3');
+            @include fs("h3");
             -webkit-line-clamp: 1;
+            @include mq("md") {
+              -webkit-line-clamp: 3;
+            }
           }
           .cat-name {
             display: none;
+            @include mq("md") {
+              display: block;
+              white-space: nowrap;
+            }
           }
           i {
             background-color: $clr_secondary_dark;
@@ -55,9 +81,21 @@
             position: relative;
             top: 0;
             width: 15%;
+            @include mq("md") {
+              float: none;
+            }
           }
         }
+        @include mq("md") {
+          display: block;
+        }
       }
+      @include mq("md") {
+        width: 100%;
+      }
+    }
+    @include mq("md") {
+      flex-direction: column-reverse;
     }
   }
 }
