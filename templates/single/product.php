@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 $rating = get_field("rating");
 $best_seller = get_field('best_seller');
@@ -10,7 +10,7 @@ $product = new WP_Query([
     'post__not_in' => [get_the_ID()],
 ]);
 $top_term = get_the_terms($post_id, 'product-category');
-if (isset ($top_term)) {
+if (isset($top_term)) {
     $category = $top_term[0]->name;
 }
 ?>
@@ -74,7 +74,6 @@ if (isset ($top_term)) {
                     get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
 
                     wp_reset_postdata();
-
                 }
                 ?>
 
@@ -96,4 +95,4 @@ if (isset ($top_term)) {
         </div>
     </div>
 </main>
-<?php wp_footer() ?>
+<?php get_footer() ?>
