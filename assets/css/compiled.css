@@ -416,6 +416,9 @@ header .container .menu-nav .sub-menu li {
 header .container .menu-nav .sub-menu li:hover {
   border-bottom: 1px solid #feb800;
 }
+header .container .menu-nav .sub-menu li a {
+  white-space: normal;
+}
 @media screen and (max-width: 992px) {
   header .container .menu-nav {
     display: none;

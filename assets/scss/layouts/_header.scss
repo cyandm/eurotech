@@ -63,6 +63,9 @@ header {
           &:hover {
             border-bottom: $b_1;
           }
+          a {
+            white-space: normal;
+          }
         }
       }
       @include mq("lg") {
@@ -115,7 +118,6 @@ header {
     }
     .header-search form {
       background-color: $clr_bg_paper;
-
     }
     @include mq("lg") {
       @include d_flex();

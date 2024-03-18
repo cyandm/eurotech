@@ -13,21 +13,22 @@ $top_term = get_the_terms($post_id, 'product-category');
 if (isset ($top_term)) {
     $category = $top_term[0]->name;
 }
-$img_2 = get_field("product_third_image");
-if (isset ($img_2)) {
-    echo $image2 = $img_2;
-} else {
-    echo 1232;
-}
+$img_2 = get_field("product_secound_image", $post_id);
+$img_3 = get_field("product_third_image");
+$img_4 = get_field("product_fourth_image");
+
 ?>
 <main class="product">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
 
         <div class="gallery">
             <div>
-                <img src="<?= $image2 ?>" />
-                <img src="<?= get_field("product_third_image"); ?>" />
-                <img src="<?= get_field("product_fourth_image"); ?>" />
+                <img
+                    src="<?= !empty ($img_2) ? $img_2 : get_stylesheet_directory_uri() . '/assets/img/sample.png' ?>" />
+                <img
+                    src="<?= !empty ($img_3) ? $img_3 : get_stylesheet_directory_uri() . '/assets/img/sample.png' ?>" />
+                <img
+                    src="<?= !empty ($img_4) ? $img_4 : get_stylesheet_directory_uri() . '/assets/img/sample.png' ?>" />
 
             </div>
             <button class="hover-zoom mb-hide">
