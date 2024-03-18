@@ -20,7 +20,7 @@ function cyn_taxonomy_register()
 }
 function cyn_term_register()
 {
-    wp_insert_term('contact us', 'form-cat', ['slug' => 'pricing']);
+    wp_insert_term('contact us', 'form-cat', ['slug' => 'contact-us']);
 }
 
 
