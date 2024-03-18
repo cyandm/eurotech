@@ -2,7 +2,6 @@
 .blog-page {
   .blog-archive {
     @include d_flex(row-reverse, start, start, nowrap, false, $s_4);
-    li:hover,
     .blog-main {
       width: 70%;
       .blog-head {
@@ -19,7 +18,7 @@
           max-width: 100%;
           li {
             border-color: rgba(0, 0, 0, 0);
-            transition: all ease-in-out 0.6s;
+            transition: all ease-in-out 1s;
             @include fs("body");
             min-height: 50px;
             i {
@@ -30,7 +29,10 @@
               padding: $s_4;
             }
           }
-          li.current-cat {
+          li.current-cat,
+          li:hover {
+            transition: all ease-in-out 3s;
+
             border-bottom: $b_1;
             @include make_icon("\e9a6");
           }
