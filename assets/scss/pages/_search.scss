@@ -7,14 +7,32 @@ main.search-result-page {
     background-repeat: no-repeat;
     background-size: 100%;
     @include d_flex(row, start, center, nowrap, false, 0);
+    @include mq('lg') {
+      background-size: unset;
+    }
+    @include mq('md') {
+      max-height: px_to_rem(300);
+      background-size: cover;
+    }
     p {
+      width: 100%;
+      padding-block: 18% 10%;
       color: $clr_natural_1;
       @include fs('title-s');
-      width: 50%;
       padding-left: $s_10;
+      @include mq('md') {
+        display: none;
+      }
     }
   }
-
+  .title-mobile-search {
+    display: none;
+    margin-top: $s_3;
+    @include fs('h2');
+    @include mq('md') {
+      display: block;
+    }
+  }
   .search-result {
     margin-block: $s_4;
     .product-result,
