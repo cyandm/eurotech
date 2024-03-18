@@ -4253,58 +4253,40 @@
   });
 
   // assets/js/modules/ajax-form.js
-  jQuery(document).ready(($) => {
-    const contactUsForm = $("#contact-form");
-    const contactUsInput = document.querySelectorAll(
-      "#contact-form div .data"
-    );
-    const contactUsFormSubmit = $("#contact-form #contact-form-submit");
-    $(contactUsForm).on("submit", (e) => {
-      e.preventDefault();
+  var ajaxSendForm = (formEl, action) => (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget, e.submitter);
+    formData.append("action", action);
+    formData.append("_nonce", cyn_head_script.nonce);
+    jQuery(($) => {
       $.ajax({
+        type: "POST",
         url: cyn_head_script.url,
-        type: "post",
         cache: false,
         processData: false,
         contentType: false,
-        data: {
-          action: "send_contact_form",
-          _nonce: cyn_head_script.nonce,
-          data: "formData"
-        },
+        data: formData,
         success: (res) => {
-          console.warn(res);
-          contactUsInput.forEach((el) => {
-            el.value = "";
-          });
-          $(contactUsFormSubmit).text(" Send !");
-          setTimeout(() => {
-            $(contactUsFormSubmit).text("Send Massage ");
-          }, 1e3);
+          formEl.reset();
         },
-        error: (err) => {
-          console.error(err);
-          $(contactUsFormSubmit).removeClass("pending");
-          $(contactUsFormSubmit).addClass("error");
+        error: () => {
         }
       });
     });
-  });
-
-  // assets/js/modules/product-property.js
-  for (let i = 1; i < 5; i++) {
-    let myFunction1 = function() {
-      document.getElementById("tab" + i + "Content").classList.toggle("show");
-    };
-    myFunction12 = myFunction1;
-    document.getElementById("tab" + i).onclick = function() {
-      myFunction1();
-    };
-  }
-  var myFunction12;
+  };
+  var ContactUs = () => {
+    const contactUsPage = document.getElementById("contactUsPage");
+    const contactForm = document.getElementById("contactForm");
+    if (!contactUsPage)
+      return;
+    contactForm.addEventListener(
+      "submit",
+      ajaxSendForm(contactForm, "cyn_contact_us_form")
+    );
+  };
+  ContactUs();
 
   // assets/js/modules/blog-top-slider.js
-  console.log(ddd);
   var swiper2 = new Swiper(".blogslider", {
     pagination: {
       el: ".swiper-pagination",
@@ -4320,7 +4302,4 @@
     speed: 5e3,
     parallax: true
   });
-
-  // assets/js/index.js
-  console.log("ss");
 })();

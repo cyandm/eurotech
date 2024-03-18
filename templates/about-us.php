@@ -5,7 +5,7 @@ $eurotech_video = get_field('eurotech_video');
 ?>
 <main class="about-us">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
-        <p>Everything you need to know about Eurotech</p>
+        <p>Everything you need to <br> know about Eurotech</p>
     </div>
     <div class="container">
         <h3 class="hide">Everything you need to know about Eurotech</h3>

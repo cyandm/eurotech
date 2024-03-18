@@ -102,10 +102,19 @@
 
 <div class="tab" id="tab4">frequently asked question</div>
 <div id="tab4Content" class="tab-content">
-    <?php
-    get_template_part(
-        'templates/components/cards/product-cards/product-question',
-        null,
-    );
-    ?>
+    <div> <button> weight</button>
+        <button> height</button>
+        >
+    </div>
+</div>
+
+<script>
+
+</script>
+<?php
+get_template_part(
+    'templates/components/cards/product-cards/product-question',
+    null,
+);
+?>
 </div>
