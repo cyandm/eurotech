@@ -13,6 +13,9 @@
     .detail {
       display: flex;
       align-items: center;
+      .cat-name {
+        display: none;
+      }
       i {
         background-color: $clr_natural_9;
         color: $clr_natural_1;
@@ -28,7 +31,7 @@
         background-color: $clr_bg_paper;
 
         img {
-          width: 47%;
+          width: 80%;
           aspect-ratio: 143/120;
         }
         .card {

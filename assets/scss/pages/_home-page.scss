@@ -1,0 +1,149 @@
+@use "../utils/"as *;
+
+main.main.home {
+  min-height: 50vh;
+
+  section.home-head-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+
+    .swiper {
+      position: relative;
+      isolation: isolate;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          position: relative;
+          isolation: isolate;
+          display: block;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 21/9;
+          }
+
+
+        }
+      }
+
+      .container {
+        position: relative;
+        isolation: isolate;
+        z-index: 9;
+
+        .slide-details {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+          left: 0;
+          bottom: 6rem;
+          width: 50%;
+          z-index: 9;
+
+          * {
+            color: $clr_accent_text;
+          }
+
+          .bg-filter {
+            padding: 1.25rem;
+            background-color: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+          }
+
+          .title h2 {
+            font-size: 60px;
+            line-height: 70px;
+          }
+
+          .deliver {
+            display: flex;
+            gap: 1.25rem;
+
+            form {
+              margin-top: 1.25rem;
+              display: flex;
+              gap: 0.5rem;
+              flex-wrap: wrap;
+
+              label {
+                width: 100%;
+
+                &,
+                * {
+                  color: rgba(#fff, 0.6);
+                }
+              }
+
+              input {
+                position: relative;
+                display: block;
+                flex: 1 1 auto;
+                padding: .5rem .75rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                appearance: none;
+                outline: none;
+                background-color: #fff;
+                max-width: 100%;
+                color: $clr_primary_text;
+
+                &:focus-visible {
+                  outline: 0;
+                }
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.5);
+                }
+              }
+            }
+
+            >a {
+              text-align: center;
+              display: flex;
+              align-items: center;
+
+              h3 {
+                @include inline-text();
+
+                i {
+                  font-size: 2em;
+                }
+              }
+            }
+          }
+
+          @include mq("md") {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+          }
+        }
+      }
+
+      .swiper-pagination {
+        bottom: 0.75rem;
+
+
+        .swiper-pagination-bullet {
+          height: 6px;
+          width: 6px;
+          border-radius: 3px;
+          opacity: 1;
+          background-color: $clr_accent_text;
+          transition: all 0.25s linear;
+
+          &.swiper-pagination-bullet-active {
+            width: 6px * 6;
+            background-color: $clr_primary_main;
+          }
+        }
+      }
+    }
+  }
+}

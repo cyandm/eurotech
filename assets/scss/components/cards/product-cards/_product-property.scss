@@ -48,6 +48,9 @@
       width: 100%;
     }
   }
+  #tab2Content {
+    flex-direction: column;
+  }
   #tab3Content {
     * {
       display: flex;
