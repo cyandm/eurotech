@@ -84,3 +84,9 @@ a {
 input {
   direction: ltr;
 }
+
+.iconsax {
+  &::before {
+    font-size: $s_6;
+  }
+}

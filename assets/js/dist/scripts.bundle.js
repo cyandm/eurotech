@@ -124,7 +124,7 @@
       back() {
       }
     },
-    CustomEvent: function CustomEvent() {
+    CustomEvent: function CustomEvent2() {
       return this;
     },
     addEventListener() {
@@ -4347,6 +4347,35 @@
     speed: 5e3,
     parallax: true
   });
+
+  // assets/js/utils/custom-events.js
+  var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
+
+  // assets/js/utils/functions.js
+  var addListener = (elementNode, eventType, func) => {
+    if (elementNode.getAttribute("hasListener"))
+      return;
+    elementNode.setAttribute("hasListener", true);
+    elementNode.addEventListener(eventType, func);
+  };
+
+  // assets/js/modules/video-cover.js
+  var videoCovers = document.querySelectorAll(".video-cover");
+  var videoSrc = document.querySelectorAll(".video");
+  if (videoCovers) {
+    videoCovers.forEach((videoCover) => {
+      addListener(videoCover, "click", (e) => {
+        const cover = videoCover;
+        console.log("hello");
+        videoSrc.forEach((videoPlay) => {
+          if (videoPlay === videoSrc)
+            return;
+          videoPlay.play();
+        });
+        cover.classList.add("without-cover");
+      });
+    });
+  }
 
   // node_modules/swiper/modules/virtual.mjs
   function Virtual(_ref) {
