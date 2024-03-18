@@ -18,7 +18,7 @@ $blog_slider = new WP_Query([
 				while ($blog_slider->have_posts()) {
 					$blog_slider->the_post();
 					$post_id = get_the_ID();
-					get_template_part('/templates/components/cards/blog-card/blog', 'topslider', ['post_id' => $post_id]);
+					get_template_part('/templates/components/cards/blog-cards/blog', 'topslider', ['post_id' => $post_id]);
 				}
 				?>
 				<?php wp_reset_postdata() ?>
@@ -40,7 +40,7 @@ $blog_slider = new WP_Query([
 			?>
 		</div>
 
-		<hr />
+
 		<div class="blog-main">
 			<div class="blog-head">
 				<ul>

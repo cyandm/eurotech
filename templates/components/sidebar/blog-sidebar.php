@@ -15,44 +15,30 @@ $popular_blog = new WP_Query([
 
 ?>
 <div class="popular-blog">
-
 	<h3> <i class="iconsax" icon-name="star" fill="red"></i> most Popular posts</h3>
+	<?php
+	if (count(array_filter($popular_post)) > 0) {
 
+		foreach ($popular_post as $blog_id) {
+			?>
+			<?php get_template_part('/templates/components/cards/blog-cards/popular', 'blog', ['post_id' => $blog_id, 'counter' => $num]);
+			$num++; ?>
 
-	<div class="popular-post">
-
-
-		<?php
-		if (count(array_filter($popular_post)) > 0) {
-
-			foreach ($popular_post as $blog_id) {
-				echo "<span class='number'>" . "0" . $num . "</span>";
-				$num++;
-				get_template_part('/templates/components/cards/blog-cards/popular', 'blog', ['post_id' => $blog_id]);
-			}
-		} else {
-			while ($first_blogs->have_posts()) {
-				$first_blogs->the_post();
-				$post_id = get_the_ID();
-				echo "<span class='number'>" . $num . "</span>";
-				$num++;
-				get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
-			}
-			wp_reset_postdata();
+		<?php }
+	} else {
+		while ($first_blogs->have_posts()) {
+			$first_blogs->the_post();
+			$post_id = get_the_ID();
+			echo "<span class='number'>" . $num . "</span>";
+			$num++;
+			get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
 		}
-		?>
+		wp_reset_postdata();
+	}
+	?>
 
-		<!-- <?php
-				while ($popular_blog->have_posts()) {
-					$popular_blog->the_post();
-					$post_id = get_the_ID();
-					echo "<span class='number'>" . $num . "</span>";
-					$num++;
-					get_template_part('/templates/components/cards/popular', 'blog', ['post_id' => $post_id]);
-				}
-				?> -->
-		<?php wp_reset_postdata() ?>
-	</div>
+	<?php wp_reset_postdata() ?>
+
 
 </div>
 <h3 class="">Today’s Pic</h3>

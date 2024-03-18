@@ -4262,87 +4262,6 @@
   });
   Swiper.use([Resize, Observer]);
 
-  // assets/js/modules/about-slider.js
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    // effect: "cube",
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: true
-    },
-    speed: 1e3,
-    parallax: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    pagination: {
-      el: ".swiper-pagination"
-    }
-  });
-
-  // assets/js/modules/ajax-form.js
-  var ajaxSendForm = (formEl, action) => (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget, e.submitter);
-    formData.append("action", action);
-    formData.append("_nonce", cyn_head_script.nonce);
-    jQuery(($) => {
-      $.ajax({
-        type: "POST",
-        url: cyn_head_script.url,
-        cache: false,
-        processData: false,
-        contentType: false,
-        data: formData,
-        success: (res) => {
-          formEl.reset();
-        },
-        error: () => {
-        }
-      });
-    });
-  };
-  var ContactUs = () => {
-    const contactUsPage = document.getElementById("contactUsPage");
-    const contactForm = document.getElementById("contactForm");
-    if (!contactUsPage)
-      return;
-    contactForm.addEventListener(
-      "submit",
-      ajaxSendForm(contactForm, "cyn_contact_us_form")
-    );
-  };
-  ContactUs();
-
-  // assets/js/modules/product-property.js
-  for (let i = 1; i < 5; i++) {
-    const el = document.getElementById("tab" + i);
-    if (el)
-      el.onclick = function() {
-        document.getElementById("tab" + i + "Content").classList.toggle("show");
-      };
-  }
-
-  // assets/js/modules/blog-top-slider.js
-  var swiper2 = new Swiper(".blogslider", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 20500,
-      disableOnInteraction: false
-    },
-    speed: 5e3,
-    parallax: true
-  });
-
   // node_modules/swiper/modules/virtual.mjs
   function Virtual(_ref) {
     let {
@@ -9613,6 +9532,107 @@
   // node_modules/swiper/swiper-bundle.mjs
   var modules = [Virtual, Keyboard, Mousewheel, Navigation, Pagination, Scrollbar, Parallax, Zoom, Controller, A11y, History, HashNavigation, Autoplay, Thumb, freeMode, Grid, Manipulation, EffectFade, EffectCube, EffectFlip, EffectCoverflow, EffectCreative, EffectCards];
   Swiper.use(modules);
+
+  // assets/js/modules/about-slider.js
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    // effect: "cube",
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true
+    },
+    speed: 1e3,
+    parallax: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination"
+    }
+  });
+
+  // assets/js/modules/ajax-form.js
+  var ajaxSendForm = (formEl, action) => (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget, e.submitter);
+    formData.append("action", action);
+    formData.append("_nonce", cyn_head_script.nonce);
+    jQuery(($) => {
+      $.ajax({
+        type: "POST",
+        url: cyn_head_script.url,
+        cache: false,
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: (res) => {
+          formEl.reset();
+        },
+        error: () => {
+        }
+      });
+    });
+  };
+  var ContactUs = () => {
+    const contactUsPage = document.getElementById("contactUsPage");
+    const contactForm = document.getElementById("contactForm");
+    if (!contactUsPage)
+      return;
+    contactForm.addEventListener(
+      "submit",
+      ajaxSendForm(contactForm, "cyn_contact_us_form")
+    );
+  };
+  ContactUs();
+
+  // assets/js/modules/product-property.js
+  for (let i = 1; i < 5; i++) {
+    const el = document.getElementById("tab" + i);
+    if (el) {
+      el.onclick = function() {
+        document.getElementById("tab" + i + "Content").classList.toggle("show");
+      };
+    }
+  }
+
+  // assets/js/modules/blog-top-slider.js
+  var swiper2 = new Swiper(".blogslider", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 20500,
+      disableOnInteraction: false
+    },
+    speed: 5e3,
+    parallax: true
+  });
+
+  // assets/js/modules/mobile-menu.js
+  var menuMobileHandler = document.querySelector(".open-pop");
+  var mobileMenu = document.querySelector(".menu-popup");
+  var btnClose = document.querySelector(".close-pop");
+  var header = document.querySelector("header");
+  if (header) {
+    console.log("header exist");
+    menuMobileHandler.addEventListener("click", () => {
+      console.log("cliked");
+      mobileMenu.classList.toggle("show");
+      overflowHandler();
+    });
+    btnClose.addEventListener("click", () => {
+      console.log("cliked on close");
+      mobileMenu.classList.toggle("show");
+      overflowHandler();
+    });
+  }
 
   // assets/js/pages/homePage.js
   var homeHeadSlider = new Swiper("#home-head-slider", {

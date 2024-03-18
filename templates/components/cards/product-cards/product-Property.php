@@ -96,25 +96,15 @@
             <?php get_template_part('/templates/components/svg/icon-download-pdf') ?>
         </span>
     </a>
-
 </div>
-
-
 <div class="tab" id="tab4">frequently asked question</div>
 <div id="tab4Content" class="tab-content">
-    <div> <button> weight</button>
-        <button> height</button>
-        >
+    <div>
+        <?php
+        get_template_part(
+            'templates/components/cards/product-cards/product-question',
+            null,
+        );
+        ?>
     </div>
-</div>
-
-<script>
-
-</script>
-<?php
-get_template_part(
-    'templates/components/cards/product-cards/product-question',
-    null,
-);
-?>
 </div>
