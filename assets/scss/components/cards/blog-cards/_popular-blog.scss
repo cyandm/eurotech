@@ -10,12 +10,20 @@
     background-color: $clr_bg_paper;
     padding: $s_3;
     margin: $s_3;
+    h3 {
+      @include mq("lg") {
+        @include fs("caption");
+      }
+    }
 
     span.number {
       @include fs("title-s");
       color: $clr_natural_4;
       height: 100%;
       width: 25%;
+      @include mq("lg") {
+        @include fs("h1");
+      }
     }
     .blog-posts {
       max-width: 70%;

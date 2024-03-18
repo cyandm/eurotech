@@ -1,46 +1,42 @@
 @use "../../../utils/" as *;
-.sidebar {
-  h2 {
-    padding: $s_12 0 $s_4 0;
-  }
-  .sidebar-products {
-    flex-direction: column;
-    .product-card {
-      padding: $s_5;
-      background-color: $clr_bg_paper;
-      margin-bottom: $s_3;
-      img {
-        aspect-ratio: 151/115;
+
+.sidebar-products {
+  flex-direction: column;
+  .product-card {
+    padding: $s_5;
+    background-color: $clr_bg_paper;
+    margin-bottom: $s_3;
+    img {
+      aspect-ratio: 151/115;
+    }
+    .card {
+      @include d_flex(row, start, center, nowrap, false, $s_4);
+      & > a {
+        width: 43%;
       }
-      .card {
-        @include d_flex(row, start, center, nowrap, false, $s_4);
-        & > a {
-          width: 43%;
-        }
+    }
+
+    .detail {
+      display: block;
+      p {
+        @include fs("h3");
+      }
+      span {
+        display: flex;
+        justify-content: space-between;
       }
 
-      .detail {
-        display: block;
-        p {
-          @include fs("h3");
-        }
-        span {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        i {
-          background-color: $clr_natural_9;
-          color: $clr_natural_1;
-          padding: $s_2;
-        }
-        .cat {
-          @include fs("body-s");
-          display: flex;
-          color: $clr_secondary_light;
-          line-height: 30px;
-          justify-content: space-between;
-        }
+      i {
+        background-color: $clr_natural_9;
+        color: $clr_natural_1;
+        padding: $s_2;
+      }
+      .cat {
+        @include fs("body-s");
+        display: flex;
+        color: $clr_secondary_light;
+        line-height: 30px;
+        justify-content: space-between;
       }
     }
   }

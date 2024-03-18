@@ -1,6 +1,9 @@
 @use "../../utils/" as *;
 .blog-archive {
   .sidebar {
+    h2 {
+      padding: $s_12 0 $s_4 0;
+    }
     width: 37%;
     @include mq("md") {
       width: 100%;
