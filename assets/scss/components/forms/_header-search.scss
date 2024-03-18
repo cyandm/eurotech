@@ -4,14 +4,14 @@
   width: 100%;
   form {
     @include d_flex(row, start, center, nowrap, false, $s_4);
-    background-color: #00000080;
+    background-color: rgba($clr_secondary_dark, 0.5);
     padding: $s_2 $s_3;
     button {
       background-color: $clr_primary_main;
       padding: $s_4;
       border: 0;
     }
-    ::placeholder {
+    &::placeholder {
       color: $clr_secondary_light;
     }
   }

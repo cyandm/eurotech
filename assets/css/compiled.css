@@ -953,7 +953,7 @@ header .container .menu-popup .header-search form {
     background-color: #ececec;
   }
   .product .products .product-card img {
-    width: 47%;
+    width: 80%;
     aspect-ratio: 143/120;
   }
   .product .products .product-card .card {
@@ -1055,7 +1055,7 @@ header .container .menu-popup .header-search form {
 .search-box form input {
   flex: 1;
 }
-.search-box form ::placeholder {
+.search-box form::placeholder {
   color: #6b6b6b;
 }
 
@@ -1069,7 +1069,7 @@ header .container .menu-popup .header-search form {
   align-items: center;
   flex-wrap: nowrap;
   gap: 1rem;
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 0.5rem 0.75rem;
 }
 .header-search form button {
@@ -1077,7 +1077,7 @@ header .container .menu-popup .header-search form {
   padding: 1rem;
   border: 0;
 }
-.header-search form ::placeholder {
+.header-search form::placeholder {
   color: #6b6b6b;
 }
 

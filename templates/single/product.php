@@ -9,7 +9,6 @@ $product = new WP_Query([
     'posts_per_page' => 6,
     'post__not_in' => [get_the_ID()],
 ]);
-// var_dump(get_queried_object());
 $top_term = get_the_terms($post_id, 'product-category');
 if (isset ($top_term)) {
     $category = $top_term[0]->name;

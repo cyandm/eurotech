@@ -14,7 +14,7 @@
     input {
       flex: 1;
     }
-    ::placeholder {
+    &::placeholder {
       color: $clr_secondary_light;
     }
   }
