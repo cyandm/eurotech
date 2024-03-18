@@ -23,7 +23,7 @@ $product = new WP_Query([
         </div>
         <div class="allproduct">
             <div class="like-product">
-                <h2>best seller</h2>
+                <h2>Exterior Door</h2>
                 <div class="products">
                     <?php
                     while ($product->have_posts()) {

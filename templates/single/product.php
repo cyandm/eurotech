@@ -102,4 +102,4 @@ if (isset ($img_2)) {
         </div>
     </div>
 </main>
-<?php wp_footer() ?>
+<?php get_footer() ?>
