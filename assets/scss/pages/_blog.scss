@@ -43,16 +43,6 @@
         width: 100%;
       }
     }
-    .pagination {
-      margin-bottom: $s_7;
-      .page-numbers {
-        border-bottom: $b_4;
-        padding: $s_2;
-      }
-      .current {
-        border-color: $clr_primary_dark;
-      }
-    }
   }
 
   @include mq("md") {
