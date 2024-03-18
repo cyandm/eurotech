@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 $rating = get_field("rating");
 $best_seller = get_field('best_seller');
@@ -9,10 +9,10 @@ $product = new WP_Query([
     'posts_per_page' => 6,
     'post__not_in' => [get_the_ID()],
 ]);
-// var_dump(get_queried_object());
 $top_term = get_the_terms($post_id, 'product-category');
-$category = $top_term[0]->name;
-
+if (isset($top_term)) {
+    $category = $top_term[0]->name;
+}
 ?>
 <main class="product">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
@@ -66,17 +66,14 @@ $category = $top_term[0]->name;
 
         <div class="like-product">
             <h2>Maybe you like it</h2>
-
             <div class="products">
                 <?php
-
                 while ($product->have_posts()) {
                     $product->the_post();
                     $product_id = get_the_ID();
                     get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
 
                     wp_reset_postdata();
-
                 }
                 ?>
 
@@ -86,7 +83,6 @@ $category = $top_term[0]->name;
         <div class="like-product">
             <h2>best seller</h2>
             <div class="products">
-
                 <?php
                 while ($product->have_posts()) {
                     $product->the_post();
@@ -99,19 +95,4 @@ $category = $top_term[0]->name;
         </div>
     </div>
 </main>
-
-<script>
-    function selectTab(tabIndex) {
-        //Hide All Tabs
-        document.getElementById("tab1Content").style.display = "none";
-        document.getElementById("tab2Content").style.display = "none";
-        document.getElementById("tab3Content").style.display = "none";
-        document.getElementById("tab4Content").style.display = "none";
-
-        //Show the Selected Tab
-        document.getElementById("tab" + tabIndex + "Content").style.display =
-            "flex";
-    }
-</script>
-
-<?php wp_footer() ?>
+<?php get_footer() ?>
