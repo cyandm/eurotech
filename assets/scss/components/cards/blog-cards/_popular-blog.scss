@@ -6,18 +6,27 @@
     fill: currentColor;
   }
   .popular-post {
-    @include d_flex(row, start, center, nowrap, false, 0);
-    width: 70%;
+    @include d_flex(row, start, start, nowrap, false, 0);
+    background-color: $clr_bg_paper;
+    padding: $s_3;
+    margin: $s_3;
+    h3 {
+      @include mq("lg") {
+        @include fs("caption");
+      }
+    }
 
     span.number {
-      @include d_flex(column, start, center, nowrap, false, 0);
       @include fs("title-s");
       color: $clr_natural_4;
       height: 100%;
-      width: 20%;
+      width: 25%;
+      @include mq("lg") {
+        @include fs("h1");
+      }
     }
     .blog-posts {
-      max-width: 100%;
+      max-width: 70%;
       .paragraph {
         @include fs("body-s");
       }

@@ -1,4 +1,3 @@
-import './modules/__index';
-import './pages/__index';
-
-console.log('ss');
+import "./modules/__index";
+import "./pages/__index";
+import "./utils/__index";

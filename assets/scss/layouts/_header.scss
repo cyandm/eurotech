@@ -2,96 +2,182 @@
 header {
   height: auto;
   position: absolute;
-  top: 8vh;
+  display: block;
+  height: 5rem;
+  top: 1.5rem;
   width: 100%;
+  z-index: 9999;
+
   .container {
     @include d_flex(row, space-between, center, nowrap, false, 0);
     padding: $s_3;
+
     .contain {
       display: flex;
       width: 34%;
       gap: $s_3;
+
       .logo-contain {
         width: 28%;
         img {
           width: 100%;
         }
+        @include mq("md") {
+          width: 31%;
+        }
       }
     }
+
     .menu-nav {
-      padding: $s_5;
       background-color: rgba(0, 0, 0, 0.5);
+
       ul {
         color: $clr_natural_1;
         @include d_flex(row, center, center, nowrap, false, $s_10);
+        padding: 0 $s_5;
+
+        li {
+          padding: $s_5 0;
+          a {
+            white-space: nowrap;
+          }
+        }
       }
-      .sub-menu {
-        display: none;
-        position: absolute;
-        transition: ease-in-out 5s;
-      }
-      .menu-item-has-children {
+
+      li.menu-item-has-children {
         @include make_icon("\eb75");
+        &::before {
+          padding-right: $s_2;
+        }
       }
+
       .menu-item-has-children:hover .sub-menu {
         display: block;
       }
-      .menu-item {
-        transition: ease-in-out 5s;
-      }
-      .sub-menu {
-        padding: $s_5;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-    }
-    @include mq("md") {
-      // justify-content: space-around;
-    }
-  }
-  .mobile_nav_menu {
-    i {
-      color: $clr_natural_1;
-      font-size: 24px;
-      padding: $s-6;
-    }
-  }
-  .menu-popup {
-    @include d_flex();
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 5vh;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.575);
-    &.show {
-      opacity: 1;
-    }
 
-    .main {
-      background-color: $clr_natural_1;
-      padding: $s_4;
-      margin: $s_4;
-      .close {
-        text-align: right;
+      .menu-item {
+        transition: ease-in-out 1s;
       }
-      i.close-pop {
-        border: 2px solid black;
-        border-radius: $s_2;
-      }
-      .menu-primary-container {
-        margin: $s-8 0;
-      }
-      .menu li {
-        padding: $s_3;
-      }
+
       .sub-menu {
-        margin-left: $s_10;
+        display: none;
+        position: absolute;
+        transition: ease-in-out 3s;
+        top: 9vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-bottom: $s_7;
+        width: 14%;
         li {
-          color: $clr_secondary_light;
+          line-height: $s_10;
+          border-bottom: $b_3;
+          padding: $s_3;
+          &:hover {
+            border-bottom: $b_1;
+          }
+        }
+      }
+      @include mq("md") {
+        // justify-content: space-around;
+      }
+    }
+    .mobile_nav_menu {
+      i {
+        color: $clr_natural_1;
+        font-size: 24px;
+        padding: $s-6;
+      }
+    }
+    .menu-popup {
+      @include d_flex();
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 5vh;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.575);
+      &.show {
+        opacity: 1;
+      }
+
+      .main {
+        background-color: $clr_natural_1;
+        padding: $s_4;
+        margin: $s_4;
+        .close {
+          text-align: right;
+        }
+        i.close-pop {
+          border: 2px solid black;
+          border-radius: $s_2;
+        }
+        .menu-primary-container {
+          margin: $s-8 0;
+        }
+        .menu li {
+          padding: $s_3;
+        }
+        .sub-menu {
+          margin-left: $s_10;
+          li {
+            color: $clr_secondary_light;
+            a {
+              white-space: normal;
+            }
+          }
+        }
+        @include mq("lg") {
+          display: none;
+        }
+      }
+    }
+    .mobile_nav_menu {
+      i {
+        color: $clr_natural_1;
+        font-size: 24px;
+        padding: $s-6;
+      }
+    }
+    .menu-popup {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 5vh;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.575);
+      &.show {
+        opacity: 1;
+      }
+
+      .main {
+        background-color: $clr_natural_1;
+        padding: $s_8;
+        margin: $s_4;
+        .close {
+          text-align: right;
+        }
+        i.close-pop {
+          border: 2px solid black;
+          border-radius: $s_2;
+        }
+        .menu-primary-container {
+          margin: $s-8 0;
+        }
+        .menu li {
+          padding: $s_3;
+        }
+        .sub-menu {
+          margin-left: $s_10;
+          li {
+            color: $clr_secondary_light;
+          }
         }
       }
       .header-search form {
         background-color: $clr_bg_paper;
+      }
+      @include mq("lg") {
+        @include d_flex();
       }
     }
   }

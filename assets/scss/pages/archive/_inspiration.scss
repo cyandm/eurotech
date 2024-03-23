@@ -1,4 +1,4 @@
-@use "../../utils/" as *;
+@use '../../utils/' as *;
 
 .inspiration {
   &__gallery {
@@ -9,7 +9,7 @@
       grid-template-columns: repeat(10, 1fr);
       gap: $s_6;
 
-      @include mq("md") {
+      @include mq('md') {
         gap: $s_4;
       }
 
@@ -21,6 +21,7 @@
           @include d_flex();
           height: 100%;
           img {
+            width: 100%;
             height: 100%;
             object-fit: cover;
           }
@@ -37,7 +38,7 @@
         &:nth-child(6n - 1) {
           margin-block-start: calc($s_8 - $s_6);
 
-          @include mq("md") {
+          @include mq('md') {
             margin-block-start: unset;
           }
         }
@@ -53,7 +54,7 @@
         }
       }
 
-      @include mq("md") {
+      @include mq('md') {
         display: flex;
         flex-direction: column;
         .inspiration__gallery__content__item {

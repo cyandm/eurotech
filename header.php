@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html <?php language_attributes() ?>>
+<html <?php language_attributes() ?> dir="ltr">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	<?php wp_head() ?>
 </head>
 
@@ -34,7 +33,7 @@
 				<i class="iconsax open-pop" icon-name="hamburger-menu" fill="red"></i>
 			</div>
 		</div>
-		<div class="menu-popup hide">
+		<div class="menu-popup">
 			<div class="main">
 				<p class="close"><i class="iconsax close-pop" icon-name="x" fill="red"></i></p>
 				<div class="header-search">

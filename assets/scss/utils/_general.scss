@@ -50,7 +50,7 @@ ul {
   -webkit-box-orient: vertical;
 }
 img {
-  object-fit: fill;
+  object-fit: cover;
 }
 .paper {
   background-color: $clr_bg_paper;
@@ -58,7 +58,7 @@ img {
 }
 .hide {
   display: none;
-  @include mq("md") {
+  @include mq("lg") {
     display: block;
   }
 }

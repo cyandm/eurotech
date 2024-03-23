@@ -124,7 +124,7 @@
       back() {
       }
     },
-    CustomEvent: function CustomEvent() {
+    CustomEvent: function CustomEvent2() {
       return this;
     },
     addEventListener() {
@@ -4253,43 +4253,38 @@
   });
 
   // assets/js/modules/ajax-form.js
-  jQuery(document).ready(($) => {
-    const contactUsForm = $("#contact-form");
-    const contactUsInput = document.querySelectorAll(
-      "#contact-form div .data"
-    );
-    const contactUsFormSubmit = $("#contact-form #contact-form-submit");
-    $(contactUsForm).on("submit", (e) => {
-      e.preventDefault();
+  var ajaxSendForm = (formEl, action) => (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget, e.submitter);
+    formData.append("action", action);
+    formData.append("_nonce", cyn_head_script.nonce);
+    jQuery(($) => {
       $.ajax({
+        type: "POST",
         url: cyn_head_script.url,
-        type: "post",
         cache: false,
         processData: false,
         contentType: false,
-        data: {
-          action: "send_contact_form",
-          _nonce: cyn_head_script.nonce,
-          data: "formData"
-        },
+        data: formData,
         success: (res) => {
-          console.warn(res);
-          contactUsInput.forEach((el) => {
-            el.value = "";
-          });
-          $(contactUsFormSubmit).text(" Send !");
-          setTimeout(() => {
-            $(contactUsFormSubmit).text("Send Massage ");
-          }, 1e3);
+          formEl.reset();
         },
-        error: (err) => {
-          console.error(err);
-          $(contactUsFormSubmit).removeClass("pending");
-          $(contactUsFormSubmit).addClass("error");
+        error: () => {
         }
       });
     });
-  });
+  };
+  var ContactUs = () => {
+    const contactUsPage = document.getElementById("contactUsPage");
+    const contactForm = document.getElementById("contactForm");
+    if (!contactUsPage)
+      return;
+    contactForm.addEventListener(
+      "submit",
+      ajaxSendForm(contactForm, "cyn_contact_us_form")
+    );
+  };
+  ContactUs();
 
   // assets/js/modules/product-property.js
   for (let i = 1; i < 5; i++) {
@@ -4321,6 +4316,103 @@
     parallax: true
   });
 
+<<<<<<< HEAD
   // assets/js/index.js
   console.log("ss");
+=======
+  // assets/js/utils/custom-events.js
+  var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
+
+  // assets/js/utils/functions.js
+  var addListener = (elementNode, eventType, func) => {
+    if (elementNode.getAttribute("hasListener"))
+      return;
+    elementNode.setAttribute("hasListener", true);
+    elementNode.addEventListener(eventType, func);
+  };
+
+  // assets/js/modules/video-cover.js
+  var videoCovers = document.querySelectorAll(".video-cover");
+  var videoSrc = document.querySelectorAll(".video");
+  if (videoCovers) {
+    videoCovers.forEach((videoCover) => {
+      addListener(videoCover, "click", (e) => {
+        const cover = videoCover;
+        console.log("hello");
+        videoSrc.forEach((videoPlay) => {
+          if (videoPlay === videoSrc)
+            return;
+          videoPlay.play();
+        });
+        cover.classList.add("without-cover");
+      });
+    });
+  }
+
+  // assets/js/modules/mobile-menu.js
+  var menuMobileHandler = document.querySelector(".open-pop");
+  var mobileMenu = document.querySelector(".menu-popup");
+  var btnClose = document.querySelector(".close-pop");
+  var header = document.querySelector("header");
+  if (header) {
+    console.log("header exist");
+    menuMobileHandler.addEventListener("click", () => {
+      console.log("cliked");
+      mobileMenu.classList.toggle("show");
+      overflowHandler();
+    });
+    btnClose.addEventListener("click", () => {
+      console.log("cliked on close");
+      mobileMenu.classList.toggle("show");
+      overflowHandler();
+    });
+  }
+
+  // assets/js/pages/homePage.js
+  var homeHeadSlider = new Swiper("#home-head-slider", {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 2,
+    centeredSlides: true,
+    autoHeight: true,
+    autoplay: {
+      delay: 3250,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+  jQuery(document).ready(($) => {
+    const tabHandler = $("main.main.home section.products-tabs nav.tabs ul li");
+    const tabContent = $("main.main.home section.products-tabs div.tabs-content .tab-content");
+    if (!tabHandler || !tabContent)
+      return;
+    $(tabHandler[0]).addClass("active");
+    $(tabContent[0]).addClass("active");
+    $(tabHandler).on("click", function(e) {
+      e.preventDefault();
+      const dataTab = $(e.target).attr("data-tab");
+      const current = $("section.products-tabs div.tabs-content .tab-content[data-tab='" + dataTab + "']");
+      if (!current)
+        return;
+      $(tabHandler).removeClass("active");
+      $(tabContent).removeClass("active");
+      $(e.target).addClass("active");
+      $(current).addClass("active");
+    });
+  });
+  var homeSketchSlider = new Swiper("#home-sketch-slider", {
+    slidesPerView: 1,
+    spaceBetween: 2,
+    centeredSlides: true,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".swiper-btn-next",
+      prevEl: ".swiper-btn-prev"
+    }
+  });
+>>>>>>> c2c3a45c3db5af24ee47f558981b3b7a9f81e8a5
 })();

@@ -4,6 +4,14 @@
   .tab {
     padding: $s_5 0;
     border-bottom: $b_1;
+    display: flex;
+    justify-content: space-between;
+    &::after {
+      content: "\eb75";
+      line-height: 1;
+      @include fs("h3");
+      font-family: "iconsax" !important;
+    }
   }
   .tab-content {
     @include d_flex(row, start, center, nowrap, true, $s_2);
@@ -47,6 +55,9 @@
     @include mq("md") {
       width: 100%;
     }
+  }
+  #tab2Content {
+    flex-direction: column;
   }
   #tab3Content {
     * {

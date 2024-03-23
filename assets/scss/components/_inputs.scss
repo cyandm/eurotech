@@ -1,10 +1,14 @@
-@use "../utils/" as *;
+@use '../utils/' as *;
 .input {
   //background-color: $clr_natural_1;
   margin-bottom: $s_5;
   background-color: $clr_natural_1;
   line-height: $s_6;
   padding: $s_4;
+  input,
+  textarea {
+    width: 100%;
+  }
   &::placeholder {
     color: $clr_secondary_light;
   }
