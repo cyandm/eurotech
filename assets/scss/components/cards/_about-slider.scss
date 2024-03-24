@@ -1,5 +1,6 @@
 @use "../../utils/" as *;
 .about-steps-slider {
+  z-index: -1;
   .steps {
     .step {
       padding: $s_4;

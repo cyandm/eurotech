@@ -1,5 +1,5 @@
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', $post_id));
 
 ?>
@@ -24,7 +24,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 						<?= get_the_date('d M') ?>
 					</span> .
 					<span>
-						<?php echo cyn_reading_time(get_the_ID()) . " Read"; ?>
+						<?= cyn_reading_time(get_the_ID()) . " Read"; ?>
 					</span>
 					</span>
 

@@ -1,5 +1,5 @@
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', $post_id));
 ?>
 <a href="<?php the_permalink($post_id) ?>">
@@ -13,10 +13,10 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 			<div class="postmeta">
 				<div>
 					<span class="meta-date meta">
-						<?= get_the_date() ?>
+					<?= get_the_date('d M') ?>
 					</span>
 					<span class="meta-comment meta">
-						<?php echo getPostViews(get_the_ID()); ?>
+						<?php echo cyn_reading_time(get_the_ID()) . " Read"; ?>
 					</span>
 					</span>
 				</div>
