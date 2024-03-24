@@ -84,9 +84,7 @@ header {
       }
     }
   }
-  .header-search form {
-    background-color: $clr_bg_paper;
-  }
+
   .menu-popup {
     display: none;
     height: 100vh;
@@ -102,6 +100,9 @@ header {
       background-color: $clr_natural_1;
       padding: $s_8;
       margin: $s_4;
+      .header-search form {
+        background-color: $clr_bg_paper;
+      }
       .close {
         text-align: right;
         i.close-pop {
