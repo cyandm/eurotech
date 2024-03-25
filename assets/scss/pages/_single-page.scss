@@ -1,0 +1,7 @@
+@use "../utils/" as *;
+.default-page {
+  margin-top: 15vh;
+  h1 {
+    padding: $s_7 0;
+  }
+}

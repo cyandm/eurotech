@@ -1,7 +1,10 @@
 @use "../../../utils/" as *;
 //card of sigle product
 .products {
-  @include d_flex(row, space-between, center, nowrap, true, $s_3);
+  @include d_flex(row, start, center, nowrap, true, $s_3);
+  .product-card {
+    max-width: 320px;
+  }
   img {
     width: 100%;
     @include mq("md") {
@@ -10,17 +13,13 @@
     }
   }
   .detail {
-    display: flex;
-    align-items: center;
+    @include d_flex(row, space-between, center, nowrap, false, 0);
+
     .cat-name {
       display: none;
     }
-    i {
-      background-color: $clr_natural_9;
-      color: $clr_natural_1;
-      padding: $s_2;
-    }
   }
+
   @include mq("md") {
     flex-direction: column;
     .product-card {
@@ -46,5 +45,12 @@
         }
       }
     }
+  }
+}
+.cat {
+  i::before {
+    background-color: $clr_natural_9;
+    color: $clr_natural_1;
+    padding: $s_2;
   }
 }

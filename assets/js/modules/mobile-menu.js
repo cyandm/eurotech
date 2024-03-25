@@ -6,7 +6,6 @@ const menuMobileHandler = document.querySelector(".open-pop");
 const mobileMenu = document.querySelector(".menu-popup");
 const btnClose = document.querySelector(".close-pop");
 const header = document.querySelector("header");
-
 if (header) {
   console.log("header exist");
 

@@ -1,4 +1,5 @@
-import Swiper from "swiper/bundle";
+import Swiper from "swiper";
+
 var swiper = new Swiper(".blogslider", {
   pagination: {
     el: ".swiper-pagination",
@@ -8,9 +9,9 @@ var swiper = new Swiper(".blogslider", {
   slidesPerView: 1,
   spaceBetween: 20,
   autoplay: {
-    delay: 20500,
+    delay: 2500,
     disableOnInteraction: false,
   },
-  speed: 5000,
+  speed: 1000,
   parallax: true,
 });

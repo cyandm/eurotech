@@ -1,51 +1,46 @@
-@use "../utils/" as *;
+@use '../utils/' as *;
 
 .contact-us {
   .banner {
     @include d_flex($a_i: center);
     width: 100%;
-    height: 100vh;
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 100%;
-    padding-bottom: $s_4;
+    background-size: cover;
+    padding-block: 12rem 2rem;
+
     .container {
       @include d_flex(row, start, center, nowrap, true, 147px);
       color: $clr_natural_1;
 
       p {
-        @include fs("title-s");
+        @include fs('title-s');
 
-        @include mq("lg") {
-          @include fs("h2");
+        @include mq('lg') {
+          @include fs('h2');
         }
       }
       .contact {
         width: 100%;
+        button[type='submit'] {
+          @include d_flex(row, center, center);
+        }
+        h2 {
+          margin-bottom: $s_3;
+        }
       }
       .title {
-        @include fs("title-s");
+        @include fs('title-s');
       }
-      @include mq("lg") {
+      @include mq('lg') {
         gap: $s_2;
       }
-      @include mq("lg") {
+      @include mq('lg') {
         flex-direction: column;
         gap: $s_2;
         $even_column: true;
         margin-top: $s_5;
       }
-    }
-    @include mq("lg") {
-      background-size: 200%;
-      align-items: start;
-    }
-    @include mq("sm") {
-      background-size: 390%;
-      height: 90vh;
-    }
-    @include mq("xs") {
-      background-size: 450%;
     }
   } //banner
 }

@@ -1,1 +1,1 @@
-<?php get_header();  /*Template Name: product */ ?>rgg
+<?php get_header();  /*Template Name: product */ ?>

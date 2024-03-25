@@ -1,6 +1,6 @@
 <?php $post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
-$top_term = get_the_terms($post_id, 'product-category');
-$category = $top_term[0]->name;
+$product_cat = get_the_terms($post_id, 'product_cat');
+
 ?>
 <div class="product-card">
     <a href="<?php the_permalink($post_id) ?>">
@@ -12,8 +12,10 @@ $category = $top_term[0]->name;
                     ?>
                 </p>
                 <p class="cat">
+
                     <span class="cat-name">
-                        <?= isset ($top_term) ? $category : "door";
+                        <?= is_array($product_cat) ? $product_cat[0]->name : '';
+
                         ?>
                     </span>
 

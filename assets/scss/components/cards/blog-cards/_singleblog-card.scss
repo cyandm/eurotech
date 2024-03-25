@@ -19,8 +19,13 @@
       display: block;
       @include fs("caption");
       color: $clr_secondary_light;
-      div {
-        @include d_flex(row, start, center, nowrap, false, $s_5);
+      div,
+      span {
+        @include d_flex(row, start, center, nowrap, false, $s_2);
+        i::before {
+          color: black;
+          @include fs("h4");
+        }
       }
     }
     .post-detail {

@@ -39,7 +39,7 @@
 	<?php
 	$new_blogs = new WP_Query([
 		'post_type' => 'post',
-		'posts_per_page' => 5,
+		'posts_per_page' => 3,
 		'post__not_in' => [get_the_ID()],
 	]);
 	?>

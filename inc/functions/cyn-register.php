@@ -16,11 +16,21 @@ function cyn_post_type_register()
 
 function cyn_taxonomy_register()
 {
-    cyn_make_taxonomy('category form', 'form-cat', 'form', true);
+    cyn_make_taxonomy('Category Form', 'form-cat', 'form', true);
+    cyn_make_taxonomy('Product Category', 'product_cat', 'product', true);
+    cyn_make_taxonomy('Product Tags', 'product_tag', 'product', true);
+
+
+
 }
 function cyn_term_register()
 {
-    wp_insert_term('contact us', 'form-cat', ['slug' => 'pricing']);
+    wp_insert_term('contact us', 'form-cat', ['slug' => 'contact-us']);
+    wp_insert_term('Interior Doors', 'product_cat', ['slug' => 'interior_doors']);
+    wp_insert_term('Best Seller', 'product_tag', ['slug' => 'best_seller']);
+    wp_insert_term('suggested Product', 'product_tag', ['slug' => 'suggested_product']);
+
+
 }
 
 

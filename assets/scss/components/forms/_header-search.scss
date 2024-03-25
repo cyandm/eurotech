@@ -11,8 +11,14 @@
       padding: $s_2;
       border: 0;
     }
-    input::placeholder {
-      color: $clr_secondary_light;
+    input {
+      flex: 1;
+      &::placeholder {
+        color: $clr_secondary_light;
+      }
     }
+  }
+  @include mq("lg") {
+    display: none;
   }
 }

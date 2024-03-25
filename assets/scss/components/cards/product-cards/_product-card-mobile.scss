@@ -26,11 +26,11 @@
         justify-content: space-between;
       }
 
-      i {
-        background-color: $clr_natural_9;
-        color: $clr_natural_1;
-        padding: $s_2;
-      }
+      // i {
+      //   background-color: $clr_natural_9;
+      //   color: $clr_natural_1;
+      //   padding: $s_2;
+      // }
       .cat {
         @include fs("body-s");
         display: flex;

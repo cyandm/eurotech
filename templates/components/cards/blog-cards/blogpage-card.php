@@ -17,14 +17,14 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 
 
 				<span class="meta"><i class="iconsax" icon-name="eye"></i>
-					<?= getPostViews(get_the_ID()); ?>
+					<?= getPostViews(get_the_ID()) . " view"; ?>
 				</span>
 				<div class="meta">
 					<span>
 						<?= get_the_date('d M') ?>
 					</span> .
 					<span>
-						<?= cyn_reading_time(get_the_ID()) . " Read"; ?>
+						<?php echo cyn_reading_time(get_the_ID()) . " Read"; ?>
 					</span>
 					</span>
 

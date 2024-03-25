@@ -3,27 +3,14 @@
 .single-sidebar {
   width: 37%;
   h3 {
-    margin: $s_5 0;
+    padding: $s_4 0;
   }
   .tags {
     @include d_flex(row, start, center, wrap, false, $s_3);
+
     li {
       background-color: $clr_bg_paper;
       padding: $s_3;
-    }
-  }
-  .catergories {
-    li.current-cat {
-      @include make_icon("\e9a6");
-    }
-    li.current-cat::before {
-      color: $clr_primary_main;
-    }
-    li {
-      width: 100%;
-      padding: $s_4;
-      background-color: $clr_bg_paper;
-      margin-bottom: $s_3;
     }
   }
 
@@ -42,5 +29,20 @@
   }
   @include mq("md") {
     width: 100%;
+  }
+}
+
+.catergories {
+  li.current-cat {
+    @include make_icon("\e9a6");
+  }
+  li.current-cat::before {
+    color: $clr_primary_main;
+  }
+  li {
+    width: 100%;
+    padding: $s_4;
+    background-color: $clr_bg_paper;
+    margin-bottom: $s_3;
   }
 }
