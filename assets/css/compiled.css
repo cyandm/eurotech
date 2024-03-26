@@ -933,18 +933,21 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
 .Property .tab-content > * {
   flex: 1;
 }
-.Property .tab-content button {
+.Property .tab-content span {
   padding: 1rem;
   width: 100%;
   border: 0;
   margin-bottom: 0.5rem;
   height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.Property .tab-content .Variable-name button {
+.Property .tab-content .Variable-name span {
   background-color: #6b6b6b;
   color: #ffffff;
 }
-.Property .tab-content .Variable-value button {
+.Property .tab-content .Variable-value span {
   background-color: #e5e3e3;
   color: #6b6b6b;
 }

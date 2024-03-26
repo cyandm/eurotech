@@ -17,18 +17,22 @@
     @include d_flex(row, start, center, nowrap, true, $s_2);
     padding-top: $s_5;
     display: none;
-    button {
+    span {
       padding: $s_4;
       width: 100%;
       border: 0;
       margin-bottom: $s_2;
       height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .Variable-name button {
+
+    .Variable-name span {
       background-color: $clr_secondary_light;
       color: $clr_natural_1;
     }
-    .Variable-value button {
+    .Variable-value span {
       background-color: $clr_secondary_text;
       color: $clr_secondary_light;
     }

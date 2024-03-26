@@ -1,84 +1,84 @@
 <div class="tab" name="tab" id="tab1">specifications</div>
 <div id="tab1Content" name="tab-content" class="tab-content">
     <div class="Variable-name">
-        <button>
+        <span>
             <?= get_field("1_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("2_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("3_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("4_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("5_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("6_feature_label") ?>
-        </button>
+        </span>
     </div>
     <div class="Variable-value">
-        <button>
+        <span>
             <?= get_field("1_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("2_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("3_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("4_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("5_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("6_feature_value") ?>
-        </button>
+        </span>
     </div>
     <div class="Variable-name">
-        <button>
+        <span>
             <?= get_field("7_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("8_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("9_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("10_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("11_feature_label") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("12_feature_label") ?>
-        </button>
+        </span>
     </div>
     <div class="Variable-value">
-        <button>
+        <span>
             <?= get_field("7_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("8_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("9_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("10_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("11_feature_value") ?>
-        </button>
-        <button>
+        </span>
+        <span>
             <?= get_field("12_feature_value") ?>
-        </button>
+        </span>
     </div>
 </div>
 
