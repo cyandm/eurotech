@@ -1,10 +1,10 @@
 <?php
-$frontPageId = get_option('page_on_front');
+$frontPageId = $args['front_page_id'];
 $video_file  = get_field('video_file', $frontPageId);
 $video_link  = get_field('video_link', $frontPageId);
 $video_cover = get_field('video_cover', $frontPageId);
 
-if (!isset($video_link))
+if (!isset($video_link) && !isset($video_file))
   return;
 ?>
 

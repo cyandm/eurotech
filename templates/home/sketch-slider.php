@@ -1,5 +1,5 @@
 <?php
-$frontPageId = get_option('page_on_front');
+$frontPageId = $args['front_page_id'];
 $sliderGroup = get_field("home_sketch_slider", $frontPageId);
 
 if (!isset($sliderGroup))

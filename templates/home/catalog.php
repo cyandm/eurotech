@@ -1,5 +1,5 @@
 <?php
-$frontPageId  = get_option('page_on_front');
+$frontPageId  = $args['front_page_id'];
 $catalogGroup = get_field("home_catalog_section", $frontPageId);
 
 if (!isset($catalogGroup))

@@ -1,6 +1,6 @@
 <?php
-$frontPageId = get_option('page_on_front');
-$catsGroup = get_field("home_products_cats", $frontPageId);
+$frontPageId = $args['front_page_id'];
+$catsGroup   = get_field("home_products_cats", $frontPageId);
 
 if (!isset($catsGroup))
   return;
