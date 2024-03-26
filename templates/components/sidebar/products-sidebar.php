@@ -18,8 +18,8 @@ $categories = get_terms([
 		<?php
 
 		foreach ($categories as $cat) {
-			echo "<li>" . $cat->name;
-			echo "</li>";
+			echo "<a href=" . get_term_link($cat->term_id) . '"><li>' . $cat->name;
+			echo "</li></a>";
 		}
 
 		?>
