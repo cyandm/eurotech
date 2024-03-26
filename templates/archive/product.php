@@ -3,16 +3,19 @@
 $banner = get_field("product_archive_banner");
 $product = new WP_Query([
 	'post_type' => 'product',
-	'posts_per_page' => 6,
+	'posts_per_page' => 10,
 	'post__not_in' => [get_the_ID()],
 ]);
 ?>
 <main class="archive-product">
-	<div class="banner" style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
-		<p>Our doors add beauty and elegance to your office</p>
+	<div class="banner"
+		style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
+		<div>
+			<p class="container">Our doors add beauty and elegance to your office</p>
+		</div>
 	</div>
 	<div class="container">
-		<div class="sidebar">
+		<div class="single-sidebar">
 			<?php
 			get_template_part(
 				'templates/components/sidebar/products-sidebar',
@@ -32,6 +35,18 @@ $product = new WP_Query([
 					}
 					?>
 					<?php wp_reset_postdata() ?>
+
+
+					<?php
+					echo "<div class='pagination'>" . paginate_links(
+						array(
+							'total' => $product->max_num_pages,
+							'prev_next' => false,
+							'mid_size' => 1,
+						)
+					) . "</div>";
+					?>
+
 				</div>
 			</div>
 		</div>

@@ -22,6 +22,7 @@
       width: 100%;
       border: 0;
       margin-bottom: $s_2;
+      height: 52px;
     }
     .Variable-name button {
       background-color: $clr_secondary_light;
@@ -69,7 +70,7 @@
     span {
       padding: $s_4;
       background-color: $clr_primary_main;
-      @include fs("h2");
+      @include fs("body");
       @include mq("md") {
         @include fs("caption");
         padding: $s_2;

@@ -23,8 +23,13 @@ main.single-post-page {
         @include d_flex($j_c: space-between, $even_column: false);
         @include fs("body-s");
         color: $clr_secondary_light;
-        div {
-          @include d_flex(row, start, start, nowrap, false, $s_1);
+        padding: $s_3 0;
+        div,
+        span {
+          @include d_flex(row, start, center, nowrap, false, $s_1);
+          i {
+            color: $clr_secondary_dark;
+          }
         }
         @include mq("md") {
           flex-wrap: nowrap;

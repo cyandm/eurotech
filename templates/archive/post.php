@@ -1,8 +1,10 @@
 <?php get_header() ?>
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', get_the_ID()));
 $banner = get_the_post_thumbnail_url($post_id, 'full');
+$all_blogs_page_id = get_option('page_for_posts');
+
 $blog_slider = new WP_Query([
     'post_type' => 'post',
     'post__not_in' => [get_the_ID()],
@@ -38,12 +40,14 @@ $blog_slider = new WP_Query([
         <div class="blog-main">
             <div class="blog-head">
                 <ul>
+                    <li class=""><a href="<?= bloginfo('url') . "/blog"; ?>">
+                            all
+                        </a></li>
                     <?php wp_list_categories(
                         [
                             'orderby' => 'id',
                             'hide_empty' => false,
                             'title_li' => "",
-                            'current_category' => 1
                         ]
                     ) ?>
                 </ul>
@@ -58,9 +62,11 @@ $blog_slider = new WP_Query([
                     ]);
                     ?>
                     <?php
-                    $new_blogs->the_post();
-                    get_template_part('/templates/components/cards/blog-cards/blogpage', 'card', ['post_id' => $post_id]);
-
+                    while (have_posts()) {
+                        the_post();
+                        $post_id = get_the_ID();
+                        get_template_part('/templates/components/cards/blog-cards/blogpage', 'card', ['post_id' => $post_id]);
+                    }
                     ?>
                     <?php wp_reset_postdata() ?>
 
@@ -69,16 +75,6 @@ $blog_slider = new WP_Query([
             </div>
 
 
-            <?php
-            $links = paginate_links(
-                array(
-                    'total' => $new_blogs->max_num_pages,
-                )
-            );
-            if ($links) {
-                echo "<div class='pagination'>$links</div>";
-            }
-            ?>
         </div>
     </div>
 </main>

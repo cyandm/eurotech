@@ -73,32 +73,49 @@ function getPostViews($post_id)
 {
     $count_key = 'post_view';
     $count = get_post_meta($post_id, $count_key, true);
-    if ($count == '') {
-        $count = 0;
-        delete_post_meta($post_id, $count_key);
-        add_post_meta($post_id, $count_key, '0');
-        return "0 view";
-    }
-    return $count . ' view';
+
+    if (is_string($count) && $count != '')
+        return $count;
+
+    return 0;
 }
 
-function setPostViews($postID)
+function setPostViews($post_id)
 {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if ($count == '') {
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
+    $count_key = 'post_view';
+    $count = get_post_meta($post_id, $count_key, true);
+    if (is_string($count) && $count != '') {
+        update_post_meta($post_id, $count_key, (int) $count + 1);
     } else {
-        $count++;
-        update_post_meta($postID, $count_key, $count);
+        update_post_meta($post_id, $count_key, '1');
     }
+    return $count;
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function render_social_media($social_media_link, $address)
 {
     $address_stable = get_stylesheet_directory_uri() . '/assets/img/';
-    if (empty($social_media_link)) return;
+    if (empty ($social_media_link))
+        return;
 
 
     printf("<a href='%s'><div class='social-media-item'><img src='%s'></div></a>", $social_media_link, $address_stable . $address);

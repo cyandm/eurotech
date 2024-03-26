@@ -19,6 +19,11 @@
     background-color: $clr_primary_main;
     color: $clr_primary_text;
     padding: $s_4 $s_5;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     transition: $t_1;
     &:hover {
       cursor: pointer;
@@ -28,6 +33,10 @@
     color: $clr_text_contrast;
     background-color: $clr_natural_9;
     padding: $s_4 $s_5;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
     transition: $t_1;
     &:hover {
       cursor: pointer;

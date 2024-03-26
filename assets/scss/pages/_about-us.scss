@@ -39,6 +39,7 @@
       object-fit: cover;
       width: 50%;
       aspect-ratio: 14 / 8;
+      z-index: -1;
     }
     .company {
       @include d_flex(column, space-evenly, stretch, nowrap, true, $s_5);

@@ -54,14 +54,14 @@
   .container {
     margin-bottom: $s_10;
     .titr {
-      @include d_flex($even_column: false, $a_i: center);
+      @include d_flex(row, space-between, center, nowrap, false, 0);
       span {
         color: $clr_secondary_light;
       }
       .product-title {
         margin: $s_6 0;
         @include d_flex(row, space-between, center, nowrap, false, 0);
-        width: 30%;
+        width: 40%;
         @include mq("md") {
           width: 100%;
         }

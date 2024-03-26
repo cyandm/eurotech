@@ -2,82 +2,82 @@
 <div id="tab1Content" name="tab-content" class="tab-content">
     <div class="Variable-name">
         <button>
-            <?= get_field("the_first_feature") ?>
+            <?= get_field("1_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_second_feature") ?>
+            <?= get_field("2_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_third_feature") ?>
+            <?= get_field("3_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_fourth_feature") ?>
+            <?= get_field("4_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_fifth_feature") ?>
+            <?= get_field("5_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_sixth_feature") ?>
+            <?= get_field("6_feature_label") ?>
         </button>
     </div>
     <div class="Variable-value">
         <button>
-            <?= get_field("the_first_feature_Value") ?>
+            <?= get_field("1_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_second_feature_value") ?>
+            <?= get_field("2_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_third_feature_value") ?>
+            <?= get_field("3_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_fourth_feature_value") ?>
+            <?= get_field("4_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_fifth_feature_value") ?>
+            <?= get_field("5_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_sixth_feature_value") ?>
+            <?= get_field("6_feature_value") ?>
         </button>
     </div>
     <div class="Variable-name">
         <button>
-            <?= get_field("the_first_feature") ?>
+            <?= get_field("7_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_second_feature") ?>
+            <?= get_field("8_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_third_feature") ?>
+            <?= get_field("9_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_fourth_feature") ?>
+            <?= get_field("10_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_fifth_feature") ?>
+            <?= get_field("11_feature_label") ?>
         </button>
         <button>
-            <?= get_field("the_sixth_feature") ?>
+            <?= get_field("12_feature_label") ?>
         </button>
     </div>
     <div class="Variable-value">
         <button>
-            <?= get_field("the_first_feature_Value") ?>
+            <?= get_field("7_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_second_feature_value") ?>
+            <?= get_field("8_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_third_feature_value") ?>
+            <?= get_field("9_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_fourth_feature_value") ?>
+            <?= get_field("10_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_fifth_feature_value") ?>
+            <?= get_field("11_feature_value") ?>
         </button>
         <button>
-            <?= get_field("the_sixth_feature_value") ?>
+            <?= get_field("12_feature_value") ?>
         </button>
     </div>
 </div>

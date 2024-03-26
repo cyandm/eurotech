@@ -50,7 +50,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 			<div class="postmeta">
 
 				<span class="meta-comment meta"><i class="iconsax" icon-name="eye"></i>
-					<?php echo getPostViews(get_the_ID()); ?>
+					<?= setPostViews(get_the_ID()); ?> view
 				</span>
 
 				<div>
@@ -58,7 +58,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 						<?= get_the_date('d M') ?>
 					</span>.
 					<span class="meta-comment">
-						<?php echo cyn_reading_time(get_the_ID()) . " Read"; ?>
+						<?= cyn_reading_time(get_the_ID()) . " Read"; ?>
 					</span>
 					</span>
 				</div>
@@ -68,7 +68,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 			</div>
 			<div class="single-comment-number">
 				<h3>
-					<?php echo get_comments_number($post_id); ?> comment
+					<?= get_comments_number($post_id); ?> comment
 				</h3>
 			</div>
 			<div class="blog-comments">

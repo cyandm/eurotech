@@ -7,8 +7,6 @@ require_once ( __DIR__ . '/inc/functions/cyn-customize.php' );
 require_once ( __DIR__ . '/inc/functions/cyn-acf.php' );
 require_once ( __DIR__ . '/inc/functions/cyn-general.php' );
 require_once ( __DIR__ . '/inc/functions/cyn-form.php' );
-
-
 require_once ( __DIR__ . '/inc/classes/cyn-metabox.php' );
 
-$cyn_metabox = new cyn_meta_box();
+new cyn_meta_box();

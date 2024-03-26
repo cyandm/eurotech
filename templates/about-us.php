@@ -56,25 +56,33 @@ $eurotech_video = get_field('eurotech_video');
                 </p>
                 <div class="statistics">
                     <div class="statistic">
-                        <h2>+<?= get_field("eurotech_consent"); ?></h2>
+                        <h2>+
+                            <?= get_field("eurotech_consent"); ?>
+                        </h2>
                         <span>
                             consent
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+<?= get_field("eurotech_project"); ?></h2>
+                        <h2>+
+                            <?= get_field("eurotech_project"); ?>
+                        </h2>
                         <span>
                             Projects
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+<?= get_field("eurotech_expert"); ?></h2>
+                        <h2>+
+                            <?= get_field("eurotech_expert"); ?>
+                        </h2>
                         <span>
                             experts
                         </span>
                     </div>
                     <div class="statistic">
-                        <h2>+<?= get_field("eurotech_adviser"); ?></h2>
+                        <h2>+
+                            <?= get_field("eurotech_adviser"); ?>
+                        </h2>
                         <span>
                             adviser
                         </span>

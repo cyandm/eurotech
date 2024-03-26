@@ -50,5 +50,7 @@ if (!is_array($catsGroup))
         <?php wp_reset_postdata() ?>
       <?php endforeach; ?>
     </div>
+
+    <a href="<?= site_url() . '/product' ?>" class="button-primary">View All</a>
   </div>
 </section>

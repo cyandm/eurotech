@@ -46,39 +46,4 @@
     background-color: $clr_bg_paper;
     padding: $s_5;
   }
-  .post-detail {
-    h2 {
-      @include mq("md") {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-      }
-    }
-  }
-  .paragraph {
-    @include fs("body");
-  }
-  .postmeta {
-    @include fs("body-s");
-    @include d_flex(row, start, start, nowrap, false, $s_6);
-    padding: $s_6 0;
-    color: $clr_secondary_light;
-    i {
-      color: $clr_secondary_dark;
-    }
-    .meta {
-      @include d_flex(row, start, center, nowrap, false, $s_2);
-    }
-    @include mq("md") {
-      padding: 0px;
-      flex-direction: column-reverse;
-      gap: 0;
-      @include fs("caption");
-    }
-  }
-  @include mq("md") {
-    background-color: $clr_bg_paper;
-    padding: $s_5;
-  }
 }

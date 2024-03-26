@@ -22,7 +22,7 @@
       padding: $s_4 $s_5;
       margin: $s_6;
       @include fs("h3");
-      @include icon("\ea95");
+      @include make_icon_after("\ea95");
       @include d_flex(row, center, center, nowrap, false, $s_2);
       cursor: pointer;
     }

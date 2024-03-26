@@ -1,48 +1,48 @@
 <div>
-    <p class="question">1.
-        <?= get_field("first_question"); ?>
+    <p class="question">
+        <?= $first_question = null !== get_field("first_question") ? "1." . get_field("first_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("first_question_answer"); ?>
+        <?= $first_question_answer = null !== get_field("first_question_answer") ? get_field("first_question_answer") : ""; ?>
     </p>
 </div>
 <div>
-    <p class="question">2.
-        <?= get_field("second_question"); ?>
+    <p class="question">
+        <?= $second_question = null !== get_field("second_question") ? "2." . get_field("second_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("second_question_answer"); ?>
+        <?= $second_question_answer = null !== get_field("second_question_answer") ? get_field("second_question_answer") : ""; ?>
     </p>
 </div>
 <div>
-    <p class="question">3.
-        <?= get_field("third_question"); ?>
+    <p class="question">
+        <?= $third_question = null !== get_field("third_question") ? "3." . get_field("third_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("third_question_answer"); ?>
+        <?= $third_question_answer = null !== get_field("third_question_answer") ? get_field("third_question_answer") : ""; ?>
     </p>
 </div>
 <div>
-    <p class="question">4.
-        <?= get_field("fourth_question"); ?>
+    <p class="question">
+        <?= $fourth_question = null !== get_field("fourth_question") ? "4." . get_field("fourth_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("fourth_question_answer"); ?>
+        <?= $fourth_question_answer = null !== get_field("fourth_question_answer") ? get_field("fourth_question_answer") : ""; ?>
     </p>
 </div>
 <div>
-    <p class="question">5.
-        <?= get_field("fourth_question"); ?>
+    <p class="question">
+        <?= $fifth_question = null !== get_field("fifth_question") ? "5." . get_field("fifth_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("fourth_question_answer"); ?>
+        <?= $fifth_question_answer = null !== get_field("fifth_question_answer") ? get_field("fifth_question_answer") : ""; ?>
     </p>
 </div>
 <div>
-    <p class="question">5.
-        <?= get_field("fifth_question"); ?>
+    <p class="question">
+        <?= $sixth_question = null !== get_field("sixth_question") ? "6." . get_field("sixth_question") : ""; ?>
     </p>
     <p class="answer">
-        <?= get_field("fifth_question_answer"); ?>
+        <?= $sixth_question_answer = null !== get_field("sixth_question_answer") ? get_field("sixth_question_answer") : ""; ?>
     </p>
 </div>

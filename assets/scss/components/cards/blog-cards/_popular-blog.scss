@@ -15,7 +15,6 @@
         @include fs("caption");
       }
     }
-
     span.number {
       @include fs("title-s");
       color: $clr_natural_4;

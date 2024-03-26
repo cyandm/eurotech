@@ -1,4 +1,4 @@
-@use "../utils/" as *;
+@use "../utils/"as *;
 
 main.main.home {
   min-height: 50vh;
@@ -25,8 +25,8 @@ main.main.home {
             object-fit: cover;
             aspect-ratio: 21/9;
 
-            @include mq("md") {
-              height: 30vh;
+            @include mq("xl") {
+              height: 40vh;
             }
           }
         }
@@ -58,9 +58,12 @@ main.main.home {
           }
 
           .title {
+            align-items: center;
+
             h2 {
               font-size: 60px;
               line-height: 70px;
+              flex: 1 1 auto;
             }
 
             a {
@@ -92,7 +95,7 @@ main.main.home {
                 position: relative;
                 display: block;
                 flex: 1 1 auto;
-                padding: 0.5rem 0.75rem;
+                padding: 1rem 1.25rem;
                 font-size: 1rem;
                 font-weight: 400;
                 line-height: 1.5;
@@ -110,9 +113,17 @@ main.main.home {
                   color: rgba(0, 0, 0, 0.5);
                 }
               }
+
+              .button-primary {
+                color: $clr_primary_text;
+              }
+
+              @include mq("md") {
+                flex-direction: column;
+              }
             }
 
-            > a {
+            >a {
               text-align: center;
               display: flex;
               align-items: center;
@@ -125,9 +136,13 @@ main.main.home {
                 }
               }
             }
+
+            .bg-filter {
+              flex: 1 1 auto;
+            }
           }
 
-          @include mq("md") {
+          @include mq("xl") {
             position: relative;
             width: 100%;
             bottom: 0;
@@ -177,9 +192,9 @@ main.main.home {
       .swiper-pagination {
         bottom: 0.75rem;
 
-        @include mq("md") {
+        @include mq("xl") {
           bottom: auto;
-          top: 25vh;
+          top: 35vh;
         }
 
         .swiper-pagination-bullet {
@@ -234,9 +249,6 @@ main.main.home {
       }
 
       .button-primary {
-        background-color: #000;
-        color: $clr_accent_text;
-
         @include mq("md") {
           display: none;
           visibility: hidden;
@@ -272,6 +284,23 @@ main.main.home {
         }
       }
     }
+
+    .button-primary {
+      display: inline-block;
+      background-color: #000;
+      color: $clr_accent_text;
+      text-align: center;
+    }
+
+    .container>.button-primary {
+      width: 100%;
+      margin-top: 1rem;
+
+      @include mq_min('md') {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 
   section.home-sketch-slider {
@@ -284,7 +313,7 @@ main.main.home {
       width: 100%;
       gap: 4rem;
 
-      > div {
+      >div {
         width: calc(50% - 2rem);
       }
 
@@ -325,7 +354,7 @@ main.main.home {
         flex-direction: column;
         gap: 1.5rem;
 
-        > div {
+        >div {
           width: 100%;
         }
       }
@@ -339,7 +368,7 @@ main.main.home {
       margin-top: -3rem;
       z-index: 12;
 
-      > div {
+      >div {
         width: calc(50% - 2rem);
         height: 3rem;
         display: flex;
@@ -350,7 +379,7 @@ main.main.home {
       @include mq("md") {
         margin-top: 1rem;
 
-        > div {
+        >div {
           width: 100%;
           justify-content: space-evenly;
         }
@@ -380,7 +409,7 @@ main.main.home {
       display: flex;
       gap: 3rem;
 
-      > div {
+      >div {
         width: calc(50% - 1.5rem);
       }
 
@@ -404,7 +433,9 @@ main.main.home {
           justify-content: flex-end;
 
           a {
-            display: inline-block;
+            @include mq('md') {
+              width: 100%;
+            }
           }
         }
       }
@@ -413,65 +444,11 @@ main.main.home {
         flex-direction: column;
         gap: 1.5rem;
 
-        > div {
+        >div {
           width: 100%;
         }
       }
     }
-  }
-
-  .home__video {
-    &__content {
-      position: relative;
-
-      .video-cover {
-        position: absolute;
-        min-width: 100%;
-        height: 100%;
-        top: 0;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-clip: border-box;
-        overflow: hidden;
-
-        filter: brightness(70%);
-
-        &::before {
-          display: inline-block;
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: static;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-clip: border-box;
-          transition: $t_1;
-        }
-
-        > i {
-          @include d_flex(row, center, center);
-          width: $s_14;
-          height: $s_14;
-          background: $clr_bg_blur;
-          border-radius: 50%;
-          position: absolute;
-          inset: 0;
-          margin: auto;
-
-          &::before {
-            color: $clr_bg_default;
-            font-size: $s_10;
-            margin-inline-start: $s_1;
-          }
-        }
-      }
-    }
-  }
-
-  .without-cover {
-    display: none;
   }
 
   section.idea {
@@ -488,12 +465,32 @@ main.main.home {
   }
 
   .home__top-blogs {
+    margin-top: 3rem;
     min-height: 10rem;
+
+    .h-title {
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .title-br {
+        flex: 1 1 auto;
+      }
+
+      .button-primary {
+        @include mq('md') {
+          display: none;
+          visibility: hidden;
+        }
+      }
+    }
 
     &__posts {
       @include d_flex($gap: $s_6);
 
-      @include mq("lg") {
+      @include mq("xl") {
         display: none;
       }
 
@@ -528,13 +525,14 @@ main.main.home {
 
             @include d_flex(row, center, center, $gap: $s_6);
 
-            > p {
+            >p {
               @include max_line(1);
             }
 
-            > button {
+            >button {
               padding: $s_3;
-              > i {
+
+              >i {
                 display: inline-flex;
 
                 &::before {
@@ -549,6 +547,72 @@ main.main.home {
       &__mobile {
         @media (min-width: 993px) {
           display: none;
+        }
+      }
+    }
+
+    .button-primary {
+      background-color: #000;
+      color: $clr_accent_text;
+    }
+
+    >.button-primary {
+      width: 100%;
+      margin-top: 1rem;
+
+      @include mq_min('md') {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .home__video {
+    &__content {
+      margin-top: 3rem;
+      position: relative;
+
+      .video-cover {
+        position: absolute;
+        min-width: 100%;
+        height: 100%;
+        top: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: border-box;
+        overflow: hidden;
+
+        filter: brightness(70%);
+
+        &::before {
+          display: inline-block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: static;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-clip: border-box;
+          transition: $t_1;
+        }
+
+        >i {
+          @include d_flex(row, center, center);
+          width: $s_14;
+          height: $s_14;
+          background: $clr_bg_blur;
+          border-radius: 50%;
+          position: absolute;
+          inset: 0;
+          margin: auto;
+
+          &::before {
+            color: $clr_bg_default;
+            font-size: $s_10;
+            margin-inline-start: $s_1;
+          }
         }
       }
     }
@@ -568,13 +632,13 @@ main.main.home {
     }
 
     &::before {
-      width: 9rem;
+      width: 8rem;
       top: -6px;
       background-color: $clr_primary_main;
     }
 
     &::after {
-      width: 7rem;
+      width: 6rem;
       top: 0;
       background-color: $clr_primary_dark;
     }

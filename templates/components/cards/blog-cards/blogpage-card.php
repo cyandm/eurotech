@@ -1,5 +1,5 @@
 <?php
-$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
 $author_name = get_the_author_meta('display_name', get_post_field('post_author', $post_id));
 
 ?>
@@ -17,7 +17,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 
 
 				<span class="meta"><i class="iconsax" icon-name="eye"></i>
-					<?= getPostViews(get_the_ID()); ?>
+					<?= getPostViews(get_the_ID()) . " view"; ?>
 				</span>
 				<div class="meta">
 					<span>
