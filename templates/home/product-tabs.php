@@ -40,7 +40,7 @@ if (!is_array($catsGroup))
         ));
         ?>
 
-        <div class="tab-content" data-tab="<?= $term->slug ?>">
+        <div class="tab-content products" data-tab="<?= $term->slug ?>">
           <?php
           while ($term_query->have_posts()) :
             $term_query->the_post();

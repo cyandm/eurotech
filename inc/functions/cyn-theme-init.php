@@ -13,7 +13,7 @@ add_action('wp_head', 'cyn_enqueue_head');
 
 function cyn_enqueue_files()
 {
-    $build = false;
+    $build = true;
     $ver = '1.0.0';
 
     $css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
