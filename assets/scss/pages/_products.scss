@@ -11,6 +11,7 @@
     p {
       position: relative;
       top: 50%;
+      width: 50%;
       transform: translateY(-50%);
       color: $clr_natural_1;
       @include fs("title-s");

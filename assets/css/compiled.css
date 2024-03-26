@@ -2430,6 +2430,7 @@ main.search-result-page .search-result .not-found-search .result-cant-found > di
 .archive-product .banner p {
   position: relative;
   top: 50%;
+  width: 50%;
   transform: translateY(-50%);
   color: #ffffff;
   font-size: 60px;

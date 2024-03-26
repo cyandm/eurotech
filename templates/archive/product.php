@@ -13,8 +13,8 @@ $product_cat = get_the_terms($post_id, 'product_cat');
 <main class="archive-product">
 	<div class="banner"
 		style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
-		<div>
-			<p class="container">Our doors add beauty and elegance to your office</p>
+		<div class="container">
+			<p>Our doors add beauty and elegance to your office</p>
 		</div>
 	</div>
 	<div class="container">
