@@ -9662,6 +9662,7 @@
       overflowHandler();
     });
   }
+  console.log("dd");
 
   // assets/js/pages/homePage.js
   var homeHeadSlider = new Swiper("#home-head-slider", {

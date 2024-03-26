@@ -6,13 +6,15 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
+    @include d_flex(column, center, flex-start, nowrap, false, 0);
+
     p {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
       color: $clr_natural_1;
       @include fs("title-s");
-      width: 30%;
+      width: 60%;
       @include mq("md") {
         @include fs("body");
       }

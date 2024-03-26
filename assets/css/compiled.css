@@ -2323,7 +2323,7 @@ main.search-result-page .search-result .product-result h2 span,
 main.search-result-page .search-result .blog-result h2 span {
   color: #d79b00;
 }
-main.search-result-page .search-result .product-desktop {
+main.search-result-page .search-result .product-result .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
   gap: 1.5rem 1.75rem;
@@ -2420,6 +2420,12 @@ main.search-result-page .search-result .not-found-search .result-cant-found > di
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
 }
 .archive-product .banner p {
   position: relative;
@@ -2429,7 +2435,7 @@ main.search-result-page .search-result .not-found-search .result-cant-found > di
   font-size: 60px;
   font-weight: 500;
   line-height: 90px;
-  width: 30%;
+  width: 60%;
 }
 @media screen and (max-width: 768px) {
   .archive-product .banner p {

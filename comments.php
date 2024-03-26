@@ -9,10 +9,10 @@ comment_form(
 		'title_reply_to' => "Leave a Reply",
 		'comment_field' => '
 		<div class="input-group">
-		<div class="input-box"> <lable>Name* </lable><input id="name" name="name" class="comment-input" rows="1" maxlength="50" placeholder=" " required/></div>
-		<div class="input-box"> <lable>Family* </lable><input id="last-name" name="last-name" class="comment-input" rows="1" maxlength="500" placeholder=" " required/></div>
-		<div class="input-box"> <lable>Email* </lable><input id="mail" name="mail" class="comment-input" rows="1" maxlength="1500" placeholder=" " required/></div>
-		<div class="input-box"> <lable>Comment* </lable>
+		<div class="input-box"> <label>Name* </label><input id="name" name="name" class="comment-input" rows="1" maxlength="50" placeholder=" " required/></div>
+		<div class="input-box"> <label>Family* </label><input id="last-name" name="last-name" class="comment-input" rows="1" maxlength="500" placeholder=" " required/></div>
+		<div class="input-box"> <label>Email* </label><input id="mail" name="mail" class="comment-input" rows="1" maxlength="1500" placeholder=" " required/></div>
+		<div class="input-box"> <label>Comment* </label>
 		<textarea id="comment" name="comment" class="comment-input" rows="3" maxlength="65525" placeholder="" required></textarea></div></div>',
 		'id_submit' => "submit-commentform",
 		'class_submit' => "btn-primary cursor-pointer",

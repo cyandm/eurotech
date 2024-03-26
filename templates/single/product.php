@@ -99,6 +99,7 @@ $img_4 = get_field("product_fourth_image");
                 if ($suggested_product->have_posts()) {
                     while ($suggested_product->have_posts()) {
                         $suggested_product->the_post();
+                        $product_id = get_the_ID();
                         get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
                     }
 

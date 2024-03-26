@@ -1,4 +1,4 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 main.search-result-page {
   .banner {
     width: 100%;
@@ -7,10 +7,10 @@ main.search-result-page {
     background-repeat: no-repeat;
     background-size: 100%;
     @include d_flex(row, start, center, nowrap, false, 0);
-    @include mq('lg') {
+    @include mq("lg") {
       background-size: unset;
     }
-    @include mq('md') {
+    @include mq("md") {
       max-height: px_to_rem(300);
       background-size: cover;
     }
@@ -18,9 +18,9 @@ main.search-result-page {
       width: 100%;
       padding-block: 18% 10%;
       color: $clr_natural_1;
-      @include fs('title-s');
+      @include fs("title-s");
       padding-left: $s_10;
-      @include mq('md') {
+      @include mq("md") {
         display: none;
       }
     }
@@ -28,8 +28,8 @@ main.search-result-page {
   .title-mobile-search {
     display: none;
     margin-top: $s_3;
-    @include fs('h2');
-    @include mq('md') {
+    @include fs("h2");
+    @include mq("md") {
       display: block;
     }
   }
@@ -44,17 +44,19 @@ main.search-result-page {
         }
       }
     }
-    .product-desktop {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(px_to_rem(300), 1fr));
-      gap: px_to_rem(24) px_to_rem(28);
+    .product-result {
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(px_to_rem(300), 1fr));
+        gap: px_to_rem(24) px_to_rem(28);
+      }
     }
     .not-found-search {
       .result-cant-found {
         margin-block: px_to_rem(240);
         @include d_flex(column, flex-start, center);
         > div {
-          @include fs('title-s');
+          @include fs("title-s");
           color: $clr_primary_dark;
           font-size: 40px;
         }
