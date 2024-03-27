@@ -18,6 +18,9 @@
       color: $clr_secondary_light;
     }
   }
+  @include mq("md") {
+    width: 100%;
+  }
 }
 .header-search {
   width: 100%;

@@ -422,7 +422,7 @@ header .container .menu-nav .sub-menu {
   width: 14%;
 }
 header .container .menu-nav .sub-menu li {
-  line-height: 2.5rem;
+  line-height: 1.75rem;
   border-bottom: 1px solid #6b6b6b;
   padding: 0.75rem;
 }
@@ -714,6 +714,7 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
   .blog-post {
     background-color: #ececec;
     padding: 1.25rem;
+    width: 100%;
   }
 }
 
@@ -1165,6 +1166,11 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
 }
 .search-box form::placeholder {
   color: #6b6b6b;
+}
+@media screen and (max-width: 768px) {
+  .search-box {
+    width: 100%;
+  }
 }
 
 .header-search {
@@ -2199,6 +2205,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   color: #ffffff;
   opacity: 0.5;
   margin: 0.5rem;
+  white-space: nowrap;
 }
 .product .gallery .hover-zoom::before {
   content: "\e921";
@@ -2354,6 +2361,16 @@ main.search-result-page .search-result .search_result_head ul {
   align-items: center;
   flex-wrap: nowrap;
   gap: 2.5rem;
+  overflow: auto;
+  max-width: 100%;
+}
+main.search-result-page .search-result .search_result_head ul li {
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  main.search-result-page .search-result .search_result_head {
+    flex-direction: column;
+  }
 }
 main.search-result-page .search-result .product-result h2,
 main.search-result-page .search-result .blog-result h2 {

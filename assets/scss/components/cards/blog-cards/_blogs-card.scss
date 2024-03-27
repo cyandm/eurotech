@@ -47,5 +47,6 @@
   @include mq("md") {
     background-color: $clr_bg_paper;
     padding: $s_5;
+    width: 100%;
   }
 }

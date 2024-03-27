@@ -45,6 +45,7 @@
       color: $clr_natural_1;
       opacity: 0.5;
       margin: $s_2;
+      white-space: nowrap;
       @include make_icon("\e921");
     }
     @include mq("md") {
