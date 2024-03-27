@@ -1,48 +1,64 @@
-<div>
-    <p class="question">
-        <?= $first_question = null !== get_field("first_question") ? "1." . get_field("first_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $first_question_answer = null !== get_field("first_question_answer") ? get_field("first_question_answer") : ""; ?>
-    </p>
-</div>
-<div>
-    <p class="question">
-        <?= $second_question = null !== get_field("second_question") ? "2." . get_field("second_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $second_question_answer = null !== get_field("second_question_answer") ? get_field("second_question_answer") : ""; ?>
-    </p>
-</div>
-<div>
-    <p class="question">
-        <?= $third_question = null !== get_field("third_question") ? "3." . get_field("third_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $third_question_answer = null !== get_field("third_question_answer") ? get_field("third_question_answer") : ""; ?>
-    </p>
-</div>
-<div>
-    <p class="question">
-        <?= $fourth_question = null !== get_field("fourth_question") ? "4." . get_field("fourth_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $fourth_question_answer = null !== get_field("fourth_question_answer") ? get_field("fourth_question_answer") : ""; ?>
-    </p>
-</div>
-<div>
-    <p class="question">
-        <?= $fifth_question = null !== get_field("fifth_question") ? "5." . get_field("fifth_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $fifth_question_answer = null !== get_field("fifth_question_answer") ? get_field("fifth_question_answer") : ""; ?>
-    </p>
-</div>
-<div>
-    <p class="question">
-        <?= $sixth_question = null !== get_field("sixth_question") ? "6." . get_field("sixth_question") : ""; ?>
-    </p>
-    <p class="answer">
-        <?= $sixth_question_answer = null !== get_field("sixth_question_answer") ? get_field("sixth_question_answer") : ""; ?>
-    </p>
-</div>
+<?php
+$question_set = [];
+$answer_set = [];
+
+for ($i = 1; $i <= 5; $i++) {
+    $question = get_field($i . '_question');
+    if (isset ($question) && $question != '')
+        array_push($question_set, $question);
+
+    $answer = get_field($i . '_answer');
+    if (isset ($answer) && $answer != '')
+        array_push($answer_set, $answer);
+}
+?>
+<?php if (count($question_set) > 0 && count($answer_set) > 0): ?>
+
+    <div class="tab" id="tab4">frequently asked question</div>
+
+    <div id="tab4Content" class="tab-content">
+        <div>
+            <div>
+                <p class="question">
+                    <?= "" !== $question_set[0] ? "1." . $question_set[0] : ""; ?>
+                </p>
+                <p class="answer">
+                    <?= "" !== $answer_set[0] ? $answer_set[0] : ""; ?>
+
+                </p>
+            </div>
+            <div>
+                <p class="question">
+                    <?= "" !== $question_set[1] ? "2." . $question_set[1] : ""; ?>
+                </p>
+                <p class="answer">
+                    <?= "" !== $answer_set[1] ? $answer_set[1] : ""; ?>
+                </p>
+            </div>
+            <div>
+                <p class="question">
+                    <?= "" !== $question_set[2] ? "2." . $question_set[2] : ""; ?>
+                </p>
+                <p class="answer">
+                    <?= "" !== $answer_set[2] ? $answer_set[2] : ""; ?>
+                </p>
+            </div>
+            <div>
+                <p class="question">
+                    <?= "" !== $question_set[3] ? "1." . $question_set[3] : ""; ?>
+                </p>
+                <p class="answer">
+                    <?= "" !== $answer_set[3] ? $answer_set[3] : ""; ?>
+                </p>
+            </div>
+            <div>
+                <p class="question">
+                    <?= "" !== $question_set[4] ? "1." . $question_set[4] : ""; ?>
+                </p>
+                <p class="answer">
+                    <?= "" !== $answer_set[4] ? $answer_set[4] : ""; ?>
+                </p>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

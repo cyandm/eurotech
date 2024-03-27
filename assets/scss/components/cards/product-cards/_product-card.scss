@@ -17,6 +17,9 @@
 
     .cat-name {
       display: none;
+      @include mq("md") {
+        display: flex;
+      }
     }
   }
 

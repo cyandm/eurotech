@@ -940,8 +940,14 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
   margin-bottom: 0.5rem;
   height: 52px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.Property .tab-content span > * {
+  flex: 1;
 }
 .Property .tab-content .Variable-name span {
   background-color: #6b6b6b;
@@ -985,7 +991,14 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
   justify-content: flex-end;
 }
 .Property #tab3Content span {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
   padding: 1rem;
+  width: 30%;
   background-color: #feb800;
   font-size: 20px;
   font-weight: 400;
@@ -998,6 +1011,7 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
     line-height: 20px;
     padding: 0.5rem;
     align-items: center;
+    width: 100%;
   }
 }
 
@@ -1034,6 +1048,11 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
 }
 .products .detail .cat-name {
   display: none;
+}
+@media screen and (max-width: 768px) {
+  .products .detail .cat-name {
+    display: flex;
+  }
 }
 @media screen and (max-width: 768px) {
   .products {
@@ -2234,6 +2253,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
 @media screen and (max-width: 768px) {
   .product .container .titr {
     flex-direction: column;
+    align-items: start;
   }
 }
 .product .container .product-pagination {
