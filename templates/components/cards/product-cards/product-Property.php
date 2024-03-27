@@ -20,6 +20,7 @@ for ($i = 7; $i <= 12; $i++) {
     if (isset ($row_value) && $row_value != '')
         array_push($variable_value2, $row_value);
 }
+$product_content = get_the_content();
 ?>
 <?php if (count($variable_name1) > 0 || count($variable_value1) > 0 || count($variable_name2) > 0 || count($variable_value2) > 0): ?>
     <div class="tab" name="tab" id="tab1">specifications</div>
@@ -64,13 +65,14 @@ for ($i = 7; $i <= 12; $i++) {
         <?php endif; ?>
     </div>
 <?php endif; ?>
-<?php if (null !== (the_content())): ?>
+<?php if ("" !== $product_content): ?>
     <div class="tab" id="tab2">product description</div>
     <div id="tab2Content" class="tab-content">
-        <?= the_content() ?>
+        <?= $product_content ?>
     </div>
-<? endif; ?>
-<?php if ("" !== (get_field("catalog"))): ?>
+<?php endif; ?>
+
+<?php if ("" != (get_field("catalog"))): ?>
     <div class="tab" id="tab3">product catalog</div>
     <div id="tab3Content" class="tab-content">
         <p>Click to download the catalog</p>
