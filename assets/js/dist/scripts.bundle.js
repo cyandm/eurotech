@@ -9650,7 +9650,6 @@
   var btnClose = document.querySelector(".close-pop");
   var header = document.querySelector("header");
   if (header) {
-    console.log("header exist");
     menuMobileHandler.addEventListener("click", () => {
       console.log("cliked");
       mobileMenu.classList.toggle("show");
@@ -9662,7 +9661,6 @@
       overflowHandler();
     });
   }
-  console.log("dd");
 
   // assets/js/pages/homePage.js
   var homeHeadSlider = new Swiper("#home-head-slider", {

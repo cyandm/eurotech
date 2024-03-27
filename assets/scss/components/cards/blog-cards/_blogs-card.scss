@@ -2,6 +2,8 @@
 .blog-post {
   @include d_flex(row, start, center, nowrap, false, $s_3);
   margin-bottom: $s_8;
+  width: 65%;
+
   img {
     height: auto;
     width: 36%;

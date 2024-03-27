@@ -7,8 +7,6 @@ const mobileMenu = document.querySelector(".menu-popup");
 const btnClose = document.querySelector(".close-pop");
 const header = document.querySelector("header");
 if (header) {
-  console.log("header exist");
-
   menuMobileHandler.addEventListener("click", () => {
     console.log("cliked");
     mobileMenu.classList.toggle("show");
@@ -20,4 +18,3 @@ if (header) {
     overflowHandler();
   });
 }
-console.log("dd");

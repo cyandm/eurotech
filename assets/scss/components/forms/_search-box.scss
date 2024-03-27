@@ -1,4 +1,4 @@
-@use '../../utils/' as *;
+@use "../../utils/" as *;
 
 .search-box {
   width: 30%;
@@ -8,7 +8,7 @@
     padding: $s_3 $s_4;
     button {
       background-color: $clr_primary_main;
-      padding: $s_4;
+      padding: $s_3;
       border: 0;
     }
     input {
@@ -17,5 +17,27 @@
     &::placeholder {
       color: $clr_secondary_light;
     }
+  }
+}
+.header-search {
+  width: 100%;
+  form {
+    @include d_flex(row, start, center, nowrap, false, $s_4);
+    background-color: rgba($clr_secondary_dark, 0.5);
+    padding: $s_3 $s_3;
+    button {
+      background-color: $clr_primary_main;
+      padding: $s_2;
+      border: 0;
+    }
+    input {
+      flex: 1;
+      &::placeholder {
+        color: $clr_secondary_light;
+      }
+    }
+  }
+  @include mq("lg") {
+    display: none;
   }
 }

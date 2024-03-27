@@ -495,7 +495,6 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
 .site-footer {
   padding-block: 2.5rem;
   padding-inline: 2.5rem;
-  margin-block-start: 5rem;
 }
 .site-footer .footer-wrapper {
   padding: 2.5rem 1.25rem;
@@ -651,6 +650,7 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
   flex-wrap: nowrap;
   gap: 0.75rem;
   margin-bottom: 2rem;
+  width: 65%;
 }
 .blog-post img {
   height: auto;
@@ -1157,7 +1157,7 @@ header .menu-popup .main .menu-primary-container .menu li .sub-menu li {
 }
 .search-box form button {
   background-color: #feb800;
-  padding: 1rem;
+  padding: 0.75rem;
   border: 0;
 }
 .search-box form input {
@@ -1943,6 +1943,7 @@ main.single-post-page .hide ul.cat li.current-cat::before {
   padding: 0.5rem;
   width: 12%;
   z-index: 2;
+  display: flex;
 }
 .about-us .steps::before {
   position: absolute;
@@ -2337,6 +2338,22 @@ main.search-result-page .title-mobile-search {
 }
 main.search-result-page .search-result {
   margin-block: 1rem;
+}
+main.search-result-page .search-result .search_result_head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+main.search-result-page .search-result .search_result_head ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2.5rem;
 }
 main.search-result-page .search-result .product-result h2,
 main.search-result-page .search-result .blog-result h2 {

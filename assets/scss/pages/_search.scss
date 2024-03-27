@@ -35,6 +35,12 @@ main.search-result-page {
   }
   .search-result {
     margin-block: $s_4;
+    .search_result_head {
+      @include d_flex(row, space-between, center, nowrap, false, 0);
+      ul {
+        @include d_flex(row, start, center, nowrap, false, $s_10);
+      }
+    }
     .product-result,
     .blog-result {
       h2 {
