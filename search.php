@@ -21,7 +21,11 @@ $query_product_args = [
 ];
 $query_product = new WP_Query($query_product_args);
 
-
+$categories = get_terms([
+    'taxonomy' => 'product_cat',
+    'hide_empty' => false,
+    'number' => 5
+]);
 ?>
 
 <?php get_header() ?>
@@ -35,12 +39,35 @@ $query_product = new WP_Query($query_product_args);
         <?= get_field("search_title", $front_page_id); ?>
     </p>
     <div class="search-result container">
+        <div class="search_result_head">
+            <ul class="category">
+                <?php
+
+                foreach ($categories as $cat) {
+                    echo "<a href=" . get_term_link($cat->term_id) . '"><li>' . $cat->name;
+                    echo "</li></a>";
+                }
+
+                ?>
+            </ul>
+            <div class="search-box ">
+
+                <?php
+                get_template_part(
+                    'templates/components/forms/search-box',
+                    null,
+                );
+                ?>
+            </div>
+        </div>
         <?php if (($query_product->have_posts()) || ($query_blog->have_posts())) : ?>
 
             <?php if ($query_product->have_posts()) : ?>
                 <div class="product-result">
                     <h2>
-                        Search results in products for <span>"<?php echo  get_search_query();  ?> "</span>
+                        Search results in products for <span>"
+                            <?php echo get_search_query(); ?> "
+                        </span>
                     </h2>
                     <div class="products">
                         <?php
@@ -60,7 +87,9 @@ $query_product = new WP_Query($query_product_args);
             <?php if ($query_blog->have_posts()) : ?>
 
                 <div class="blog-result">
-                    <h2>Search results in blogs for <span>"<?php echo  get_search_query();  ?> "</span></h2>
+                    <h2>Search results in blogs for <span>"
+                            <?php echo get_search_query(); ?> "
+                        </span></h2>
                     <div class="blog-desktop">
                         <?php
 
@@ -80,7 +109,9 @@ $query_product = new WP_Query($query_product_args);
             <?php endif ?>
         <?php else : ?>
             <div class="not-found-search">
-                <h2>Search results for <span>"<?php echo  get_search_query();  ?> "</span></h2>
+                <h2>Search results for <span>"
+                        <?php echo get_search_query(); ?> "
+                    </span></h2>
                 <div class="result-cant-found">
                     <div>
                         result not found!

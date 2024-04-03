@@ -5,30 +5,30 @@ $video_link  = get_field('video_link', $frontPageId);
 $video_cover = get_field('video_cover', $frontPageId);
 
 if (!isset($video_link) && !isset($video_file))
-  return;
+    return;
 ?>
 
 <section class="home__video container">
 
-  <div class="home__video__content">
+    <div class="home__video__content">
 
-    <?php $video_show = !$video_file && !$video_link;
+        <?php $video_show = !$video_file && !$video_link;
 
-    if (!$video_show) : ?>
+        if (!$video_show) : ?>
 
-      <video class="video" width="100%" height="100%" controls poster="<?= $video_cover ?>">
+            <video class="video" width="100%" height="100%" controls poster="<?= $video_cover ?>">
 
-        <source src="<?= $video_link ?>" />
-        <source src="<?= $video_file ?>" />
+                <source src="<?= $video_link ?>" />
+                <source src="<?= $video_file ?>" />
 
-      </video>
+            </video>
 
-      <div class="video-cover">
-        <i class="iconsax" icon-name="play"></i>
-      </div>
+            <div class="video-cover">
+                <i class="iconsax" icon-name="play"></i>
+            </div>
 
-    <?php endif ?>
+        <?php endif ?>
 
-  </div>
+    </div>
 
 </section>

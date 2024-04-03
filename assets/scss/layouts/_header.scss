@@ -1,4 +1,4 @@
-@use "../utils/"as *;
+@use "../utils/" as *;
 
 header {
   height: auto;
@@ -76,7 +76,7 @@ header {
           }
 
           &.menu-item-has-children {
-            >a {
+            > a {
               @include make_icon("\eb75");
 
               &::before {
@@ -97,7 +97,7 @@ header {
               backdrop-filter: blur(12px);
 
               &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 display: block;
                 width: calc(100% + $s_4);
@@ -130,7 +130,7 @@ header {
         padding: $s_2;
       }
 
-      @include mq_min('md') {
+      @include mq_min("md") {
         display: none;
         visibility: hidden;
       }
@@ -145,12 +145,12 @@ header {
     top: 0;
     padding: $s_4;
     margin: 0;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(12px);
     visibility: hidden;
     opacity: 0;
     z-index: -999;
-    transition: .3s ease;
+    transition: 0.3s ease;
 
     &.active {
       display: block;
@@ -227,7 +227,7 @@ header {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: .5rem;
+            gap: 0.5rem;
             overflow: hidden;
 
             li {
@@ -240,7 +240,7 @@ header {
               font-size: 1rem;
 
               &.menu-item-has-children {
-                >a {
+                > a {
                   @include make_icon_after("\eb75");
                 }
               }
@@ -258,7 +258,7 @@ header {
 
                 li {
                   color: var(--clr-natural-7);
-                  font-size: .95rem;
+                  font-size: 0.95rem;
                 }
               }
             }

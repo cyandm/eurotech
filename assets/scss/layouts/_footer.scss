@@ -1,4 +1,4 @@
-@use "../utils/"as *;
+@use "../utils/" as *;
 
 .site-footer {
   padding-block: $s_10;
@@ -18,7 +18,7 @@
         margin-bottom: $s_2;
       }
 
-      >div {
+      > div {
         color: $clr_text_contrast;
       }
 
@@ -29,13 +29,13 @@
       .icon-social-media {
         @include d_flex(row, flex-start, stretch, nowrap, false, $s_2);
 
-        >a {
+        > a {
           background-color: $clr_primary_light;
           width: px_to_rem(32);
           height: px_to_rem(32);
           @include d_flex(row, center, center);
 
-          >div {
+          > div {
             @include d_flex(row, center, center);
 
             img {

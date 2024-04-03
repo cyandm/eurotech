@@ -85,7 +85,6 @@
       }
     }
     .steps {
-      // @include make_icon(" ");
       .step {
         @include d_flex(row, start, center, nowrap, false, 0);
         .step_padding {
@@ -99,9 +98,8 @@
           padding: $s_2;
           width: 12%;
           z-index: 2;
-          img {
-            //width: $s_10;
-          }
+          display: flex;
+     
         }
       } //step
     }

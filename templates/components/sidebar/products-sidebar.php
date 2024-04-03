@@ -1,5 +1,5 @@
 <?php
-$product_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+$product_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $rating = get_field("rating");
 $product = new WP_Query([
 	'post_type' => 'product',
@@ -18,8 +18,8 @@ $categories = get_terms([
 		<?php
 
 		foreach ($categories as $cat) {
-			echo "<li>" . $cat->name;
-			echo "</li>";
+			echo "<a href=" . get_term_link($cat->term_id) . '"><li>' . $cat->name;
+			echo "</li></a>";
 		}
 
 		?>

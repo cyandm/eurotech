@@ -7,10 +7,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     @include d_flex(column, center, flex-start, nowrap, false, 0);
-
     p {
       position: relative;
       top: 50%;
+      width: 50%;
       transform: translateY(-50%);
       color: $clr_natural_1;
       @include fs("title-s");
@@ -36,12 +36,12 @@
     .allproduct {
       width: 80%;
       padding: $s_4;
-
+      h2 {
+        padding: $s_3 0;
+      }
       .products {
-        display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        gap: $s_11;
+        @include d_flex(row, start, start, wrap, false, $s_12);
+
         .product-card {
           margin-bottom: $s_3;
         }
@@ -73,7 +73,6 @@
             }
           }
           i {
-            // background-color: $clr_secondary_dark;
             color: $clr_natural_1;
             padding: 0.5rem;
           }

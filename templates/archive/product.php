@@ -6,12 +6,14 @@ $product = new WP_Query([
 	'posts_per_page' => 10,
 	'post__not_in' => [get_the_ID()],
 ]);
+$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
+$product_cat = get_the_terms($post_id, 'product_cat');
+
 ?>
 <main class="archive-product">
-	<div class="banner"
-		style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
-		<div>
-			<p class="container">Our doors add beauty and elegance to your office</p>
+	<div class="banner" style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
+		<div class="container">
+			<p>Our doors add beauty and elegance to your office</p>
 		</div>
 	</div>
 	<div class="container">
@@ -25,11 +27,15 @@ $product = new WP_Query([
 		</div>
 		<div class="allproduct">
 			<div class="like-product">
-				<h2>Exterior Door</h2>
+				<h2>
+					<?= is_array($product_cat) ? $product_cat[0]->name : '';
+
+					?>
+				</h2>
 				<div class="products">
 					<?php
-					while ($product->have_posts()) {
-						$product->the_post();
+					while (have_posts()) {
+						the_post();
 						$post_id = get_the_ID();
 						get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $post_id]);
 					}
@@ -51,5 +57,14 @@ $product = new WP_Query([
 			</div>
 		</div>
 	</div>
+	<?php
+	echo "<div class='pagination container'>" . paginate_links(
+		array(
+			'total' => $product->max_num_pages,
+			'prev_next' => false,
+			'mid_size' => 1,
+		)
+	) . "</div>";
+	?>
 </main>
 <?php get_footer() ?>

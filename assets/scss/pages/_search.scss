@@ -35,6 +35,20 @@ main.search-result-page {
   }
   .search-result {
     margin-block: $s_4;
+    .search_result_head {
+      @include d_flex(row, space-between, center, nowrap, false, 0);
+      ul {
+        @include d_flex(row, start, center, nowrap, false, $s_10);
+        overflow: auto;
+        max-width: 100%;
+        li {
+          white-space: nowrap;
+        }
+      }
+      @include mq("md") {
+        flex-direction: column;
+      }
+    }
     .product-result,
     .blog-result {
       h2 {
