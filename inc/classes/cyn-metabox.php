@@ -3,13 +3,9 @@ if ( ! class_exists( 'cyn_meta_box' ) ) {
 	class cyn_meta_box {
 		function __construct() {
 			add_action( 'add_meta_boxes', [ $this, 'cyn_form_meta_box' ] );
-
 			add_filter( 'manage_form_posts_columns', [ $this, 'cyn_form_table_head' ] );
 			add_action( 'manage_form_posts_custom_column', [ $this, 'cyn_form_table_column' ], 10, 2 );
-
-
 		}
-
 		public function cyn_form_meta_box() {
 			add_meta_box( 'information', 'Information', function () {
 				global $post;

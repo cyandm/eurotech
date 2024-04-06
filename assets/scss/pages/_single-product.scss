@@ -1,101 +1,52 @@
 @use "../utils/" as *;
 .product {
-  .banner {
-    @include d_flex($a_i: flex-end);
-    width: 100%;
-    height: 70vh;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    transition: ease-in-out 5s;
-    @include d_flex(row, space-between, flex-end, nowrap, false, 0);
-    &:hover {
-      background-size: 110%;
-      transition: ease-in-out 5s;
-    }
-    @include mq("md") {
-      height: 40vh;
-    }
-  }
+  margin-top: 15vh;
   .gallery {
-    @include d_flex(row, space-between, flex-end, nowrap, false, 0);
-    padding: $s_10;
+    @include d_flex(row, space-between, flex-start, nowrap, true, $s_4);
     width: 100%;
-    div {
-      @include d_flex(row, center, center, nowrap, false, 0);
-    }
     img {
-      width: 20%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 12/11;
       margin-right: $s_3;
-      transition: transform 2s;
-      &:hover {
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari 3-8 */
-        transform: scale(1.5);
-      }
       @include mq("md") {
         width: 30%;
       }
     }
-    .hover-zoom {
-      background-color: $clr_natural_9;
-      padding: $s_3;
-      text-align: right;
-      color: $clr_natural_1;
-      opacity: 0.5;
-      margin: $s_2;
-      white-space: nowrap;
-      @include make_icon("\e921");
+
+    .product_detail {
+      margin-bottom: $s_10;
+      .titr {
+        @include d_flex(row, space-between, center, nowrap, false, 0);
+        span {
+          color: $clr_secondary_light;
+        }
+        .product-title {
+          width: fit-content;
+          white-space: nowrap;
+        }
+
+        @include mq("md") {
+          flex-direction: column;
+          align-items: start;
+        }
+      }
+      .product-content p {
+        color: $clr_secondary_light;
+      }
     }
     @include mq("md") {
       padding: $s_3;
+      flex-direction: column;
     }
   }
-  .container {
+  .footer-product {
     margin-bottom: $s_10;
-    .titr {
-      @include d_flex(row, space-between, center, nowrap, false, 0);
-      span {
-        color: $clr_secondary_light;
-      }
-      .product-title {
-        margin: $s_6 0;
-        @include d_flex(row, space-between, center, nowrap, false, 0);
-        width: 40%;
-        @include mq("md") {
-          width: 100%;
-        }
-      }
-      .score i {
-        color: $clr_primary_dark;
-        fill: $clr_primary_dark;
-      }
-      @include mq("md") {
-        flex-direction: column;
-        align-items: start;
-      }
-    }
-    .product-pagination {
-      @include d_flex(row, space-between, center, nowrap, false, 0);
-      span {
-        padding: $s_3;
-        background-color: $clr_secondary_dark;
-        color: $clr_natural_1;
-        margin: $s_5 0;
-        @include mq("md") {
-          width: 100%;
-          text-align: center;
-        }
-      }
-      @include mq("md") {
-        flex-direction: column;
+    .like-product {
+      h2 {
+        padding: $s_8 0;
       }
     }
   }
-  .like-product {
-    h2 {
-      padding: $s_8 0;
-    }
+  @include mq("md") {
+    margin-top: 20px;
   }
 }

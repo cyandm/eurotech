@@ -1,6 +1,6 @@
 <?php
 $frontPageId = $args['front_page_id'];
-$catsGroup   = get_field("home_products_cats", $frontPageId);
+$catsGroup = get_field("home_products_cats", $frontPageId);
 
 if (!isset($catsGroup))
   return;
@@ -8,15 +8,16 @@ if (!isset($catsGroup))
 if (!is_array($catsGroup))
   return;
 ?>
-
 <section class="products-tabs">
   <div class="container">
     <nav class="tabs">
       <ul>
-        <?php foreach ($catsGroup as $termId) : ?>
+        <?php foreach ($catsGroup as $termId): ?>
           <?php $term = get_term_by('id', $termId, 'product-category'); ?>
 
-          <li data-tab="<?= $term->slug ?>"><?= $term->name ?></li>
+          <li data-tab="<?= $term->slug ?>">
+            <?= $term->name ?>
+          </li>
         <?php endforeach; ?>
       </ul>
 
@@ -24,25 +25,27 @@ if (!is_array($catsGroup))
     </nav>
 
     <div class="tabs-content">
-      <?php foreach ($catsGroup as $termId) : ?>
+      <?php foreach ($catsGroup as $termId): ?>
         <?php
         $term = get_term_by('id', $termId, 'product-category');
-        $term_query = new WP_Query(array(
-          'post_type' => 'product',
-          'posts_per_page' => 4,
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'product-category',
-              'field' => "slug",
-              'terms' => $term->slug
+        $term_query = new WP_Query(
+          array(
+            'post_type' => 'product',
+            'posts_per_page' => 4,
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'product-category',
+                'field' => "slug",
+                'terms' => $term->slug
+              )
             )
           )
-        ));
+        );
         ?>
 
         <div class="tab-content products" data-tab="<?= $term->slug ?>">
           <?php
-          while ($term_query->have_posts()) :
+          while ($term_query->have_posts()):
             $term_query->the_post();
             get_template_part('templates/components/cards/product-cards/suggest-product', null, []);
           endwhile; ?>

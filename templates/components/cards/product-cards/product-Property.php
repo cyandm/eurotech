@@ -1,91 +1,87 @@
 <?php
-$variable_name1 = [];
-$variable_value1 = [];
-$variable_name2 = [];
-$variable_value2 = [];
-for ($i = 1; $i <= 6; $i++) {
+$variable_name = [];
+$variable_value = [];
+
+for ($i = 1; $i <= 7; $i++) {
     $row_name = get_field($i . '_feature_label');
     if (isset($row_name) && $row_name != '')
-        array_push($variable_name1, $row_name);
+        array_push($variable_name, $row_name);
     $row_value = get_field($i . '_feature_value');
     if (isset($row_value) && $row_value != '')
-        array_push($variable_value1, $row_value);
+        array_push($variable_value, $row_value);
 }
-for ($i = 7; $i <= 12; $i++) {
-    $row_name = get_field($i . '_feature_label');
-    if (isset($row_name) && $row_name != '')
-        array_push($variable_name2, $row_name);
-
-    $row_value = get_field($i . '_feature_value');
-    if (isset($row_value) && $row_value != '')
-        array_push($variable_value2, $row_value);
-}
-$product_content = get_the_content();
 ?>
-<?php if (count($variable_name1) > 0 || count($variable_value1) > 0 || count($variable_name2) > 0 || count($variable_value2) > 0) : ?>
-    <div class="tab" name="tab" id="tab1">specifications</div>
-    <div id="tab1Content" name="tab-content" class="tab-content">
-        <?php if (count($variable_name1) > 0) : ?>
+<div class="products-changing">
+    <?php if (!empty(get_field('1_feature_label')) && !empty(get_field('1_feature_value'))): ?>
+        <div class="variable">
             <div class="Variable-name">
-                <?php
-                foreach ($variable_name1 as $name) {
-                    echo '<span>' . $name . '</span>';
-                }
-                ?>
+                <?= get_field('1_feature_label'); ?>
             </div>
-        <?php endif; ?>
-
-        <?php if (count($variable_value1) > 0) : ?>
             <div class="Variable-value">
-                <?php
-                foreach ($variable_value1 as $value) {
-                    echo '<span>' . $value . '</span>';
-                }
-                ?>
+                <?= get_field('1_feature_value'); ?>
             </div>
-        <?php endif; ?>
-        <?php if (count($variable_name2) > 0) : ?>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('2_feature_label')) && !empty(get_field('2_feature_value'))): ?>
+        <div class="variable">
             <div class="Variable-name">
-                <?php
-                foreach ($variable_name2 as $name) {
-                    echo '<span>' . $name . '</span>';
-                }
-                ?>
+                <?= get_field('2_feature_label'); ?>
             </div>
-        <?php endif; ?>
-
-        <?php if (count($variable_value2) > 0) : ?>
             <div class="Variable-value">
-                <?php
-                foreach ($variable_value2 as $value) {
-                    echo '<span>' . $value . '</span>';
-                }
-                ?>
+                <?= get_field('2_feature_value'); ?>
             </div>
-        <?php endif; ?>
-    </div>
-<?php endif; ?>
-<?php if ("" !== $product_content) : ?>
-    <div class="tab" id="tab2">product description</div>
-    <div id="tab2Content" class="tab-content">
-        <?= $product_content ?>
-    </div>
-<?php endif; ?>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('3_feature_label')) && !empty(get_field('3_feature_value'))): ?>
+        <div class="variable">
+            <div class="Variable-name">
+                <?= get_field('3_feature_label'); ?>
+            </div>
+            <div class="Variable-value">
+                <?= get_field('3_feature_value'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('4_feature_label')) && !empty(get_field('4_feature_value'))): ?>
+        <div class="variable">
+            <div class="Variable-name">
+                <?= get_field('4_feature_label'); ?>
+            </div>
+            <div class="Variable-value">
+                <?= get_field('4_feature_value'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('5_feature_label')) && !empty(get_field('5_feature_value'))): ?>
+        <div class="variable">
+            <div class="Variable-name">
+                <?= get_field('5_feature_label'); ?>
+            </div>
+            <div class="Variable-value">
+                <?= get_field('5_feature_value'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('6_feature_label')) && !empty(get_field('6_feature_value'))): ?>
+        <div class="variable">
+            <div class="Variable-name">
+                <?= get_field('6_feature_label'); ?>
+            </div>
+            <div class="Variable-value">
+                <?= get_field('6_feature_value'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty(get_field('7_feature_label')) && !empty(get_field('7_feature_value'))): ?>
+        <div class="variable">
+            <div class="Variable-name">
+                <?= get_field('7_feature_label'); ?>
+            </div>
+            <div class="Variable-value">
+                <?= get_field('7_feature_value'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
-<?php if ("" != (get_field("catalog"))) : ?>
-    <div class="tab" id="tab3">product catalog</div>
-    <div id="tab3Content" class="tab-content">
-        <p>Click to download the catalog</p>
-        <a href="<?= get_field("catalog"); ?>" class="download">
-            <span> Download
-                <?php get_template_part('/templates/components/svg/icon-download-pdf') ?>
-            </span>
-        </a>
-    </div>
-<?php endif; ?>
-<?php
-get_template_part(
-    'templates/components/cards/product-cards/product-question',
-    null,
-);
-?>
+
+</div>
