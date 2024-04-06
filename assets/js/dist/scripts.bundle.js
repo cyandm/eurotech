@@ -26,6 +26,25 @@
   };
   var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
+  // assets/js/modules/header.js
+  jQuery(document).ready(($) => {
+    const menuModal = $("#mobile-menu-modal");
+    const menuOpener = $("#mobile-menu-modal-open");
+    if (!menuModal || !menuOpener)
+      return;
+    $(menuOpener).on("click", function(e) {
+      $(menuModal).addClass("active");
+      $(document.body).css("overflow", "hidden");
+    });
+    $('header [data-close="close"]').on("click", function(e) {
+      const target = e.target;
+      if ($(target).attr("data-close") != "close")
+        return;
+      $(menuModal).removeClass("active");
+      $(document.body).attr("style", "");
+    });
+  });
+
   // node_modules/swiper/shared/ssr-window.esm.mjs
   function isObject(obj) {
     return (
@@ -11068,6 +11087,12 @@
     speed: 1e3,
     parallax: true,
   });
+  var swiper2 = new Swiper(".product_gallery", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
 
   // assets/js/utils/custom-events.js
   var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
@@ -11086,31 +11111,12 @@
     videoCovers.forEach((videoCover) => {
       addListener(videoCover, "click", (e) => {
         const cover = videoCover;
-        console.log("hello");
         videoSrc.forEach((videoPlay) => {
           if (videoPlay === videoSrc) return;
           videoPlay.play();
         });
         cover.classList.add("without-cover");
       });
-    });
-  }
-
-  // assets/js/modules/mobile-menu.js
-  var menuMobileHandler = document.querySelector(".open-pop");
-  var mobileMenu = document.querySelector(".menu-popup");
-  var btnClose = document.querySelector(".close-pop");
-  var header = document.querySelector("header");
-  if (header) {
-    menuMobileHandler.addEventListener("click", () => {
-      console.log("cliked");
-      mobileMenu.classList.toggle("show");
-      overflowHandler();
-    });
-    btnClose.addEventListener("click", () => {
-      console.log("cliked on close");
-      mobileMenu.classList.toggle("show");
-      overflowHandler();
     });
   }
 

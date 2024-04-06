@@ -3,49 +3,47 @@
 .products {
   @include d_flex(row, start, center, nowrap, true, $s_3);
   .product-card {
-    max-width: 320px;
-  }
-  img {
-    width: 100%;
+    max-width: 25%;
+    img {
+      width: 100%;
+      @include mq("md") {
+        aspect-ratio: 1/1;
+      }
+    }
+    .detail {
+      @include d_flex(row, space-between, center, nowrap, false, 0);
+      .cat-name {
+        display: none;
+        @include mq("md") {
+          display: flex;
+        }
+      }
+      @include mq("md") {
+        display: block;
+      }
+    }
     @include mq("md") {
-      width: 30%;
-      aspect-ratio: 4/3;
+      max-width: 100%;
+      padding: $s_4;
+      background-color: $clr_bg_paper;
     }
   }
-  .detail {
-    @include d_flex(row, space-between, center, nowrap, false, 0);
-
-    .cat-name {
-      display: none;
-      @include mq("md") {
+  @include mq("md") {
+    flex-direction: column;
+    .card {
+      @include d_flex(row, center, center, nowrap, true, $s_4);
+      a {
         display: flex;
       }
     }
-  }
-
-  @include mq("md") {
-    flex-direction: column;
-    .product-card {
-      padding: $s_5;
-      background-color: $clr_bg_paper;
-
-      img {
-        width: 80%;
-        aspect-ratio: 143/120;
+    .detail {
+      i {
+        display: none;
       }
-      .card {
-        @include d_flex(row, start, center, nowrap, true, $s_4);
-      }
-      .detail {
-        display: block;
-        i {
-          display: none;
-        }
-        .cat {
-          @include fs("caption");
-          color: $clr_secondary_light;
-          line-height: 30px;
-        }
+      .cat {
+        @include fs("caption");
+        color: $clr_secondary_light;
+        line-height: 30px;
       }
     }
   }

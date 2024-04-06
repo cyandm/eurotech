@@ -15,3 +15,10 @@ var swiper = new Swiper(".blogslider", {
   speed: 1000,
   parallax: true,
 });
+
+var swiper = new Swiper(".product_gallery", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
