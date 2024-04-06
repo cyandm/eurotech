@@ -1,6 +1,6 @@
 <?php
-$frontPageId  = get_option('page_on_front');
-$ideaGroup = get_field("home_idea_section", $frontPageId);
+$frontPageId = $args['front_page_id'];
+$ideaGroup   = get_field("home_idea_section", $frontPageId);
 
 if (!isset($ideaGroup))
   return;

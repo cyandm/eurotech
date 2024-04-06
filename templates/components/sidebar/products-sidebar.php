@@ -1,5 +1,5 @@
 <?php
-$product_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+$product_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $rating = get_field("rating");
 $product = new WP_Query([
 	'post_type' => 'product',

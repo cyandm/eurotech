@@ -56,7 +56,6 @@
     margin-bottom: $s_10;
     .titr {
       @include d_flex(row, space-between, center, nowrap, false, 0);
-
       span {
         color: $clr_secondary_light;
       }

@@ -4,7 +4,37 @@ $post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $banner = get_the_post_thumbnail_url($post_id, 'full');
 $rating = get_field("rating");
 $front_page_id = get_option('page_on_front');
+
+$product = new WP_Query([
+    'post_type' => 'product',
+    'posts_per_page' => 6,
+    'post__not_in' => [get_the_ID()],
+]);
+
+
+$best_sellers_q = new WP_Query([
+    'post_type' => 'product',
+    'tax_query' => [
+        [
+            'taxonomy' => 'product_tag',
+            'field' => 'slug',
+            'terms' => 'best_seller',
+        ]
+    ]
+]);
+$suggested_product = new WP_Query([
+    'post_type' => 'product',
+    'tax_query' => [
+        [
+            'taxonomy' => 'product_tag',
+            'field' => 'slug',
+            'terms' => 'suggested_product',
+        ]
+    ]
+]);
+
 $suggested = get_field("popular_posts");
+
 $img_2 = get_field("product_secound_image", $post_id);
 $img_3 = get_field("product_third_image");
 $img_4 = get_field("product_fourth_image");
@@ -53,6 +83,50 @@ $img_4 = get_field("product_fourth_image");
             <?= previous_post_link('<span>&larr; %link</span>', 'previous Item'); ?>
             <?= next_post_link('<span>%link &rarr;</span>', 'Next Item'); ?>
         </p>
+
+        <div class="like-product">
+            <h2>Maybe you like it</h2>
+            <div class="products">
+                <?php
+                if ($suggested_product->have_posts()) {
+                    while ($suggested_product->have_posts()) {
+                        $suggested_product->the_post();
+                        $product_id = get_the_ID();
+                        get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    }
+                } else {
+                    while ($product->have_posts()) {
+                        $product->the_post();
+                        $product_id = get_the_ID();
+                        get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    }
+                }
+                ?>
+
+                <?php wp_reset_postdata() ?>
+            </div>
+        </div>
+
+        <div class="like-product">
+            <h2>best seller</h2>
+            <div class="products">
+                <?php
+                if ($best_sellers_q->have_posts()) {
+                    while ($best_sellers_q->have_posts()) {
+                        $best_sellers_q->the_post();
+                        get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    }
+                } else {
+                    while ($product->have_posts()) {
+                        $product->the_post();
+                        $post_id = get_the_ID();
+                        get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    }
+                }
+                ?>
+                <?php wp_reset_postdata() ?>
+            </div>
+        </div>
         <?php get_template_part('/templates/components/cards/product-cards/single-product', 'footer');
         ?>
     </div>

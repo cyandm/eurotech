@@ -4,13 +4,15 @@
 
 <main class="main home">
   <?php
-  get_template_part('templates/home/head-slider', null, []);
-  get_template_part('templates/home/product-tabs', null, []);
-  get_template_part('templates/home/sketch-slider', null, []);
-  get_template_part('templates/home/catalog', null, []);
-  get_template_part('templates/home/video');
-  get_template_part('templates/home/idea', null, []);
-  get_template_part('templates/home/top-blogs');
+  $front_page_id = get_the_ID();
+
+  get_template_part('templates/home/head-slider', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/product-tabs', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/sketch-slider', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/catalog', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/video', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/idea', null, ['front_page_id' => $front_page_id]);
+  get_template_part('templates/home/top-blogs', null, ['front_page_id' => $front_page_id]);
   ?>
 </main>
 

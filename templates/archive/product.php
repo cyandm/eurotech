@@ -6,13 +6,12 @@ $product = new WP_Query([
 	'posts_per_page' => 10,
 	'post__not_in' => [get_the_ID()],
 ]);
-$post_id = isset ($args['post_id']) ? $args['post_id'] : get_the_ID();
+$post_id = isset($args['post_id']) ? $args['post_id'] : get_the_ID();
 $product_cat = get_the_terms($post_id, 'product_cat');
 
 ?>
 <main class="archive-product">
-	<div class="banner"
-		style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
+	<div class="banner" style="background-image: url(<?= get_stylesheet_directory_uri() . '/assets/img/product-archive.png' ?>);">
 		<div class="container">
 			<p>Our doors add beauty and elegance to your office</p>
 		</div>
@@ -42,6 +41,17 @@ $product_cat = get_the_terms($post_id, 'product_cat');
 					}
 					?>
 					<?php wp_reset_postdata() ?>
+
+
+					<?php
+					echo "<div class='pagination'>" . paginate_links(
+						array(
+							'total' => $product->max_num_pages,
+							'prev_next' => false,
+							'mid_size' => 1,
+						)
+					) . "</div>";
+					?>
 
 				</div>
 			</div>

@@ -7,7 +7,6 @@ if (videoCovers) {
   videoCovers.forEach((videoCover) => {
     addListener(videoCover, "click", (e) => {
       const cover = videoCover;
-      console.log("hello");
 
       videoSrc.forEach((videoPlay) => {
         if (videoPlay === videoSrc) return;

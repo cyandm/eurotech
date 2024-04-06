@@ -1,6 +1,6 @@
 <?php
-$frontPageId = get_option('page_on_front');
-$catsGroup = get_field("home_products_cats", $frontPageId);
+$frontPageId = $args['front_page_id'];
+$catsGroup   = get_field("home_products_cats", $frontPageId);
 
 if (!isset($catsGroup))
   return;
@@ -40,7 +40,7 @@ if (!is_array($catsGroup))
         ));
         ?>
 
-        <div class="tab-content" data-tab="<?= $term->slug ?>">
+        <div class="tab-content products" data-tab="<?= $term->slug ?>">
           <?php
           while ($term_query->have_posts()) :
             $term_query->the_post();
@@ -50,5 +50,7 @@ if (!is_array($catsGroup))
         <?php wp_reset_postdata() ?>
       <?php endforeach; ?>
     </div>
+
+    <a href="<?= site_url() . '/product' ?>" class="button-primary">View All</a>
   </div>
 </section>

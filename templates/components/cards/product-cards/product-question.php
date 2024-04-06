@@ -4,15 +4,15 @@ $answer_set = [];
 
 for ($i = 1; $i <= 5; $i++) {
     $question = get_field($i . '_question');
-    if (isset ($question) && $question != '')
+    if (isset($question) && $question != '')
         array_push($question_set, $question);
 
     $answer = get_field($i . '_answer');
-    if (isset ($answer) && $answer != '')
+    if (isset($answer) && $answer != '')
         array_push($answer_set, $answer);
 }
 ?>
-<?php if (count($question_set) > 0 && count($answer_set) > 0): ?>
+<?php if (count($question_set) > 0 && count($answer_set) > 0) : ?>
 
     <div class="tab" id="tab4">frequently asked question</div>
 

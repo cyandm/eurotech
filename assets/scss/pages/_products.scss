@@ -14,6 +14,7 @@
       transform: translateY(-50%);
       color: $clr_natural_1;
       @include fs("title-s");
+      width: 60%;
       @include mq("md") {
         @include fs("body");
       }

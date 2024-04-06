@@ -60,9 +60,9 @@ $categories = get_terms([
                 ?>
             </div>
         </div>
-        <?php if (($query_product->have_posts()) || ($query_blog->have_posts())): ?>
+        <?php if (($query_product->have_posts()) || ($query_blog->have_posts())) : ?>
 
-            <?php if ($query_product->have_posts()): ?>
+            <?php if ($query_product->have_posts()) : ?>
                 <div class="product-result">
                     <h2>
                         Search results in products for <span>"
@@ -84,7 +84,7 @@ $categories = get_terms([
 
                 </div>
             <?php endif ?>
-            <?php if ($query_blog->have_posts()): ?>
+            <?php if ($query_blog->have_posts()) : ?>
 
                 <div class="blog-result">
                     <h2>Search results in blogs for <span>"
@@ -107,7 +107,7 @@ $categories = get_terms([
                 </div>
 
             <?php endif ?>
-        <?php else: ?>
+        <?php else : ?>
             <div class="not-found-search">
                 <h2>Search results for <span>"
                         <?php echo get_search_query(); ?> "
