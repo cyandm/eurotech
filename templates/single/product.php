@@ -18,11 +18,15 @@ $sku = get_field("product_sku");
                 <img class="swiper-slide"
                     src="<?= !empty($img_4) ? $img_4 : get_stylesheet_directory_uri() . '/assets/img/sample.png' ?>" />
             </div>
+            <div class="buttons">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         </div>
 
 
 
-        <div class="product_detail">
+        <div class="product_detail container">
             <div class="titr">
                 <h2>
                     <?= get_the_title(); ?>
@@ -46,21 +50,17 @@ $sku = get_field("product_sku");
 
 
     </div>
-    <?php
-    get_template_part(
-        'templates/components/cards/product-cards/product-description',
-        null,
-    );
-    ?>
+    <div class="container">
+        <?php
+        get_template_part(
+            'templates/components/cards/product-cards/product-description',
+            null,
+        );
+        ?>
 
-    <?php get_template_part('/templates/components/cards/product-cards/single-product', 'footer');
-    ?>
-
+        <?php get_template_part('/templates/components/cards/product-cards/single-product', 'footer');
+        ?>
+    </div>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper(".product_gallery", {});
-</script>
 <?php get_footer() ?>
