@@ -21,8 +21,9 @@ jobs:
 
       - name: Create Tag
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the automatically provided token
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} # Use the automatically provided token
         run: |
           TAG_NAME="${{ env.commit_message }}"  # Use the commit message as the tag name
+          TAG_NAME="${TAG_NAME//[^a-zA-Z0-9._-]/-}"  # Replace invalid characters with dashes
           git tag "$TAG_NAME"  # Create a new tag
           git push origin "$TAG_NAME"  # Push the new tag to the repository
