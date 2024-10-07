@@ -1,0 +1,32 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - dev  # تغییر از main به dev
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create Tag and Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          git fetch origin dev  # دریافت آخرین تغییرات برنچ dev
+          git checkout dev  # سوئیچ به برنچ dev
+          COMMIT_SHA=$(git rev-parse HEAD)  # دریافت SHA آخرین کامیت در برنچ dev
+          TAG_NAME="v$(date +'%Y.%m.%d.%H.%M')"
+          node ./build/create-tag.js  # اجرای اسکریپت ایجاد تگ
