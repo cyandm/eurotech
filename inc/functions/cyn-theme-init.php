@@ -12,8 +12,8 @@ add_action( 'wp_head', 'cyn_enqueue_head' );
 
 
 function cyn_enqueue_files() {
-	$build = false;
-	$ver = '1.0.0';
+	$build = true;
+	$ver = '1.0.1';
 
 	$css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
 	$js_path = $build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
