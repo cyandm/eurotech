@@ -7,7 +7,10 @@ const REPO_OWNER = 'cyandm'; // نام کاربری شما در گیت‌هاب
 const REPO_NAME = 'eurotech'; // نام ریپازیتوری شما
 
 async function getLatestCommitSHA(repo, branch, token) {
+	console.log(`Using token: ${GITHUB_TOKEN}`); // برای بررسی اینکه آیا توکن به درستی تنظیم شده است
+
 	try {
+		console.log(`Fetching SHA for branch: ${branch} in repo: ${repo}`);
 		const response = await fetch(
 			`https://api.github.com/repos/${repo}/git/refs/heads/${branch}`,
 			{
