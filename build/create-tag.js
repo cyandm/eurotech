@@ -2,7 +2,7 @@ import axios from 'axios';
 import fetch from 'node-fetch';
 import { execSync } from 'child_process';
 
-const GITHUB_TOKEN = process.env.TOKEN; // توکن را از محیط دریافت می‌کند
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // توکن را از محیط دریافت می‌کند
 const REPO_OWNER = 'cyandm'; // نام کاربری شما در گیت‌هاب
 const REPO_NAME = 'eurotech'; // نام ریپازیتوری شما
 
