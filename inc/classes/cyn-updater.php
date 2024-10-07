@@ -1,44 +1,44 @@
 <?php
 
 class GithubUpdater {
-	private $theme;
-	private $basename;
-	private $active;
-	private $repository; // نام متغیر جدید برای مخزن
+	private $theme_slug;
+	private $repo_owner; // نام کاربری شما در GitHub
+	private $repo_name;  // نام ریپازیتوری شما
+	private $current_version;
 
-
-	public function __construct( $theme, $repository ) {
-		$this->theme = $theme;
-		$this->repository = $repository;
-
-		if ( ! function_exists( 'wp_get_theme' ) ) {
-			require_once( ABSPATH . 'wp-includes/theme.php' );
-		}
-
-		$this->basename = wp_get_theme( $this->theme )->get_template();
-		$this->active = wp_get_theme( $this->theme )->is_allowed();
+	public function __construct( $theme_slug, $repo_owner, $repo_name ) {
+		$this->theme_slug = $theme_slug; // نام تم را به عنوان پارامتر دریافت می‌کند
+		$this->repo_owner = $repo_owner;
+		$this->repo_name = $repo_name; // نام ریپازیتوری
+		$this->current_version = wp_get_theme( $this->theme_slug )->get( 'Version' );
 
 		add_filter( 'pre_set_site_transient_update_themes', [ $this, 'check_for_update' ] );
 		add_filter( 'themes_api', [ $this, 'themes_api_call' ], 10, 3 );
-		add_filter( 'upgrader_post_install', [ $this, 'after_install' ], 10, 3 );
 	}
 
 	public function check_for_update( $transient ) {
+
+		var_dump( $transient );
+
+		// چک می‌کنیم که آیا اطلاعات موجود است یا خیر
 		if ( empty( $transient->checked ) ) {
 			return $transient;
 		}
 
-		// GitHub API URL
-		$remote = wp_remote_get( 'https://api.github.com/repos/' . $this->repository . '/releases/latest' );
+		// دریافت اطلاعات آخرین ریلیز از GitHub
+		$remote = wp_remote_get( 'https://api.github.com/repos/' . $this->repo_owner . '/' . $this->repo_name . '/releases/latest' );
 
 		if ( ! is_wp_error( $remote ) ) {
-			$remote = json_decode( wp_remote_retrieve_body( $remote ) );
-			if ( $remote && version_compare( wp_get_theme( $this->theme )->get( 'Version' ), $remote->tag_name, '<' ) ) {
-				$response = new \stdClass();
-				$response->slug = $this->basename;
-				$response->new_version = $remote->tag_name;
-				$response->package = $remote->zipball_url;
-				$transient->response[ $this->basename ] = $response;
+			$remote_data = json_decode( wp_remote_retrieve_body( $remote ), true );
+
+
+			// بررسی وجود داده‌ها و ورژن جدید
+			if ( version_compare( $this->current_version, $remote_data['tag_name'], '<' ) ) {
+				$response = [];
+				$response['slug'] = $this->theme_slug;
+				$response['new_version'] = $remote_data['tag_name'];
+				$response['package'] = $remote_data['zipball_url']; // آدرس دانلود
+				$transient->response[ $this->theme_slug ] = $response;
 			}
 		}
 
@@ -46,37 +46,21 @@ class GithubUpdater {
 	}
 
 	public function themes_api_call( $false, $action, $response ) {
-		if ( is_object( $response ) && isset( $response->slug ) && $response->slug === $this->basename ) {
-			$remote = wp_remote_get( 'https://api.github.com/repos/' . $this->repository );
+
+		// در صورت درخواست اطلاعات اضافی برای تم
+		if ( is_object( $response ) && isset( $response->slug ) && $response->slug === $this->theme_slug ) {
+			$remote = wp_remote_get( 'https://api.github.com/repos/' . $this->repo_owner . '/' . $this->repo_name . '/releases/latest' );
 
 			if ( ! is_wp_error( $remote ) ) {
-				$remote_body = wp_remote_retrieve_body( $remote );
-				$remote_data = json_decode( $remote_body );
+				$remote_data = json_decode( wp_remote_retrieve_body( $remote ), true );
 
-				if ( isset( $remote_data->tag_name ) && isset( $remote_data->zipball_url ) ) {
-					$response->new_version = $remote_data->tag_name;
-					$response->package = $remote_data->zipball_url;
-				} else {
-					error_log( 'Invalid response structure from GitHub API' );
+				if ( isset( $remote_data['tag_name'] ) ) {
+					$response->new_version = $remote_data['tag_name'];
+					$response->package = $remote_data['zipball_url'];
 				}
-			} else {
-				error_log( 'Error fetching data from GitHub: ' . $remote->get_error_message() );
 			}
 		}
 
 		return $response;
-	}
-
-	public function after_install( $response, $hook_extra, $result ) {
-		global $wp_filesystem;
-		$install_dir = get_theme_root() . '/' . $this->basename;
-		$wp_filesystem->move( $result['destination'], $install_dir );
-		$result['destination'] = $install_dir;
-
-		if ( $this->active ) {
-			switch_theme( $this->basename );
-		}
-
-		return $result;
 	}
 }

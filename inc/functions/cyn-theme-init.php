@@ -12,8 +12,8 @@ add_action( 'wp_head', 'cyn_enqueue_head' );
 
 
 function cyn_enqueue_files() {
-	$build = true;
-	$ver = '1.0.1';
+	$build = false;
+	$ver = '1.0.3';
 
 	$css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
 	$js_path = $build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
@@ -50,10 +50,13 @@ function cyn_theme_setup() {
 		'product-cat' => 'product category',
 	] );
 
-	$theme_name = 'eurotech'; // نام فولدر تم
-	$repository = 'cyandm/eurotech'; // نام مخزن گیت‌هاب
+	$theme_slug = 'eurotech'; // نام فولدر تم
+	$owner = 'cyandm'; // نام مخزن گیت‌هاب
+	$repository = 'eurotech'; // نام مخزن گیت‌هاب
 
-	new GithubUpdater( $theme_name, $repository );
+
+
+	new GithubUpdater( $theme_slug, $owner, $repository );
 }
 
 function cyn_admin_files() {
