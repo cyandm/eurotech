@@ -1,82 +1,80 @@
-@use "../utils/" as *;
+@use '../utils/' as *;
 .blog-page {
-   .blog__hero {
-    min-width: 100%;
-    height: 70vh;
-    @include mq("lg") {
-      height: 40vh;
-    }
-  }
-  .archive-main {
-    width: 100% !important;
-    .blog-post {
-      img {
-        width: 25% !important;
-        @include mq("md") {
-          width: 38% !important;
-        }
-      }
-    }
-  }
-  .blog-archive {
-    @include d_flex(row-reverse, start, start, nowrap, false, $s_4);
-    .blog-main {
-      width: 70%;
-      .blog-head {
-        @include d_flex($j_c: space-between);
-        ul {
-          display: flex;
-          padding-block: $s_6;
-          gap: $s_8;
-          overflow: auto;
-          width: 100%;
-          li {
-            border-color: rgba(0, 0, 0, 0);
-            transition: all ease-in-out 1s;
-            @include fs("body");
-            white-space: nowrap;
-            min-height: 50px;
-            text-align: center;
-            &:hover {
-              transition: all ease-in-out 0.7s;
-              border-bottom: $b_1;
-            }
-            &.current-cat {
-              transition: all ease-in-out 3s;
-              border-bottom: 3px solid $clr_primary_main;
-              @include make_icon("\e9a6");
-              &::before {
-                color: $clr_primary_main;
-              }
-            }
-            a{
-              padding: 30px;
-            }
-            i {
-              color: $clr_primary_dark;
-            }
-            @include mq("md") {
-              background-color: $clr_bg_paper;
-              padding: $s_3 $s_4;
-              @include fs("caption");
-            }
-          }
-          @include mq("md") {
-            gap: $s_2;
-          }
-        }
-        @include mq("md") {
-          flex-direction: column-reverse;
-          align-items: start;
-        }
-      }
-      @include mq("md") {
-        width: 100%;
-      }
-    }
-    @include mq("md") {
-      flex-direction: column-reverse;
-      gap:$s_8;
-    }
-  }
+	.blog__hero {
+		min-width: 100%;
+		height: 70vh;
+		@include mq('lg') {
+			height: 40vh;
+		}
+	}
+	.archive-main {
+		width: 100% !important;
+		.blog-post {
+			img {
+				width: 25% !important;
+				@include mq('md') {
+					width: 38% !important;
+				}
+			}
+		}
+	}
+	.blog-archive {
+		@include d_flex(row-reverse, start, start, nowrap, false, $s_4);
+		.blog-main {
+			width: 70%;
+			.blog-head {
+				@include d_flex($j_c: space-between);
+				ul {
+					display: flex;
+					padding-block: $s_6;
+					gap: $s_8;
+					overflow: auto;
+					width: 100%;
+					li {
+						border-color: rgba(0, 0, 0, 0);
+						transition: all ease-in-out 1s;
+						@include fs('body');
+						white-space: nowrap;
+						min-height: 50px;
+						text-align: center;
+						&:hover {
+							transition: all ease-in-out 0.7s;
+							border-bottom: $b_1;
+						}
+						&.current-cat {
+							transition: all ease-in-out 3s;
+							border-bottom: 3px solid $clr_primary_main;
+							@include make_icon('\e9a6');
+							&::before {
+								color: $clr_primary_main;
+							}
+						}
+
+						i {
+							color: $clr_primary_dark;
+						}
+						@include mq('md') {
+							background-color: $clr_bg_paper;
+							padding: $s_3 $s_4;
+							@include fs('caption');
+						}
+					}
+					@include mq('md') {
+						gap: $s_2;
+					}
+				}
+				@include mq('md') {
+					flex-direction: column-reverse;
+					align-items: start;
+				}
+			}
+			@include mq('md') {
+				width: 100%;
+			}
+		}
+		@include mq('md') {
+			flex-direction: column-reverse;
+			gap: $s_8;
+		}
+	}
 }
