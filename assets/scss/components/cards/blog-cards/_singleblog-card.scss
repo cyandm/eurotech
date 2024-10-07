@@ -4,15 +4,15 @@
     .blog-posts {
       @include d_flex(row, start, center, nowrap, false, $s_3);
       margin-bottom: $s_8;
-      background-color: $clr_natural_1;
-      pad: $s_3;
+      background-color: $clr_bg_paper;
+      padding: $s_3;
     }
     .post-main {
       width: 70%;
     }
     img {
       height: 15vh;
-      width: 30%;
+      width: 43%;
       aspect-ratio: auto 120 / 95;
     }
     .postmeta {

@@ -7,7 +7,7 @@
 			$about_us = get_field('about_us'); ?>
 	</p>
 	<div class="catergories">
-		<h3 class="catergories mb-hide">categories</h3>
+		<h3 class="catergories">categories</h3>
 		<ul class="cat">
 			<?php wp_list_categories(
 				[

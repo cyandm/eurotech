@@ -1,16 +1,21 @@
 @use "../../../utils/" as *;
+.blogs {
+  @include d_flex(column, start, start, nowrap, false, $s_5);
+  @include mq("md") {
+    display: block;
+  }
+}
 .blog-post {
-  @include d_flex(row, start, center, nowrap, false, $s_3);
-  margin-bottom: $s_8;
-  width: 65%;
-
+  @include d_flex(row, start, stretch, nowrap, false, $s_3);
   img {
     height: auto;
-    width: 36%;
-    aspect-ratio: 328/302;
+    width: 38%;
+    aspect-ratio: 1/1;
     object-fit: cover;
   }
   .post-detail {
+    @include d_flex(column, flex-start, start, nowrap, false, $s_3);
+    width: 62%;
     h2 {
       @include mq("lg") {
         overflow: hidden;
@@ -22,20 +27,20 @@
   }
   .paragraph {
     @include fs("body");
-    @include mq("lg") {
+    @include mq("md") {
       display: none;
     }
   }
   .postmeta {
     @include fs("body-s");
-    @include d_flex(row, start, start, nowrap, false, $s_6);
+    @include d_flex(row, start, start, nowrap, false, $s_9);
     padding: $s_6 0;
     color: $clr_secondary_light;
     i {
       color: $clr_secondary_dark;
     }
     .meta {
-      @include d_flex(row, start, center, nowrap, false, $s_2);
+      @include d_flex(row, start, center, nowrap, false, $s_1);
     }
     @include mq("md") {
       padding: 0px;
@@ -47,6 +52,7 @@
   @include mq("md") {
     background-color: $clr_bg_paper;
     padding: $s_5;
+    margin-block: $s_4;
     width: 100%;
   }
 }

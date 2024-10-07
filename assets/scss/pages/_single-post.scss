@@ -10,11 +10,27 @@ main.single-post-page {
   }
   .single-blog {
     @include d_flex(row-reverse, start, start, nowrap, false, $s_4);
+    margin-block-start: $s_10;
+    h1{
+      @include fs('h1');
+    }
     @include mq("md") {
       flex-direction: column-reverse;
     }
     .post-main {
       width: 70%;
+         h1{
+      @include fs('h1');
+               @include mq("md") {
+          @include fs("h3");
+         }
+    }
+       h2{
+      @include fs('h2');
+    }
+       h3{
+      @include fs('h3');
+    }
       @include mq("md") {
         width: 100%;
       }
@@ -38,6 +54,8 @@ main.single-post-page {
       }
       //content
       .post-content {
+                  @include d_flex(column, start, start, nowrap, false, $s_4);
+
         width: 100%;
         margin-bottom: $s_6;
         @include fs("body");
@@ -79,7 +97,7 @@ main.single-post-page {
         }
 
         p {
-          text-align: justify;
+          text-align: left;
           @include mq("md") {
             @include fs("body-s");
           }
@@ -102,6 +120,11 @@ main.single-post-page {
       padding: $s_3;
       line-height: $s_10;
       margin-bottom: $s_5;
+      width: 100%;
+      text-align: center;
+      a{
+        white-space: nowrap;
+      }
     }
     li.current-cat {
       background-color: $clr_primary_text;

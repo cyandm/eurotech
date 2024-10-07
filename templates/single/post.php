@@ -25,7 +25,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 					<?php echo $about_us ?>
 				</p>
 
-				<h3 class="mb-hide">categories</h3>
+				<h3>categories</h3>
 				<ul class="cat">
 					<!-- <li class="current-cat"><i class="iconsax" icon-name="flash-1"></i>
 						<?= get_cat_name($category_id = 4);
@@ -44,9 +44,9 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 					) ?>
 				</ul>
 			</div>
-			<h2>
+			<h1>
 				<?= get_the_title($post_id) ?>
-			</h2>
+			</h1>
 			<div class="postmeta">
 
 				<span class="meta-comment meta"><i class="iconsax" icon-name="eye"></i>
@@ -68,7 +68,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 			</div>
 			<div class="single-comment-number">
 				<h3>
-					<?= get_comments_number($post_id); ?> comment
+					<?= get_comments_number($post_id); ?> comments
 				</h3>
 			</div>
 			<div class="blog-comments">

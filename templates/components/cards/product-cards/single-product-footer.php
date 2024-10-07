@@ -6,10 +6,11 @@ $product = new WP_Query([
 ]);
 $best_sellers_q = new WP_Query([
     'post_type' => 'product',
+    'posts_per_page' => 4,
+
     'tax_query' => [
         [
-            'posts_per_page' => 4,
-            'taxonomy' => 'product_tag',
+             'taxonomy' => 'product_tag',
             'field' => 'slug',
             'terms' => 'best_seller',
         ]
@@ -17,16 +18,17 @@ $best_sellers_q = new WP_Query([
 ]);
 $suggested_product = new WP_Query([
     'post_type' => 'product',
+    'posts_per_page' => 4,
+
     'tax_query' => [
         [
             'taxonomy' => 'product_tag',
             'field' => 'slug',
-            'posts_per_page' => 4,
-            'terms' => 'suggested_product',
+             'terms' => 'suggested_product',
         ]
     ]
 ]); ?>
-<div class="footer-product">
+<div class="footer-product container">
     <div class="like-product">
         <h2>Maybe you like it</h2>
         <div class="products">
@@ -59,13 +61,15 @@ $suggested_product = new WP_Query([
             if ($best_sellers_q->have_posts()) {
                 while ($best_sellers_q->have_posts()) {
                     $best_sellers_q->the_post();
-                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    $products_id = get_the_ID();
+
+                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $products_id]);
                 }
             } else {
                 while ($product->have_posts()) {
                     $product->the_post();
-                    $post_id = get_the_ID();
-                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $product_id]);
+                    $products_id = get_the_ID();
+                    get_template_part('/templates/components/cards/product-cards/suggest', 'product', ['post_id' => $products_id]);
                 }
             }
             ?>

@@ -11,8 +11,8 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 		<h3>
 			<?= get_the_title($post_id) ?>
 		</h3>
-		<div class="paragraph mb-hide">
-			<?php echo get_the_excerpt(post: $post_id) ?>
+		<div class="paragraph">
+			<?php echo get_the_excerpt($post_id); ?>
 		</div>
 	</div>
 </a>

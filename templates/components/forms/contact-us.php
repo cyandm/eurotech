@@ -12,6 +12,6 @@
 		<textarea class="data" rows="5" name="describe" placeholder="Massage" required></textarea>
 	</div>
 	<button id="contact-form-submit" class="submit" variant="primary" type="submit">
-		<div> Send Message <i class="iconsax" icon-name="send-1" fill="red"></i></div>
+		 Send Message <i class="iconsax" icon-name="send-1"></i>
 	</button>
 </form>

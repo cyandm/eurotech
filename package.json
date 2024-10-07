@@ -1,6 +1,6 @@
 {
   "name": "Eurotech",
-  "version": "1.0.0.0",
+  "version": "1.0.0",
   "description": "",
   "author": "cyan-dm",
   "scripts": {
@@ -21,6 +21,7 @@
     "esbuild": "^0.20.1",
     "gsap": "^3.12.5",
     "sass": "^1.74.1",
-    "swiper": "^11.0.7"
+    "swiper": "^11.0.7",
+    "toastify-js": "^1.12.0"
   }
 }

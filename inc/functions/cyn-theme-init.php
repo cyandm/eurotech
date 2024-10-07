@@ -45,11 +45,12 @@ function cyn_theme_setup()
     add_theme_support('automatic-feed-links');
 
     register_nav_menus([
-        'header' => 'Header',
-        'footer-col1' => 'Footer1',
-        'footer-col2' => 'Footer2',
-        'footer-col3' => 'Footer3'
-
+        'header' => 'Main Menu',
+        'header-mobile' => 'Mobile Menu',
+        'footer-col1' => 'Footer - discover',
+        'footer-col2' => 'Footer - Our company',
+        'footer-col3' => 'Footer - support',
+        'product-cat' => 'product category',
     ]);
 }
 

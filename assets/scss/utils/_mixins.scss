@@ -4,7 +4,7 @@
 $viewports: (
   "xs": 320px,
   "sm": 480px,
-  "md": 768px,
+  "md": 890px,
   "lg": 992px,
   "xl": 1200px,
 );
@@ -31,9 +31,9 @@ $viewports: (
       "title": make_font_list(80px, 600, 70px),
       "title-s": make_font_list(60px, 500, 90px),
       "h1": make_font_list(32px, 500, 48px),
-      "h2": make_font_list(24px, 500, 44.5px),
+      "h2": make_font_list(24px, 500, 30.5px),
       "h3": make_font_list(20px, 500, 34px),
-      "h4": make_font_list(16px, 500, 28px),
+      "h4": make_font_list(16px, 500, 24px),
       "body": make_font_list(20px, 400, 36px),
       "body-s": make_font_list(16px, 400, 32px),
       "caption": make_font_list(12px, 500, 20px),

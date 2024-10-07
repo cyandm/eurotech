@@ -47,18 +47,19 @@ $heroTitle = get_field('hero_title', $front_page_id);
 
 
     </section>
+	 <?= the_pagination(); ?>
 
 
     <section class="inspiration__pagination container">
 
         <?php
-        echo "<div class='pagination'>" . paginate_links(
-            array(
-                'total' => $wp_query->max_num_pages,
-                'prev_next' => false,
-                'mid_size' => 1,
-            )
-        ) . "</div>";
+        // echo "<div class='pagination'>" . paginate_links(
+        //     array(
+        //         'total' => $wp_query->max_num_pages,
+        //         'prev_next' => false,
+        //         'mid_size' => 1,
+        //     )
+        // ) . "</div>";
         ?>
 
     </section>

@@ -1,6 +1,4 @@
 <?php /*Template Name: contact */ ?>
-
-
 <?php
 $banner = get_the_post_thumbnail_url( $post_id, 'full' );
 ?>
@@ -9,16 +7,14 @@ $banner = get_the_post_thumbnail_url( $post_id, 'full' );
 
 <div class="contact-us"
 	 id="contactUsPage">
-	<div class="banner"
+	<div class="contact-hero"
 		 <?php printf( "style=\"background-image:url('%s')\"", $banner ) ?>>
 		<div class="container">
-			<p>We're here to listen to your needs, your concerns, and your ideas
+			<p><?= get_field('contact_us'); ?>
 			</p>
 			<div class="contact">
-				<h2>
-					<?= ! empty ( $title_page ) ? $title_page : 'Contact Us' ?>
-				</h2>
-				<?php get_template_part( '/templates/components/forms/contact-us' ); ?>
+				<h2>Contact Us</h2>
+				<?php get_template_part( '/templates/components/forms/contact-us2' ); ?>
 			</div>
 		</div>
 	</div>

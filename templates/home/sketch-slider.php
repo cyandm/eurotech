@@ -1,7 +1,7 @@
 <?php
 $frontPageId = $args['front_page_id'];
 $sliderGroup = get_field("home_sketch_slider", $frontPageId);
-
+$sketch_certificate =  get_field("sketch_certificate", $frontPageId);
 if (!isset($sliderGroup))
   return;
 ?>
@@ -33,16 +33,19 @@ if (!isset($sliderGroup))
                 <div class="context">
                   <p><?= $content ?></p>
                 </div>
+
               </div>
             </div>
+
           </div>
         <?php endfor; ?>
       </div>
 
       <div class="swiper-navigation">
-        <div>
+        <div >
           <button class="swiper-btn-prev button-primary"><i class="iconsax" icon-name="arrow-left"></i></button>
-          <button class="swiper-btn-next button-primary"><i class="iconsax" icon-name="arrow-right"></i></button>
+          <button class="swiper-btn-next button-primary"><i class="iconsax" icon-name="arrow-right"></i>  <a href="<?= $sketch_certificate; ?>" class="view">view certificate</a></button>
+
         </div>
       </div>
     </div>

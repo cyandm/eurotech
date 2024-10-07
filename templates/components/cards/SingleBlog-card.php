@@ -13,7 +13,7 @@ $author_name = get_the_author_meta('display_name', get_post_field('post_author',
 			<div class="postmeta">
 				<div>
 					<span class="meta-date meta">
-						<?= get_the_date() ?>
+						<?= get_the_date('d M') ?>
 					</span>
 					.<span class="meta-comment meta">
 						<?= cyn_reading_time(get_the_ID()) . " Read"; ?>

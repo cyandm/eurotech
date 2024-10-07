@@ -29,7 +29,7 @@
   }
   @include mq("md") {
     background-position: top;
-    background-size: 180%;
+    background-size: 100%;
     .error-text {
       width: 85%;
 
@@ -41,4 +41,8 @@
       }
     }
   }
+    @include mq("md") {
+  height: auto;
+
+    }
 }

@@ -11,18 +11,15 @@ if ( ! class_exists( 'cyn_meta_box' ) ) {
 				global $post;
 				?>
 				<table>
+							<tr>
+						<td><?php _e('name', 'cyn-dm') ?></td>
+								<td><?= get_post_meta($post->ID, 'name', true) ?></td>
+							</tr>
 					<tr>
-						<td><?php _e( 'name', 'cyn-dm' ) ?></td>
-						<td><?= get_post_meta( $post->ID, 'name', true ) ?></td>
+						<td><?php _e( 'number', 'cyn-dm' ) ?></td>
+						<td><?= get_post_meta( $post->ID, 'number', true ) ?></td>
 					</tr>
-					<tr>
-						<td><?php _e( 'family', 'cyn-dm' ) ?></td>
-						<td>
-
-							<?= get_post_meta( $post->ID, 'family', true ) ?>
-
-						</td>
-					</tr>
+				 
 					<tr>
 						<td><?php _e( 'email', 'cyn-dm' ) ?></td>
 						<td>
@@ -43,8 +40,8 @@ if ( ! class_exists( 'cyn_meta_box' ) ) {
 		}
 
 		public function cyn_form_table_head( $columns ) {
-			$columns['telephone'] = __( 'شماره تلفن', 'cyn-dm' );
-			$columns['email'] = __( 'آدرس ایمیل', 'cyn-dm' );
+			$columns['telephone'] = 'number';
+			$columns['email'] = 'email';
 			return $columns;
 		}
 

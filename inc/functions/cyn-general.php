@@ -158,14 +158,13 @@ function the_pagination()
         $links[] = $paged + 1;
     }
 
-    echo '<ul class="pagination " itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">' . "\n";
+    echo '<ul class="pagination container " itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">' . "\n";
     /** Previous Post Link */
     if (get_previous_posts_link())
         printf(' <li class="page-item">%s</li>
     ' . "\n", get_previous_posts_link('
     <span aria-hidden="true" class="page-link ripple">&laquo;</span>
-    <span class="sr-only">Previous</span>
-    '));
+     '));
     /** Link to first page, plus ellipses if necessary */
     if (!in_array(1, $links)) {
         $class = 1 == $paged ? '  class="page-item active"' : '';
@@ -190,6 +189,6 @@ function the_pagination()
     if (get_next_posts_link())
         printf('<li class="page-item ">%s</li>
     ' . "\n", get_next_posts_link('<span aria-hidden="true" class="page-link ripple">&raquo;</span>
-    <span class="sr-only">Next</span>'));
+ '));
     echo '</ul>' . "\n";
 }

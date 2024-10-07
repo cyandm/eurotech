@@ -11,12 +11,9 @@ $facebook_id = null !== get_option('cyn_facebook_label') ? get_option('cyn_faceb
 $x_id = null !== get_option('cyn_x_label') ? get_option('cyn_x_label') : '';
 
 $address = null !== get_option('cyn_text_address') ? get_option('cyn_text_address') : '';
-
-
+$map_link = null !== get_option('cyn_address_map') ? get_option('cyn_address_map') : '';
 $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_phone_number_one') : '';
 $phone_number2 = null !== get_option('cyn_phone_number_two') ? get_option('cyn_phone_number_two') : '';
-
-
 ?>
 <footer class="site-footer">
 	<div class="footer-wrapper">
@@ -47,19 +44,20 @@ $phone_number2 = null !== get_option('cyn_phone_number_two') ? get_option('cyn_p
 
 		</div>
 		<?php if (!empty ($address)): ?>
-			<div class="footer-col ">
+			<div class="footer-col footer-address">
 				<h4 class="footer-col-title">Address</h4>
 				<div>
-					<?= $address ?>
+					<a href="<?= $map_link?>"><?= $address ?></a>
 				</div>
 			</div>
 		<?php endif ?>
-		<div class="footer-col col-newsletter">
+		<div class="footer-col col-newsletter" id="newsletter">
 			<h4 class="footer-col-title">Join Our Newsletter</h4>
 			<div>Subscribe To Our Blog Posts</div>
-			<form class="form-newsletter">
-				<input class="input-primary" type="email" placeholder="email">
-				<button class="button-primary">Subscribe</button>
+			<form class="form-newsletter" id="subscribe" action="">
+				<input class="input-primary" name="email" type="email" id="email_input" placeholder="email">
+				<button class="button-primary" id="Subscribe-button">Subscribe</button>
+				<p class=" " id="success"></p>
 			</form>
 		</div>
 	</div>

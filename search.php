@@ -32,7 +32,7 @@ $categories = get_terms([
 <main class="search-result-page">
     <div class="banner" <?php printf("style=\"background-image:url('%s')\"", $banner) ?>>
         <p class="container">
-            <?= get_field("search_title", $front_page_id); ?>
+            <?= get_field("search_hero_title", $front_page_id); ?>
         </p>
     </div>
     <p class="container title-mobile-search">

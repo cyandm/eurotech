@@ -13,7 +13,7 @@ $all_blogs_page_id = get_option('page_for_posts');
 <main class="blog-page">
 
 	<!-- Swiper -->
-	<div class="banner" style="background-image:url('<?php echo $banner; ?>')">
+	<img src="<?= $banner;?>" class="blog__hero"/>
 		<div class="swiper blogslider banner_text">
 			<div class="swiper-wrapper">
 				<?php
@@ -30,7 +30,7 @@ $all_blogs_page_id = get_option('page_for_posts');
 				<div class="swiper-pagination"></div>
 			</div>
 		</div>
-	</div>
+	
 	<!-- top slider blog -->
 	<div class="container blog-archive">
 		<div class="sidebar">
@@ -45,9 +45,9 @@ $all_blogs_page_id = get_option('page_for_posts');
 		<div class="blog-main">
 			<div class="blog-head">
 				<ul>
-					<li class="current-cat"><a href="<?= get_permalink($all_blogs_page_id) ?>">
+					<a href="<?= get_permalink($all_blogs_page_id) ?>"><li class="current-cat">
 							all
-						</a></li>
+						</li></a>
 					<?php wp_list_categories(
 						[
 							'orderby' => 'id',
@@ -58,7 +58,6 @@ $all_blogs_page_id = get_option('page_for_posts');
 				</ul>
 			</div>
 			<div class="blog-section">
-
 				<div class="blogs">
 					<?php
 					$new_blogs = new WP_Query([
@@ -71,20 +70,12 @@ $all_blogs_page_id = get_option('page_for_posts');
 					while ($new_blogs->have_posts()) {
 						$new_blogs->the_post();
 						$post_id = get_the_ID();
-
 						get_template_part('/templates/components/cards/blog-cards/blogpage', 'card', ['post_id' => $post_id]);
 					}
 					?>
 					<?php wp_reset_postdata() ?>
-
 				</div>
-
 			</div>
-
-
-
-
-
 			<?php
 			echo "<div class='pagination'>" . paginate_links(
 				array(
@@ -94,9 +85,6 @@ $all_blogs_page_id = get_option('page_for_posts');
 				)
 			) . "</div>";
 			?>
-
-
-
 		</div>
 	</div>
 </main>

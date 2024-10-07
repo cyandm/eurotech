@@ -6,27 +6,17 @@ $product = new WP_Query([
 	'posts_per_page' => 4,
 	'post__not_in' => [get_the_ID()],
 ]);
-$categories = get_terms([
-	'taxonomy' => 'product_cat',
-	'hide_empty' => false,
-	'number' => 5
-]);
+
 ?>
-<div class="catergories">
+<div class="catergories mb-hide">
 	<h3> category</h3>
-	<ul class="cat">
-		<?php
+	<ul class="cat ">
+		<?php wp_nav_menu(['theme_location' => 'product-cat']) ?>
 
-		foreach ($categories as $cat) {
-			echo "<a href=" . get_term_link($cat->term_id) . '"><li>' . $cat->name;
-			echo "</li></a>";
-		}
-
-		?>
 	</ul>
 </div>
 <div class="like-product">
-	<h3>Maybe you likes it</h3>
+	<h3>Suggested products</h3>
 	<div class="sidebar-products">
 		<?php
 		while ($product->have_posts()) {

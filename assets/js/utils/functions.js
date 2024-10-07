@@ -95,17 +95,17 @@ export const showMassage = (status, parentEl, innerText = null) => {
   span.classList.add(status);
 
   if (status === "success") {
-    span.innerText = innerText ?? "عملیات با موفقیت انجام شد";
+    span.innerText = innerText ?? "mission accomplished";
     return;
   }
 
   if (status === "warning") {
-    span.innerText = innerText ?? "عملیات در انتظار تایید ادمین است";
+    span.innerText = innerText ?? "The operation is waiting for admin approval";
     return;
   }
 
   if (status === "error") {
-    span.innerText = innerText ?? "عملیات با خطا مواجه شد";
+    span.innerText = innerText ?? "The operation encountered an error";
     return;
   }
 
